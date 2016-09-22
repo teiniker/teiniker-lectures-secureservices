@@ -1,0 +1,38 @@
+Exercise: Basic Authentication
+-------------------------------------------------------------------------------
+
+Replace the plain text password with a digested one
+---------------------------------------------------
+To improve the security of the given Web service, use a digested (instead of a 
+plain text) password in the Basic Authentication procedure.
+To keep things simple we skip the TLS step - which is mandatory in practice!!
+
+1. Create a new Wildfly application user 
+
+	username: bart
+	password: bcrypt("nd767amJHJ8s")
+	role: user
+	
+	Insert digested password here: TODO
+	
+	Tip: You can use the given BCryptTest to generate the digested password. 
+
+
+2. Use SoapUI to request a list of users from the Web service 
+ 	=> Setup the database table using the given SQL scripts
+ 	=> Authenticate as bart / bcrypt("nd767amJHJ8s") / pre-emptively
+
+	Insert raw request here: TODO
+
+	Insert raw response here: TODO
+	
+	Note that you get only points if you put the request and response message
+	into this file!!
+
+
+3. Extend UserServiceJSONTest to support the digested password
+
+	Tip: Use Base64.encodeBase64String()
+	
+	
+

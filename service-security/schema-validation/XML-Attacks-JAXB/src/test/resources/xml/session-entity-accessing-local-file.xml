@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!DOCTYPE foo [  
+  <!ELEMENT foo ANY >
+  <!ENTITY xxe SYSTEM "file:///dev/random" >]><foo>&xxe;</foo>
+  
+<SessionRoot>
+    <Sessions>
+        <Session id="one" valid="true" hack="true"/>
+        <Session id="two" valid="false" />
+    </Sessions>    
+    <Hack>
+    	<blackhack id="666" />
+    </Hack>
+</SessionRoot>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<booklist listtitle="Science Fiction">
+
+	<book price="33.3" >
+		<title>The Naked Sun</title>
+		<author>Isaac Asimov</author>
+		<isbn>0553293397</isbn>
+	</book>
+
+	<book price="77.7" >
+		<title>Foundation's Triumph</title>
+		<author>David Brin</author>
+		<isbn>0061056391</isbn>
+	</book>
+
+	<book price="11.1" >		
+		<title>Snow Crash</title>
+		<author>Neal Stephenson</author>
+		<isbn>0553380958</isbn>
+	</book>
+
+</booklist>
+
