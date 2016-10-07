@@ -87,7 +87,6 @@ public class UserServiceXMLTest
 		// Response
 		int httpResponseCode = connection.getResponseCode();
 		Assert.assertEquals(204, httpResponseCode);
-		Assert.assertEquals(0, connection.getContentLengthLong());
 	}
 	
 	
