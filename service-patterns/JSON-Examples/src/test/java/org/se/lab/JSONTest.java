@@ -44,8 +44,8 @@ public class JSONTest
 	{
 		  // build JSON
         JsonArrayBuilder jsonArrayBuilder = Json.createArrayBuilder();
-        jsonArrayBuilder.add(
-        		Json.createObjectBuilder()
+        jsonArrayBuilder
+        	.add(Json.createObjectBuilder()
                 	.add("id", 3)
                     .add("username", "bart")
                     .add("password", "**********")
@@ -59,8 +59,7 @@ public class JSONTest
 	@Test
 	public void testJsonReader() throws FileNotFoundException
 	{
-		JsonReader jsonReader = 
-				Json.createReader(new FileReader(new File("src/test/resources/json", "user.json")));
+		JsonReader jsonReader = Json.createReader(new FileReader(new File("src/test/resources/json", "user.json")));
 	    JsonObject jsonObject = jsonReader.readObject();
 	    
 	    int id = jsonObject.getInt("id");
