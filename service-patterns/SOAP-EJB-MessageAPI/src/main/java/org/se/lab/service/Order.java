@@ -24,20 +24,6 @@ public class Order
 		setName(name);
 	}
 	
-//	/*
-//     * Property: id
-//     */
-//    
-//    @XmlAttribute
-//    private int id;
-//    public int getId()
-//    {
-//        return id;
-//    }
-//    public void setId(int id)
-//    {
-//        this.id = id;
-//    }
 
     
     /*
