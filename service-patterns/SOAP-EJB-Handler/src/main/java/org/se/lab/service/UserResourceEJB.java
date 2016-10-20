@@ -7,16 +7,12 @@ import javax.inject.Inject;
 import javax.jws.HandlerChain;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
-import javax.jws.soap.SOAPBinding;
-import javax.jws.soap.SOAPBinding.Style;
 
 import org.apache.log4j.Logger;
 import org.se.lab.data.User;
 import org.se.lab.data.UserDAO;
 
 @WebService(name="UserService")
-//@SOAPBinding(style=Style.RPC)
-@SOAPBinding(style=Style.DOCUMENT) // default setting
 @HandlerChain(file="handler-chain.xml")
 @Stateless
 public class UserResourceEJB
