@@ -72,7 +72,8 @@ public class UserServiceConnectorTest
 	@Test
 	public void testFindAll()
 	{
-	    List<User> user = service.findAll();
+	    List<User> users = service.findAll();
 	    
+	    System.out.println(users);
 	}
 }

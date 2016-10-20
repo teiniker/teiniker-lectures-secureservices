@@ -191,6 +191,8 @@ public class UserServiceConnectorImpl implements UserServiceConnector
     @Override
     public List<User> findAll()
     {
+    	LOG.info("findAll()");
+    	
         try
         {
             // Request
