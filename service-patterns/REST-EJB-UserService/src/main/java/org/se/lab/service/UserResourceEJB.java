@@ -31,7 +31,7 @@ public class UserResourceEJB
 		
 	public UserResourceEJB()
 	{
-		LOG.debug(UserResourceEJB.class.getName() + " created");
+		LOG.info(UserResourceEJB.class.getName() + " created");
 	}
 	
 	
@@ -40,9 +40,9 @@ public class UserResourceEJB
 	@Produces("application/xml")
 	public Response insert(UserDTO user)
 	{
-		LOG.debug("insert: " + user);
+		LOG.info("insert: " + user);
 
-		User u = dao.createUser(user.getUsername(), user.getPassword());
+		User u = dao.createUser(user.getId(), user.getUsername(), user.getPassword());
 		return Response.created(URI.create("/users/" + u.getId())).build();
 	}
 	
@@ -52,7 +52,7 @@ public class UserResourceEJB
 	@Consumes("application/xml")
 	public void update(@PathParam("id") int id, UserDTO user)
 	{
-		LOG.debug("update to " + user);
+		LOG.info("update to " + user);
 
 		// TODO
 	}
@@ -62,7 +62,7 @@ public class UserResourceEJB
 	@Path("{id}")
 	public void delete(@PathParam("id") int id)
 	{
-		LOG.debug("delete: " + id);
+		LOG.info("delete: " + id);
 		
 		// TODO
 	}
@@ -72,7 +72,7 @@ public class UserResourceEJB
 	@Produces({"application/xml", "application/json"})
 	public List<UserDTO> findAll()
 	{
-		LOG.debug("find all Users");
+		LOG.info("find all Users");
 		
 		List<User> list = dao.findAll();
 		List<UserDTO> result = UserDTO.toUserDTOList(list);
@@ -82,11 +82,11 @@ public class UserResourceEJB
 	
 	@GET
 	@Path("{id}")
-	@Produces({"application/xml", "application/json"})
-	public UserDTO findById(@PathParam("id") int id) 
+	@Produces("application/xml")
+	public UserDTO findByIdXml(@PathParam("id") int id) 
 		throws WebApplicationException
 	{
-		LOG.debug("find User with id=" + id);
+		LOG.info("find User with id=" + id + " XML representation");
 
 		User user = dao.findById(id);
 
@@ -95,4 +95,21 @@ public class UserResourceEJB
 		else
 			return new UserDTO(user);
 	}
+
+	@GET
+	@Path("{id}")
+	@Produces("application/json")
+	public UserDTO findByIdJson(@PathParam("id") int id) 
+		throws WebApplicationException
+	{
+		LOG.info("find User with id=" + id + " JSON representation");
+
+		User user = dao.findById(id);
+
+		if(user == null)
+			throw new WebApplicationException(Response.Status.NOT_FOUND);
+		else
+			return new UserDTO(user);
+	}
+
 }

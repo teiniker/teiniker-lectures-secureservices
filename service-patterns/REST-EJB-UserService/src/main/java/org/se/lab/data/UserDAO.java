@@ -12,5 +12,5 @@ public interface UserDAO
 	User findById(int id);
 	List<User> findAll();
 	
-	User createUser(String username, String password);
+	User createUser(int id, String username, String password);
 }

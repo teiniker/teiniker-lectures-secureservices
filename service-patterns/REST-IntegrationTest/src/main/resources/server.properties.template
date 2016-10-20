@@ -1,0 +1,6 @@
+#
+# REST Properties
+#
+
+# XML File settings
+xml.directory=/home/student/git/teiniker-lectures-secureservices/service-patterns/REST-IntegrationTest/src/test/resources

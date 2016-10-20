@@ -5,9 +5,13 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.apache.log4j.Logger;
+
 class UserDAOImpl // package private
 	implements UserDAO
 {
+	private final Logger LOG = Logger.getLogger(UserDAOImpl.class);
+	
 	@PersistenceContext
 	private EntityManager em;
 
@@ -20,6 +24,7 @@ class UserDAOImpl // package private
 	public User insert(User entity)
 	{
 		em.persist(entity);
+		LOG.info(entity);
 		return entity;
 	}
 
@@ -55,9 +60,10 @@ class UserDAOImpl // package private
 	 */
 
 	@Override
-	public User createUser(String username, String password)
+	public User createUser(int id, String username, String password)
 	{
 		User u = new User();
+		u.setId(id);
 		u.setUsername(username);
 		u.setPassword(password);		
 		insert(u);
