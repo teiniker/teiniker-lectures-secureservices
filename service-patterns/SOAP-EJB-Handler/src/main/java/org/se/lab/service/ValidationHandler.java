@@ -41,18 +41,16 @@ public class ValidationHandler
             SOAPEnvelope soapEnv = soapMsg.getSOAPPart().getEnvelope();
             SOAPHeader soapHeader = soapEnv.getHeader();
          
+            
+            
             ByteArrayOutputStream out = new ByteArrayOutputStream();
             soapMsg.writeTo(out);
             log.append(out); 
         } 
-        catch (SOAPException e) 
+        catch (SOAPException | IOException e) 
         {
-            System.err.println(e);
+            LOG.error("Can't process SOAP message!", e);
         } 
-        catch (IOException e) 
-        {
-            System.err.println(e);
-        }
 
         LOG.info(log.toString());
         return true;
