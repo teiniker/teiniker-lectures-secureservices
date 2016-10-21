@@ -36,8 +36,7 @@ public class UserResourceEJB
 	
 	
 	@POST
-	@Consumes("application/xml")
-	@Produces("application/xml")
+	@Consumes({"application/xml", "application/json"})
 	public Response insert(UserDTO user)
 	{
 		LOG.info("insert: " + user);
