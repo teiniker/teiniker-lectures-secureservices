@@ -1,7 +1,7 @@
 Exercise: Service Interceptor
 -------------------------------------------------------------------------------
 
-URL: http://localhost:8080/SOAP-EJB-OrderService-Handler/OrderService?wsdl
+URL: http://localhost:8080/SOAP-EJB-OrderService-Handler-Exercise/OrderService?wsdl
 
 
 1. SOAP Message 
