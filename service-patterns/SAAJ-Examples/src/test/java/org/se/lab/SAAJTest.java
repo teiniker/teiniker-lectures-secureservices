@@ -66,7 +66,7 @@ public class SAAJTest
 		SOAPHeader header = message.getSOAPHeader();
 		SOAPElement key = header.addChildElement("key", "se", "http://www.security.lab.se.org");
 		key.addTextNode("ijD8qepbRnIsva0kx0cKRCcYysg=");
-				
+		
 		SOAPBody body = message.getSOAPBody();
 		SOAPElement element = body.addChildElement("book");
 		element.addTextNode("Java Programming");
