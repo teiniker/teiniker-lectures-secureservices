@@ -1,0 +1,10 @@
+
+CREATE TABLE user 
+(
+	id INT NOT NULL PRIMARY KEY,
+	username VARCHAR(32) NOT NULL,
+	password VARCHAR(32) NOT NULL
+) ENGINE = INNODB;
+
+
+	
