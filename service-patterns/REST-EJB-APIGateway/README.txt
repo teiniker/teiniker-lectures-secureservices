@@ -4,6 +4,17 @@ How to access the REST resource?
 URL: http://localhost:8080/REST-EJB-APIGateway/v1/articles
 
 
+How to download the WSDL definition?
+-------------------------------------------------------------------------------
+
+URL: http://localhost:8080/SOAP-EJB-UserService/UserService?wsdl
+
+$ mkdir src/main/resources/wsdl
+$ curl http://localhost:8080/SOAP-EJB-UserService/UserService?wsdl > src/main/resources/wsdl/UserService.wsdl
+$ less src/main/resources/wsdl/UserService.wsdl
+
+
+
 JAX-RS Client API
 ---------------------------------------------------------------------
 https://jersey.java.net/documentation/latest/client.html

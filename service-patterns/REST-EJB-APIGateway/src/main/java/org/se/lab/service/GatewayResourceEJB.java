@@ -10,9 +10,10 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.GenericType;
-import javax.xml.ws.WebServiceRef;
 
 import org.apache.log4j.Logger;
+import org.se.lab.client.UserResourceEJBService;
+import org.se.lab.client.UserService;
 
 @Path("/v1/articles")
 @Stateless
@@ -20,9 +21,14 @@ public class GatewayResourceEJB
 {
 	private final Logger LOG = Logger.getLogger(GatewayResourceEJB.class);
 	
+	private UserService service;
+			
 	public GatewayResourceEJB()
 	{
 		LOG.debug(GatewayResourceEJB.class.getName() + " created");
+	
+		UserResourceEJBService ws = new UserResourceEJBService();
+		service = ws.getUserServicePort();	
 	}
 	
 	
@@ -35,11 +41,12 @@ public class GatewayResourceEJB
 		try
 		{
 			Client client = ClientBuilder.newClient();
-			response = client
+			response = client	// don't hardcode URLs !!!
 						.target("http://localhost:8080").path("REST-EJB-ArticleService/v1/articles")
 						.request().accept("application/xml").get(new GenericType<List<ArticleDTO>>() {});
 		
 			LOG.debug(response);
+			LOG.debug(service.findAll(0, 0));
 			client.close();
 		}
 		catch(Exception e)

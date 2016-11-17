@@ -43,6 +43,50 @@
 			</plugin>
 
 			<plugin>
+		        <groupId>org.codehaus.mojo</groupId>
+		        <artifactId>build-helper-maven-plugin</artifactId>
+		        <version>1.9.1</version>
+		        <executions>
+			        <execution>
+		            	<phase>generate-sources</phase>
+			            <goals>
+			            	<goal>add-source</goal>
+			            </goals>
+			            <configuration>
+			              <sources>
+			                <source>src/generated/java</source>
+			              </sources>
+			            </configuration>
+			          </execution>
+		        </executions>
+	      	</plugin>
+			
+        	<!-- usage of jax-ws maven plugin-->
+        	<plugin> 
+            	<groupId>org.codehaus.mojo</groupId>
+            	<artifactId>jaxws-maven-plugin</artifactId>
+            	<version>1.12</version>
+            	<executions> 
+                	<execution> 
+                    	<id>wsimport-from-jdk</id>
+                    	<goals>
+                        	<goal>wsimport</goal>
+                    	</goals>
+                	</execution>
+            	</executions>
+            	<configuration>
+                	<!-- or using wsdls file directory -->
+                    <wsdlDirectory>src/main/resources/wsdl</wsdlDirectory> 
+                    <wsdlFile>myWSDL.wsdl</wsdlFile>
+                	<keep>true</keep> 
+                	<!-- Package name --> 
+                	<packageName>org.se.lab.client</packageName> 
+                	<!-- generated source files destination-->
+                	<sourceDestDir>src/generated/java</sourceDestDir>
+            	</configuration>
+        	</plugin>
+        	
+   			<plugin>
 				<groupId>org.wildfly.plugins</groupId>
 				<artifactId>wildfly-maven-plugin</artifactId>
 				<version>1.0.2.Final</version>
