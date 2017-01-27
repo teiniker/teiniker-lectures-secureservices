@@ -2,7 +2,10 @@ package org.se.lab;
 
 import java.text.ParseException;
 
+import org.apache.commons.codec.DecoderException;
+import org.apache.commons.codec.binary.Hex;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import com.nimbusds.jose.EncryptionMethod;
@@ -17,13 +20,18 @@ import com.nimbusds.jose.crypto.DirectEncrypter;
 
 public class JWEwithSymmetricKey
 {
-    byte[] key128 =
-    { (byte) 177, (byte) 119, (byte) 33, (byte) 13, (byte) 164, (byte) 30, (byte) 108, (byte) 121, (byte) 207,
-            (byte) 136, (byte) 107, (byte) 242, (byte) 12, (byte) 224, (byte) 19, (byte) 226 };
-
+    private byte[] key128;
+    
+    @Before
+    public void setup() throws DecoderException
+    {
+        key128 = Hex.decodeHex("b177210da41e6c79cf886bf20ce013e2".toCharArray()); 
+        System.out.println("Key : " + Hex.encodeHexString(key128));        
+    }
+    
     @Test
     public void testEncryption() throws KeyLengthException, JOSEException
-    {
+    {    	
         // Create the header
         JWEHeader header = new JWEHeader(JWEAlgorithm.DIR, EncryptionMethod.A128GCM);
 
