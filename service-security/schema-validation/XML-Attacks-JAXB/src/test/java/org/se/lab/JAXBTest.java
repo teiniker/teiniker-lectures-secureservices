@@ -33,7 +33,7 @@ public class JAXBTest
 	{
 		Source src = new StreamSource(new FileReader(new File("src/test/resources/xml", "session-tag-injection.xml")));
 
-		parseXmlAndValidateObjects(src);
+		parseXml(src);
 	}
 
 
@@ -56,7 +56,7 @@ public class JAXBTest
 	{
 		Source src = new StreamSource(new FileReader(new File("src/test/resources/xml", "session-entity-file.xml")));
 
-		parseXmlAndValidateObjects(src);
+		parseXml(src);
 	}
 	
 	@Test
@@ -64,7 +64,7 @@ public class JAXBTest
 	{
 		Source src = new StreamSource(new FileReader(new File("src/test/resources/xml", "session-entity-expansion.xml")));
 
-		parseXmlAndValidateObjects(src);
+		parseXml(src);
 	}
 
 	
@@ -72,7 +72,7 @@ public class JAXBTest
 	 * Utility methods
 	 */
 	
-	private void parseXmlAndValidateObjects(Source src) throws JAXBException
+	private void parseXml(Source src) throws JAXBException
 	{
 		Unmarshaller unmarshaller = context.createUnmarshaller();
 		JAXBElement<SessionRootType> element = unmarshaller.unmarshal(src, SessionRootType.class);
