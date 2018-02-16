@@ -80,5 +80,4 @@ public class ArticlesITCase
 		System.out.println("Response-Content:\n" + content);
 		Assert.assertEquals(EXPECTED, content);
 	}
-
 }

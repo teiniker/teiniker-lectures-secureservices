@@ -46,6 +46,8 @@ $ keytool -genkeypair -keystore wildfly.keystore -storepass student -keypass stu
 	=> Undertow HTTPS listener https listening on localhost/127.0.0.1:8443
 
 
+TODO: Describe web.xml settings!!!
+
 
 How to access the WSDL definition?
 -------------------------------------------------------------------------------

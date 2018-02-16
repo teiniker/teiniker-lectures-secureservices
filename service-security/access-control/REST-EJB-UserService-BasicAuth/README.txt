@@ -57,6 +57,20 @@ How to configure Basic Authentication?
 	</login-config>
 	
 
+How to access the REST service?
+-------------------------------------------------------------------------------
+
+URL: http://localhost:8080/REST-EJB-UserService-BasicAuth/v1/users
+
+
+How to use Authentication in SoapUI?
+-------------------------------------------------------------------------------
+
+- Click the [Auth] bottom of the request form.
+- Add Authentication / Basic
+- Enter username and password
+- check Authenticate pre-emptively
+ 
 
 How to use Basic Authentication?
 -------------------------------------------------------------------------------

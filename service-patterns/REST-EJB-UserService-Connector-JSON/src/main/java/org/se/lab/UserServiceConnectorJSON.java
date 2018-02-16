@@ -193,6 +193,8 @@ public class UserServiceConnectorJSON implements UserServiceConnector
     
     protected List<User> convertJsonArray2UserList(String json)
     {
+    	// TODO: Change to javax.
+    	
         JSONArray array = new JSONArray(json);
         List<User> list = new ArrayList<>();
         for(int i=0; i< array.length(); i++)
