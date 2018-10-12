@@ -1,1 +1,1 @@
-# teiniker-lectures-secureservices
+# Secure Services by Examples 
