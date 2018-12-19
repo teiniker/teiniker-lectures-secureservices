@@ -1,4 +1,4 @@
-# Secure Services by Examples 
+# Secure Services by Example 
 
 This project collects examples, exercises and model solutions needed as an introduction to software design.
 Based on these examples, an inductive learning approach to architectural risk analysis and penetration testing can be used.
@@ -11,8 +11,8 @@ Based on these examples, an inductive learning approach to architectural risk an
   * [Message Encryption](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/service-security/message-encryption)  
 
 See also: 
-[Secure Coding by Exampes](https://github.com/teiniker/teiniker-lectures-securecoding) and 
-[Secure Design by Examples](https://github.com/teiniker/teiniker-lectures-securedesign) 
+[Secure Coding by Exampe](https://github.com/teiniker/teiniker-lectures-securecoding) and 
+[Secure Design by Example](https://github.com/teiniker/teiniker-lectures-securedesign) 
 
 As a development environment, you can use a pre-configured Linux VM image:
 [Virtual Lab](https://drive.google.com/drive/folders/1AzsF4Mvh1HJ8k6OW5W5hQ5CF0HdqA51l)
