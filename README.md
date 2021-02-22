@@ -3,7 +3,7 @@
 This project collects examples, exercises and model solutions needed as an introduction to software design.
 Based on these examples, an inductive learning approach to architectural risk analysis and penetration testing can be used.
 
-* [Web Service Patterns](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/service-patterns) 
+* Web Service Patterns 
   
 * Web Service Security  
   
