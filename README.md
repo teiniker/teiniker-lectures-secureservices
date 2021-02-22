@@ -6,10 +6,7 @@ Based on these examples, an inductive learning approach to architectural risk an
 * [Web Service Patterns](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/service-patterns) 
   
 * Web Service Security  
-  * [Access Control](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/service-security/access-control)  
-  * [XML Attack Prevention](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/service-security/schema-validation)  
-  * [Message Encryption](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/service-security/message-encryption)  
-
+  
 See also: 
 [Secure Coding by Exampe](https://github.com/teiniker/teiniker-lectures-securecoding) and 
 [Secure Design by Example](https://github.com/teiniker/teiniker-lectures-securedesign) 
