@@ -33,9 +33,6 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<!-- Define the version of JBoss' Java EE 7 APIs we want to import. Any
-				dependencies from org.jboss.spec will have their version defined by this
-				BOM -->
 			<dependency>
 				<groupId>org.jboss.spec</groupId>
 				<artifactId>jboss-javaee-7.0</artifactId>

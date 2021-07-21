@@ -19,6 +19,10 @@
 		<listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>
 	</listener>
 
+	<security-role>
+		<role-name>user</role-name>
+	</security-role>
+
 	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>All resources</web-resource-name>
@@ -31,10 +35,6 @@
 			<role-name>user</role-name>
 		</auth-constraint>
 	</security-constraint>
-
-	<security-role>
-		<role-name>user</role-name>
-	</security-role>
 
 	<login-config>
 		<auth-method>BASIC</auth-method>

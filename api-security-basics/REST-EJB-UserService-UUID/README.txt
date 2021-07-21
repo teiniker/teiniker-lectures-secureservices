@@ -1,6 +1,6 @@
 How to access the REST resource?
 -------------------------------------------------------------------------------
-URL: http://localhost:8080/REST-EJB-UserService-UUID/v1/users
+URL: https://localhost:8443/REST-EJB-UserService-UUID/v1/users
 
 
 How to create a new user?

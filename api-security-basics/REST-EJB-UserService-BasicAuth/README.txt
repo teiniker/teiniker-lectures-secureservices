@@ -1,21 +1,13 @@
 How to configure Basic Authentication?
 -------------------------------------------------------------------------------
 
-How to setup the database?
--------------------------------------------------------------------------------
 $ mysql -u student -p
   Enter password: student
 MariaDB [(none)]> use testdb;
 
 copy/paste SQL statements from src/main/resources/sql/
 
-
-How to access the REST service?
--------------------------------------------------------------------------------
-
-URL: https://localhost:8443/REST-EJB-UserService-BasicAuth/v1/users
-
-curl -i -X GET http://localhost:8080/REST-EJB-UserService-BasicAuth/v1/users
+$ mvn wildfly:deploy
 
 $ curl -i -k -X GET https://localhost:8443/REST-EJB-UserService-BasicAuth/v1/users
 HTTP/2 401
@@ -28,6 +20,7 @@ content-length: 71
 date: Fri, 06 Nov 2020 09:45:32 GMT
 
 <html><head><title>Error</title></head><body>Unauthorized</body></html>
+
 
 $ curl -i -k --user student:student -X GET https://localhost:8443/REST-EJB-UserService-BasicAuth/v1/users
 HTTP/2 200
@@ -85,25 +78,11 @@ Wildfly AS Configuration
 	
 	=> JBOSS_HOME/standalone/configuration/application-roles.properties
 		student=user
-		
-	standalone.xml // already configured by default
-	<management>
-        <security-realms>
-            <security-realm name="ApplicationRealm">
-                <authentication>
-                    <local default-user="$local" allowed-users="*" skip-group-loading="true"/>
-                    <properties path="application-users.properties" relative-to="jboss.server.config.dir"/>
-                </authentication>
-                <authorization>
-                    <properties path="application-roles.properties" relative-to="jboss.server.config.dir"/>
-                </authorization>
-            </security-realm>
-        </security-realms>			
-		...
-	</management>
 
-	
 *) REST Application Configuration: web.xml
+	<security-role>
+		<role-name>user</role-name>
+	</security-role>
 
 	<security-constraint>
 		<web-resource-collection>
@@ -117,10 +96,6 @@ Wildfly AS Configuration
 			<role-name>user</role-name>
 		</auth-constraint>
 	</security-constraint>
-	
-	<security-role>
-		<role-name>user</role-name>
-	</security-role>
 
 	<login-config>
 		<auth-method>BASIC</auth-method>

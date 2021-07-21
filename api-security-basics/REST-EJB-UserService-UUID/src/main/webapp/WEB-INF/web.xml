@@ -18,4 +18,26 @@
 	<listener>
 		<listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>
 	</listener>
+
+	<security-role>
+		<role-name>user</role-name>
+	</security-role>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>All resources</web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
+		<auth-constraint>
+			<role-name>user</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>ApplicationRealm</realm-name>
+	</login-config>
 </web-app>

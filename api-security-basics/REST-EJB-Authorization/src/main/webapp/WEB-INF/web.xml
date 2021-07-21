@@ -32,11 +32,9 @@
 			<web-resource-name>user resources</web-resource-name>
 			<url-pattern>/v1/products/*</url-pattern>
 		</web-resource-collection>
-		<!-- turn off TLS (for testing only) 
-		<user-data-constraint> 
+		<user-data-constraint>
 			<transport-guarantee>CONFIDENTIAL</transport-guarantee> 
 		</user-data-constraint> 
-		-->
 		<auth-constraint>
 			<role-name>user</role-name>
 			<role-name>admin</role-name>
@@ -51,11 +49,9 @@
 			<http-method>GET</http-method>
 			-->
 		</web-resource-collection>
-		<!-- turn off TLS (for testing only) 
-		<user-data-constraint> 
+		<user-data-constraint>
 			<transport-guarantee>CONFIDENTIAL</transport-guarantee> 
 		</user-data-constraint> 
-		-->
 		<auth-constraint>
 			<role-name>admin</role-name>
 		</auth-constraint>

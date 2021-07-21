@@ -2,37 +2,37 @@ How to test client permissions?
 -------------------------------------------------------------------------------
 Using SoapUI we can simulate different clients:
 
-	user: http://localhost:8080/REST-EJB-Authorization/v1/products
-		student	=> HTTP/1.1 200 OK
-		admin	=> HTTP/1.1 200 OK
+user: https://localhost:8443/REST-EJB-Authorization/v1/products
+    student	=> HTTP/1.1 200 OK
+    admin	=> HTTP/1.1 200 OK
 
-	admin: http://localhost:8080/REST-EJB-Authorization/v1/users
-		student => HTTP/1.1 403 Forbidden
-		admin   => HTTP/1.1 200 OK
+admin: http://localhost:8443/REST-EJB-Authorization/v1/users
+    student => HTTP/1.1 403 Forbidden
+    admin   => HTTP/1.1 200 OK
 
 
 How add a new user to the Wildfly configuration?
 -------------------------------------------------------------------------------
 
-	cd JBOSS_HOME/bin
-	$ ./add-user.sh
-	- b (Application user)
-	- username: admin
-	- password: admin
-	- roles: admin,user
-	- new user used for AS to AS communication: no 		
+$ cd JBOSS_HOME/bin
+$ ./add-user.sh
+- b (Application user)
+- username: admin
+- password: admin
+- roles: admin,user
+- new user used for AS to AS communication: no
 
-	=> JBOSS_HOME/standalone/configuration/application-users.properties
-        admin=207b6e0cc556d7084b5e2db7d822555c
-        student=82364171bad00c2c933b216cac1001d4
-	
-	=> JBOSS_HOME/standalone/configuration/application-roles.properties
-		admin=user,admin
+=> JBOSS_HOME/standalone/configuration/application-users.properties
+    admin=207b6e0cc556d7084b5e2db7d822555c
+    student=82364171bad00c2c933b216cac1001d4
+
+=> JBOSS_HOME/standalone/configuration/application-roles.properties
+    admin=user,admin
 
 How to use the resources from curl?
 -------------------------------------------------------------------------------
 
-$ curl -i -X GET http://localhost:8080/REST-EJB-Authorization/v1/products/1
+$ curl -i -k -X GET https://localhost:8443/REST-EJB-Authorization/v1/products/1
 HTTP/1.1 401 Unauthorized
 Expires: 0
 Connection: keep-alive
@@ -45,7 +45,7 @@ Date: Tue, 10 Nov 2020 20:30:23 GMT
 
 <html><head><title>Error</title></head><body>Unauthorized</body></html>
 
-$ curl -i -u student:student -X GET http://localhost:8080/REST-EJB-Authorization/v1/products/1
+$ curl -i -k -u student:student -X GET https://localhost:8443/REST-EJB-Authorization/v1/products/1
 HTTP/1.1 200 OK
 Connection: keep-alive
 Content-Type: application/xml;charset=UTF-8
@@ -58,7 +58,7 @@ Date: Tue, 10 Nov 2020 20:31:13 GMT
     <price>5280</price>
 </product>
 
-$ curl -i -u admin:admin -X GET http://localhost:8080/REST-EJB-Authorization/v1/products/1
+$ curl -i -k -u admin:admin -X GET https://localhost:8443/REST-EJB-Authorization/v1/products/1
 HTTP/1.1 200 OK
 Connection: keep-alive
 Content-Type: application/xml;charset=UTF-8
@@ -72,7 +72,7 @@ Date: Tue, 10 Nov 2020 20:32:04 GMT
 </product>
 
 
-$ curl -i -X GET http://localhost:8080/REST-EJB-Authorization/v1/users/1
+$ curl -i -k -X GET https://localhost:8443/REST-EJB-Authorization/v1/users/1
 HTTP/1.1 401 Unauthorized
 Expires: 0
 Connection: keep-alive
@@ -83,7 +83,7 @@ Content-Type: text/html;charset=UTF-8
 Content-Length: 71
 Date: Tue, 10 Nov 2020 20:00:05 GMT
 
-$ curl -i -u student:student -X GET http://localhost:8080/REST-EJB-Authorization/v1/users/1
+$ curl -i -k -u student:student -X GET https://localhost:8443/REST-EJB-Authorization/v1/users/1
 HTTP/1.1 403 Forbidden
 Expires: 0
 Connection: keep-alive
@@ -93,7 +93,7 @@ Content-Type: text/html;charset=UTF-8
 Content-Length: 68
 Date: Tue, 10 Nov 2020 20:24:01 GMT
 
-$ curl -i -u admin:admin -X GET http://localhost:8080/REST-EJB-Authorization/v1/users/1
+$ curl -i -k -u admin:admin -X GET https://localhost:8443/REST-EJB-Authorization/v1/users/1
 HTTP/1.1 200 OK
 Expires: 0
 Connection: keep-alive
@@ -113,13 +113,13 @@ Date: Tue, 10 Nov 2020 20:40:09 GMT
 How to use the resources from SoapUI?
 -------------------------------------------------------------------------------
 
-	URL: http://localhost:8080/REST-EJB-Authorization/v1/users
-	URL: http://localhost:8080/REST-EJB-Authorization/v1/products
-		
-	Authorization : Basic	
-	Username: student
-	Password: student
-	Authenticate pre-emptively
+URL: https://localhost:8443/REST-EJB-Authorization/v1/users
+URL: https://localhost:8443/REST-EJB-Authorization/v1/products
+
+Authorization : Basic
+Username: student
+Password: student
+Authenticate pre-emptively
 	
 	
 REST Application Configuration: web.xml

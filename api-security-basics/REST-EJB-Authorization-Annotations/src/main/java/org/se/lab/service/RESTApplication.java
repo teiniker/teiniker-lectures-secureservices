@@ -16,7 +16,6 @@ public class RESTApplication
 	public RESTApplication()
 	{
 		classes.add(UserResourceEJB.class);
-		classes.add(ProductResourceEJB.class);
 	}
 
 	@Override
