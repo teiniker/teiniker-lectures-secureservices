@@ -1,11 +1,15 @@
 # Secure Services by Example 
 
-This project collects examples, exercises and model solutions needed as an introduction to software design.
-Based on these examples, an inductive learning approach to architectural risk analysis and penetration testing can be used.
+This project collects examples, exercises and model solutions to give an introduction to API Security ans secure 
+design of micro services.
 
-* Web Service Patterns 
+* API Security Basics
   
-* Web Service Security  
+* Edge Security
+
+* Service to Service Communication  
+  
+* Service Infrastructure
   
 See also: 
 [Secure Coding by Exampe](https://github.com/teiniker/teiniker-lectures-securecoding) and 
