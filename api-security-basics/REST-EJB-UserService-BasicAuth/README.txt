@@ -1,5 +1,6 @@
 How to configure Basic Authentication?
 -------------------------------------------------------------------------------
+$ sudo systemctl start mariadb.service
 
 $ mysql -u student -p
   Enter password: student
@@ -9,7 +10,7 @@ copy/paste SQL statements from src/main/resources/sql/
 
 $ mvn wildfly:deploy
 
-$ curl -i -k -X GET https://localhost:8443/REST-EJB-UserService-BasicAuth/v1/users
+$ curl -i -k https://localhost:8443/REST-EJB-UserService-BasicAuth/v1/users
 HTTP/2 401
 expires: 0
 www-authenticate: Basic realm="ApplicationRealm"
@@ -22,7 +23,7 @@ date: Fri, 06 Nov 2020 09:45:32 GMT
 <html><head><title>Error</title></head><body>Unauthorized</body></html>
 
 
-$ curl -i -k --user student:student -X GET https://localhost:8443/REST-EJB-UserService-BasicAuth/v1/users
+$ curl -i -k --user student:student https://localhost:8443/REST-EJB-UserService-BasicAuth/v1/users
 HTTP/2 200
 expires: 0
 cache-control: no-cache, no-store, must-revalidate

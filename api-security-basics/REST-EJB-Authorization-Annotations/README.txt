@@ -1,7 +1,7 @@
 How to use the resources from curl?
 -------------------------------------------------------------------------------
 
-$ curl -i -k -u student:student -X GET https://localhost:8443/REST-EJB-Authorization-Annotations/v1/users/1
+$ curl -i -k -u student:student https://localhost:8443/REST-EJB-Authorization-Annotations/v1/users/1
 HTTP/2 200
 expires: 0
 cache-control: no-cache, no-store, must-revalidate
@@ -17,7 +17,7 @@ date: Wed, 21 Jul 2021 17:12:38 GMT
 </user>
 
 
-$ curl -i -k -u student:student -X GET https://localhost:8443/REST-EJB-Authorization-Annotations/v1/users
+$ curl -i -k -u student:student https://localhost:8443/REST-EJB-Authorization-Annotations/v1/users
 HTTP/2 403 Forbidden
 expires: 0
 cache-control: no-cache, no-store, must-revalidate
@@ -28,7 +28,7 @@ date: Wed, 21 Jul 2021 17:13:35 GMT
 
 Access forbidden: role not allowed
 
-$ curl -i -k -u admin:admin -X GET https://localhost:8443/REST-EJB-Authorization-Annotations/v1/users/1
+$ curl -i -k -u admin:admin https://localhost:8443/REST-EJB-Authorization-Annotations/v1/users/1
 HTTP/2 200
 expires: 0
 cache-control: no-cache, no-store, must-revalidate
@@ -44,7 +44,7 @@ date: Wed, 21 Jul 2021 17:15:08 GMT
 </user>
 
 
-$ curl -i -k -u admin:admin -X GET https://localhost:8443/REST-EJB-Authorization-Annotations/v1/users
+$ curl -i -k -u admin:admin https://localhost:8443/REST-EJB-Authorization-Annotations/v1/users
 HTTP/2 200
 expires: 0
 cache-control: no-cache, no-store, must-revalidate

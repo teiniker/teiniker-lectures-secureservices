@@ -45,7 +45,7 @@ Date: Tue, 10 Nov 2020 20:30:23 GMT
 
 <html><head><title>Error</title></head><body>Unauthorized</body></html>
 
-$ curl -i -k -u student:student -X GET https://localhost:8443/REST-EJB-Authorization/v1/products/1
+$ curl -i -k -u student:student https://localhost:8443/REST-EJB-Authorization/v1/products/1
 HTTP/1.1 200 OK
 Connection: keep-alive
 Content-Type: application/xml;charset=UTF-8
@@ -58,7 +58,7 @@ Date: Tue, 10 Nov 2020 20:31:13 GMT
     <price>5280</price>
 </product>
 
-$ curl -i -k -u admin:admin -X GET https://localhost:8443/REST-EJB-Authorization/v1/products/1
+$ curl -i -k -u admin:admin https://localhost:8443/REST-EJB-Authorization/v1/products/1
 HTTP/1.1 200 OK
 Connection: keep-alive
 Content-Type: application/xml;charset=UTF-8
@@ -72,7 +72,7 @@ Date: Tue, 10 Nov 2020 20:32:04 GMT
 </product>
 
 
-$ curl -i -k -X GET https://localhost:8443/REST-EJB-Authorization/v1/users/1
+$ curl -i -k https://localhost:8443/REST-EJB-Authorization/v1/users/1
 HTTP/1.1 401 Unauthorized
 Expires: 0
 Connection: keep-alive
@@ -83,7 +83,7 @@ Content-Type: text/html;charset=UTF-8
 Content-Length: 71
 Date: Tue, 10 Nov 2020 20:00:05 GMT
 
-$ curl -i -k -u student:student -X GET https://localhost:8443/REST-EJB-Authorization/v1/users/1
+$ curl -i -k -u student:student https://localhost:8443/REST-EJB-Authorization/v1/users/1
 HTTP/1.1 403 Forbidden
 Expires: 0
 Connection: keep-alive
@@ -93,7 +93,7 @@ Content-Type: text/html;charset=UTF-8
 Content-Length: 68
 Date: Tue, 10 Nov 2020 20:24:01 GMT
 
-$ curl -i -k -u admin:admin -X GET https://localhost:8443/REST-EJB-Authorization/v1/users/1
+$ curl -i -k -u admin:admin https://localhost:8443/REST-EJB-Authorization/v1/users/1
 HTTP/1.1 200 OK
 Expires: 0
 Connection: keep-alive
