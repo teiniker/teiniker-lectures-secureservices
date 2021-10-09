@@ -26,6 +26,15 @@ B) Configure the REST Service to use TLS
       (see: Wildfly-Configurations/https)
 
     - Add a <security-constraint> to the web.xml file and redeploy the service.
+        <security-constraint>
+            <web-resource-collection>
+                <web-resource-name>All resources</web-resource-name>
+                <url-pattern>/*</url-pattern>
+            </web-resource-collection>
+            <user-data-constraint>
+                <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+            </user-data-constraint>
+        </security-constraint>
 
 C) Experiments
     1. Access the service via HTTP and analyze the response message:
@@ -41,17 +50,6 @@ E) Related Patterns
     Compare this implementation the following Service Design Patterns:
     - Resource API
     - Common Versioning Strategies
-
-Tip: Use the following <security-constraint>
-	<security-constraint>
-		<web-resource-collection>
-			<web-resource-name>All resources</web-resource-name>
-			<url-pattern>/*</url-pattern>
-		</web-resource-collection>
-		<user-data-constraint>
-			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
-		</user-data-constraint>
-	</security-constraint>
 
 Tip: Don't forget to undeploy the service after your experiments.
     $ mvn wildfly:undeploy
