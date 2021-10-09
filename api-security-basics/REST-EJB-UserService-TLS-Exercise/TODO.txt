@@ -34,6 +34,14 @@ C) Experiments
     2. Access the service via HTTPS and analyze the used TLS connection:
         $ curl -v -k https://localhost:8443/REST-EJB-UserService-TLS-Exercise/v1/users
 
+D) Code Review
+    Analyze the source code of the example to understand how it is working.
+
+E) Related Patterns
+    Compare this implementation the following Service Design Patterns:
+    - Resource API
+    - Common Versioning Strategies
+
 Tip: Use the following <security-constraint>
 	<security-constraint>
 		<web-resource-collection>
