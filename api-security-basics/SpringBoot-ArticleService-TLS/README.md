@@ -1,12 +1,37 @@
 # Example: SpringBoot ArticleService 
 
+## Setup TLS
+
+In order to configure a TLS connector, we hae to create a server-side certificate and configure the 
+application.properties file.
+
+```
+$ cd src/main/resources
+$ keytool -genkeypair -keystore server.jks -storepass student -keypass student -keyalg RSA -alias server -dname "cn=se,o=lab,c=org"
+```
+
+Change `application.properties`:
+```
+server.ssl.key-store=classpath:server.jks
+server.ssl.key-store-type=pkcs12
+server.ssl.key-store-password=student
+server.ssl.key-password=student
+server.ssl.key-alias=server
+server.port=8443
+```
+
+Now, we can start the service as a separate process:
+```
+$ mvn spring-boot:run
+```
+
 
 ## Using the Service
 
 ### Find Articles
 
 ```
-$ curl -i localhost:8080/articles
+$ curl -i -k https://localhost:8443/articles
 
 HTTP/1.1 200
 Content-Type: application/json
@@ -20,7 +45,7 @@ Date: Thu, 07 Oct 2021 13:38:59 GMT
 ```
 
 ```
-$ curl -i localhost:8080/articles/2
+$ curl -i -k https://localhost:8443/articles/2
 
 HTTP/1.1 200
 Content-Type: application/json
@@ -31,7 +56,7 @@ Date: Thu, 07 Oct 2021 13:39:04 GMT
 ```
 
 ```
-$ curl -i localhost:8080/articles/99
+$ curl -i -k https://localhost:8443/articles/99
 
 HTTP/1.1 404
 Content-Type: text/plain;charset=UTF-8
@@ -43,7 +68,7 @@ Could not find employee 99
 
 ### Insert an Article
 ```
-$ curl -i -X POST localhost:8080/articles -H 'Content-type:application/json' -d '{"description": "Microservices Patterns: With examples in Java", "price": 2550}'
+$ curl -i -k -X POST https://localhost:8443/articles -H 'Content-type:application/json' -d '{"description": "Microservices Patterns: With examples in Java", "price": 2550}'
 
 HTTP/1.1 200
 Content-Type: application/json
@@ -55,7 +80,7 @@ Date: Thu, 07 Oct 2021 14:17:36 GMT
 
 ### Update an Article
 ```
-$ curl -i -X PUT localhost:8080/articles/2 -H 'Content-type:application/json' -d '{"description": "Effective Java", "price": 9999}'
+$ curl -i -k -X PUT https://localhost:8443/articles/2 -H 'Content-type:application/json' -d '{"description": "Effective Java", "price": 9999}'
 
 HTTP/1.1 200
 Content-Type: application/json
@@ -67,7 +92,7 @@ Date: Thu, 07 Oct 2021 14:20:22 GMT
 
 ### Delete an Article
 ```
-$ curl -i -X DELETE localhost:8080/articles/3
+$ curl -i -k -X DELETE https://localhost:8443/articles/3
 
 HTTP/1.1 200
 Content-Length: 0
@@ -75,7 +100,7 @@ Date: Thu, 07 Oct 2021 14:23:30 GMT
 ```
 
 ```
-$ curl -i localhost:8080/articles/3
+$ curl -i -k https://localhost:8443/articles/3
 
 HTTP/1.1 404
 Content-Type: text/plain;charset=UTF-8
