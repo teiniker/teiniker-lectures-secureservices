@@ -13,6 +13,9 @@ A) Deploy & Test the REST Service
     - Configure Wildfly to provide a Datasource named MySqlDS
       (see Wildfly-Configurations/datasource)
 
+    - Start Wildfly
+        $ bin/standalone.sh
+
     - Deploy the REST service into Wildfly
         $ mvn wildfly:deploy
 

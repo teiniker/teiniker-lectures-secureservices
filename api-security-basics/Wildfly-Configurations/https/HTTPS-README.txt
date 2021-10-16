@@ -4,7 +4,7 @@ How to configure a HTTPS connector?
 1. Use a Keystore
 --------------------
 
-$ cp application.keystore /home/student/install/wildfly-24.0.1.Final/standalone/configuration
+$ cp application.keystore /home/student/local/wildfly-24.0.1.Final/standalone/configuration
 
 
 2. Wildfly Configuration (standalone.xml)
