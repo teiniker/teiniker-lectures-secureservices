@@ -1,4 +1,4 @@
-# Example: SpringBoot ArticleService 
+# Example: SpringBoot Transport Layer Security 
 
 ## Setup TLS
 
@@ -110,8 +110,7 @@ Date: Thu, 07 Oct 2021 14:24:05 GMT
 Could not find employee 3
 ```
 
-
-
 ## References
 
 [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+[Apache Maven Resources Plugin](https://maven.apache.org/plugins/maven-resources-plugin/)

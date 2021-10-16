@@ -5,7 +5,7 @@ You have given a working REST service implemented with SpringBoot.
 Perform the following tasks:
 
 A) Run the REST Service
-    - Deploy the REST service into Wildfly
+    - Run the REST service
         $ mvn spring-boot:run
 
     - Use curl to access the REST service
