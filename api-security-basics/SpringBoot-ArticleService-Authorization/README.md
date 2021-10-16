@@ -18,7 +18,7 @@ Now we can add a `SecurityConfig` class. All security related settings can be fo
 ```Java 
 ```
 
-### Access the REST Service
+## Access the REST Service
 
 Let's run the example:
 ```

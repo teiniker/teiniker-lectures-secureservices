@@ -112,5 +112,9 @@ Could not find employee 3
 
 ## References
 
-[Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-[Apache Maven Resources Plugin](https://maven.apache.org/plugins/maven-resources-plugin/)
+* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+* [Enable HTTPS/SSL in Spring Boot](https://youtu.be/HLSmjZ5vN0w)
+
+* [Apache Maven Resources Plugin](https://maven.apache.org/plugins/maven-resources-plugin/)
+
+*Egon Teiniker, 2020 - 2021, GPL v3.0*
