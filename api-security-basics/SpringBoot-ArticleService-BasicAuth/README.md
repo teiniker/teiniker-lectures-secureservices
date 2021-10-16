@@ -93,8 +93,11 @@ User-Agent: curl/7.74.0
 Accept: */*
 ```
 
-When we use a **base64 decoder** we can see that `aG9tZXI6aG9tZXI=` contains `homer:homer`, 
-the username and the password. 
+When we use a **base64 decoder** we can see that `aG9tZXI6aG9tZXI=` contains the username and the password. 
+
+```
+$ echo 'aG9tZXI6aG9tZXI=' | base64 --decode
+```
 
 
 ## References
