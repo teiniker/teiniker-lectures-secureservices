@@ -1,5 +1,8 @@
 package org.se.lab;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +23,10 @@ public class ArticleController
         this.repository = repository;
     }
 
+    @Operation(summary = "Get all Articles", description = "Returns a list of articles", operationId = "articles")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "ok, successful operation"),
+            @ApiResponse(responseCode = "404", description = "Not found")})
     @GetMapping("/articles")
     List<Article> all()
     {

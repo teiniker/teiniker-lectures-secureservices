@@ -1,4 +1,6 @@
 package org.se.lab;
+import io.swagger.v3.oas.annotations.media.Schema;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,6 +9,7 @@ import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Schema(name="Article", description = "Holds all data for a particular article.")
 @Entity
 @Table(name="article")
 public class Article implements Serializable
@@ -23,7 +26,7 @@ public class Article implements Serializable
     {
     }
 
-
+    @Schema(name = "id", description = "auto-generated identifier", required = false, example = "7")
     @Id
     @Column(name="ID")
     @GeneratedValue
