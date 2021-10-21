@@ -46,9 +46,12 @@ To sort the API paths in order of their HTTP methods, we can add:
 springdoc.swagger-ui.operationsSorter=method
 ```
 
-The **OpenAPI descriptions** will be available at the path `/v3/api-docs` by default:
+
+## OpenAPI Specification
+The **OpenAPI** descriptions will be available at the path `/v3/api-docs` by default:
 ```
-URL: http://localhost:8080/v3/api-docs/
+http://localhost:8080/v3/api-docs/
+http://localhost:8080/v3/api-docs.yaml
 ```
 
 To use a custom path, we can indicate in the `application.properties` file:
@@ -59,7 +62,6 @@ springdoc.api-docs.path=/api-docs
 ## References
 
 * [Documenting a Spring REST API Using OpenAPI 3.0](https://www.baeldung.com/spring-rest-openapi-documentation)
-
 * [springdoc-openapi](https://springdoc.org/)
 
 *Egon Teiniker, 2020-2021, GPL v3.0*
