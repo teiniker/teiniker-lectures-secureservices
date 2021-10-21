@@ -28,7 +28,7 @@ $ mvn spring-boot:run
 
 So now our API documentation will be available at:
 ```
-URL: http://localhost:8080/swagger-ui.html
+https://localhost:8443/swagger-ui.html
 ```
 
 ## Configure SpringDoc 
@@ -52,6 +52,10 @@ The **OpenAPI** descriptions will be available at the path `/v3/api-docs` by def
 ```
 http://localhost:8080/v3/api-docs/
 http://localhost:8080/v3/api-docs.yaml
+
+https://localhost:8443/v3/api-docs/
+https://localhost:8443/v3/api-docs.yaml
+
 ```
 
 To use a custom path, we can indicate in the `application.properties` file:
