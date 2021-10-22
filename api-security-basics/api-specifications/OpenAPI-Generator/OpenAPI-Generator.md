@@ -4,8 +4,7 @@
 
 Download the openapi-generator-cli-5.2.1.jar file from the Maven Repository and store it in a local directory.
 ```
-$ cd local/open-api
-$ java -jar ~/local/open-api/openapi-generator-cli-5.2.1.jar help
+$ java -jar generator/openapi-generator-cli-5.2.1.jar help
 usage: openapi-generator-cli <command> [<args>]
 
 The most commonly used openapi-generator-cli commands are:
@@ -23,7 +22,7 @@ The most commonly used openapi-generator-cli commands are:
 ## Generate the Service Implementation
 
 ```
-$ java -jar ~/local/open-api/openapi-generator-cli-5.2.1.jar generate -g spring --library spring-boot -i ArticleService.yaml -o ./ -p groupId=org.se.lab -p artifactId=REST-ArticleService -p artifactVersion=1.0.0-SNAPSHOT
+$ java -jar generator/openapi-generator-cli-5.2.1.jar generate -g spring --library spring-boot -i ArticleService.yaml -o ./ -p groupId=org.se.lab -p artifactId=REST-ArticleService -p artifactVersion=1.0.0-SNAPSHOT
 
 $ tree src/
 src/
