@@ -53,5 +53,6 @@ src/
 
 * [Maven Repository](https://mvnrepository.com/artifact/org.openapitools/openapi-generator-cli/5.2.1)
 
+* [YouTube: Introducing OpenAPI Generator](https://youtu.be/t4jaTC7QjMg)
 
 *Egon Teiniker, 2020-2021, GPL v3.0*
