@@ -12,6 +12,8 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.log4j.Logger;
 import org.junit.Before;
 
+import javax.net.ssl.HttpsURLConnection;
+
 public abstract class AbstractTestBase
 {
     protected final Logger LOG = Logger.getLogger(this.getClass());
@@ -30,7 +32,11 @@ public abstract class AbstractTestBase
     	HOST = properties.getProperty("rest.host");
     	PORT = properties.getProperty("rest.port");
     	LOG.debug("Connect to " + HOST + ":" + PORT);
-    
+
+		// TLS data
+		System.setProperty( "javax.net.ssl.trustStore", properties.getProperty("ssl.trustStore"));
+		System.setProperty( "javax.net.ssl.trustStorePassword", properties.getProperty("ssl.trustStorePassword"));
+
     	// Authentication data
         String username = properties.getProperty("rest.username");
         String password = properties.getProperty("rest.password");      
@@ -50,6 +56,8 @@ public abstract class AbstractTestBase
     	{
     		PROXY = Proxy.NO_PROXY;
     	}
+
+		HttpsURLConnection.setDefaultHostnameVerifier(new LocalhostVerifyer());
     }
 
 	

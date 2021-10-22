@@ -31,7 +31,7 @@ public class UserServiceJSONTest
 	@Test
 	public void testFindById() throws IOException
 	{
-		URL url = new URL("http://" + HOST + ":" + PORT + WEB_APP_NAME + "/users/3");
+		URL url = new URL("https://" + HOST + ":" + PORT + WEB_APP_NAME + "/users/3");
 		System.out.println(url.toExternalForm());
 		
 		HttpURLConnection connection = (HttpURLConnection) url.openConnection(PROXY);
@@ -52,7 +52,7 @@ public class UserServiceJSONTest
 	public void testFindAll() throws IOException
 	{
 		// Request
-		URL url = new URL("http://" + HOST + ":" + PORT + WEB_APP_NAME + "/users");
+		URL url = new URL("https://" + HOST + ":" + PORT + WEB_APP_NAME + "/users");
 		HttpURLConnection connection = (HttpURLConnection) url.openConnection(PROXY);
 		connection.setRequestMethod("GET");
 		connection.setRequestProperty("Authorization", "Basic " + BASIC_AUTHORIZATION_DATA);
