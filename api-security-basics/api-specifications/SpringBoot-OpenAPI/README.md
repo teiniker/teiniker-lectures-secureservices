@@ -50,12 +50,8 @@ springdoc.swagger-ui.operationsSorter=method
 ## OpenAPI Specification
 The **OpenAPI** descriptions will be available at the path `/v3/api-docs` by default:
 ```
-http://localhost:8080/v3/api-docs/
-http://localhost:8080/v3/api-docs.yaml
-
 https://localhost:8443/v3/api-docs/
 https://localhost:8443/v3/api-docs.yaml
-
 ```
 
 To use a custom path, we can indicate in the `application.properties` file:
