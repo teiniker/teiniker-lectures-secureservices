@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: OpenAPI definition
-  version: v0
+  version: v1
 servers:
 - url: http://localhost:8080
   description: Generated server url
@@ -22,7 +22,7 @@ paths:
         "404":
           description: Not Found
           content:
-            '*/*':
+            'application/json':
               schema:
                 type: string
         "200":
@@ -133,12 +133,11 @@ components:
       properties:
         id:
           type: integer
-          description: auto-generated identifier
           format: int64
-          example: 7
         description:
+          type: string
+        category:
           type: string
         price:
           type: integer
           format: int64
-      description: Holds all data for a particular article.

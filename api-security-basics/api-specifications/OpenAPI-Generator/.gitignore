@@ -1,6 +1,2 @@
-.openapi-generator-ignore
-.openapi-generator
 target/
-src/
-README.md
 

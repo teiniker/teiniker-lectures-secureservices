@@ -22,7 +22,7 @@ The most commonly used openapi-generator-cli commands are:
 ## Generate the Service Implementation
 
 ```
-$ java -jar generator/openapi-generator-cli-5.2.1.jar generate -g spring --library spring-boot -i ArticleService.yaml -o ./ -p groupId=org.se.lab -p artifactId=REST-ArticleService -p artifactVersion=1.0.0-SNAPSHOT
+$ java -jar generator/openapi-generator-cli-5.2.1.jar generate -g spring --library spring-boot -i ArticleService.yaml -o target/gen -p groupId=org.se.lab -p artifactId=REST-ArticleService -p artifactVersion=1.0.0-SNAPSHOT
 
 $ tree src/
 src/
@@ -45,6 +45,10 @@ src/
         └── application.properties
 ```
 
+Compile the generated code
+```
+$ mvn compile
+```
 
 
 ## References
