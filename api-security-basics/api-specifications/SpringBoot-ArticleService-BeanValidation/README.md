@@ -24,12 +24,12 @@ $ curl -i http://localhost:8080/articles/2
  
 Insert an Article:
 ```
-$ curl -i -X POST http://localhost:8080/articles -H 'Content-type:application/json' -d '{"id":7, description": "Microservices Patterns: With examples in Java", "price": 2550}'
+$ curl -i -X POST http://localhost:8080/articles -H 'Content-type:application/json' -d '{"id":7, "description": "Microservices Patterns: With examples in Java", "price": 2550}'
 ```
 
 Insert an invalid Article:
-```
-$ curl -i -X POST http://localhost:8080/articles -H 'Content-type:application/json' -d '{"id":7,"description": "Micr", "price": 2550}'
+```curl -i -X POST http://localhost:8080/articles -H 'Content-type:application/json' -d '{"id":7,"description": "Micr", "price": 2550}'
+$ 
 
 HTTP/1.1 400 
 Content-Type: application/json
