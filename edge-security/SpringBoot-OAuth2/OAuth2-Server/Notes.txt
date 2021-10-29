@@ -1,0 +1,5 @@
+curl -i -u orderprocessingapp:orderprocessingappsecret -H "Content-Type: application/json" -d '{"grant_type":"client_credentials", "scope":"read write"}' http://localhost:8085/oauth/token
+
+"access_token":"8f1791d4-089d-4837-bb58-848d3fbc4df7"
+
+

@@ -11,86 +11,6 @@ Note that **all samples use HTTP** (not HTTPS) endpoints to make it possible to 
 passed on the network.
 **In production systems, HTTPS should be used for any andpoint.**
 
-
-## Building a Microservice
-
-To build and run a simple microservice type:
-```
-$ cd sample01
-$ mvn spring-boot:run
-```
-Spring Boot runs an embedded Apache Tomcat web server that listens for HTTP requests on **port 8080**.
-We can change that in the `src/main/resources/application.properties` file:
-```
-server.port=8080
-```
-With a **HTTP POST request** we can insert a new Order into the `orders` resource:
-```
-$ curl -v http://localhost:8080/orders -H 'Content-Type: application/json' --data-binary @- <<EOF
-{
-"items":[
-    {
-        "itemCode":"IT001",
-        "quantity":3
-    },
-    {
-        "itemCode":"IT004",
-        "quantity":1
-    }
-    ],
-    "shippingAddress":"No 4, CA, USA"
-}
-EOF
-
-HTTP/1.1 201
-Content-Type: application/json
-Transfer-Encoding: chunked
-Date: Thu, 19 Nov 2020 11:49:33 GMT
-
-{   
-    "orderId":"5f85cdcd-1a35-4755-a6df-3a8d239a4c86",
-    "items":
-    [
-        {"itemCode":"IT001","quantity":3},
-        {"itemCode":"IT004","quantity":1}
-    ],
-    "shippingAddress":"No 4, CA, USA"
-}
-```
-Based on the returned `orderId` we can also send a **HTTP GET request**:
-```
-$ curl -i http://localhost:8080/orders/5f85cdcd-1a35-4755-a6df-3a8d239a4c86
-
-HTTP/1.1 200
-Content-Type: application/json
-Transfer-Encoding: chunked
-Date: Thu, 19 Nov 2020 11:55:51 GMT
-
-{
-    "orderId":"5f85cdcd-1a35-4755-a6df-3a8d239a4c86",
-    "items":
-    [
-        {"itemCode":"IT001","quantity":3},
-        {"itemCode":"IT004","quantity":1}
-    ],
-    "shippingAddress":"No 4, CA, USA"
-}
-```
-
-The implementation of the REST endpoint can be reviewed in the `OrderProcessService` class.
-The following annotations are used:
-* **@RestController**: Informs the Spring Boot runtime to expose the class as a microservice.
-
-* **@RequestMapping("/orders")**: Specifies the path under which all resources of the service exist.
-
-* **@PostMapping**: Informs Spring Boot runtime to expose the method as HTTP POST method.
-
-* **@RequestBody**: Says that the content of the HTTP request is assigned to the given object. 
-
-Another important class is called `OrderApplication`. The **@SpringBootApplication** annotation informs 
-the Spring Boot runtime that this application is a Spring Boot application.
-
-
 ## Setting Up an OAuth 2.0 Authorization Server
 
 **OAuth 2.0** is a clean mechanism for solving the problems related to providing our
@@ -114,7 +34,7 @@ gets from the client application.
 
 To build and run the OAuth 2.0 authorization server, type:
 ```
-$ cd sample02
+$ cd OAuth2-Server
 $ mvn spring-boot:run
 ```
 The OAuth 2.0 authorization server runs on **HTTP port 8085**.
@@ -180,11 +100,9 @@ Once secured with OAuth 2.0, the microservice expects a valid access token from 
 calling client application. Then it will validate this token with the assistance of
 the authorization server before it grants access to its resources.
 
-Before we start the secured microservice, we have to **stop the running microservice**
-from `chapter02/sampl01`.
-Now, we can build and run the new service:
+We can build and run the service:
 ```
-$ cd sample03
+$ cd OrderService
 $ mvn spring-boot:run
 ```
 
