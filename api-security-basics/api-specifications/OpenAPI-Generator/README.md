@@ -22,10 +22,10 @@ The most commonly used openapi-generator-cli commands are:
 ## Generate the Service Implementation
 
 ```
-$ java -jar generator/openapi-generator-cli-5.2.1.jar generate -g spring --library spring-boot -i ArticleService.yaml -o target/gen -p groupId=org.se.lab -p artifactId=REST-ArticleService -p artifactVersion=1.0.0-SNAPSHOT
+$ java -jar generator/openapi-generator-cli-5.2.1.jar generate -g spring --library spring-boot -i src/main/resources/api.yaml -o target -p groupId=org.se.lab -p artifactId=REST-ArticleService -p artifactVersion=1.0.0-SNAPSHOT
 
-$ tree src/
-src/
+$ tree target/
+target/
 └── main
     ├── java
     │   └── org
@@ -47,16 +47,94 @@ src/
 
 Compile the generated code
 ```
-$ mvn compile
+$ cd src-gen
+$ mvn spring-boot:run
 ```
+
+The API documentation will be available at:
+```
+http://localhost:8443/swagger-ui.html#/article-controller
+```
+
+Because this only the skeleton of a service, there is no real functionality.
+We have to extend the generated code to add business logic to it.
+
+## Security Aspects of OpenAPI
+
+### Authentication
+OpenAPI supports multiple types of authentications and authorzations schemes specified with
+the `security scheme` component.
+
+```
+components:
+  securitySchemes:
+    basicAuth:     
+      type: http
+      scheme: basic
+```
+
+After defining a `securitySchemes` we can add a `security` element to our methods:
+
+```
+/articles:
+  get:
+    security:
+       - basicAuth: []
+```
+
+The OpenAPI generator will only generate server-side annotations but not code to use an
+authentication mechanism of Spring Security.
+
+
+### Data Validation
+
+When we define the schema for a model class like Article, we can specify the data types 
+of its attributes.
+
+Primitive data types in the OAS are based on the types supported by the 
+**JSON Schema Specification**.
+Primitives have an optional modifier property: `format`: `int32`, `int64`, `float`, `double`, `password`. 
+OAS uses several known formats to define in fine detail the data type being used.
+
+```
+    Article:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          minimum: 0
+        description:
+          type: string
+          
+        mail:
+          type: string
+          format: email
+        price:
+          type: integer
+          format: int64
+          minimum: 0
+
+```
+
+Also, for type:string there are interesting formats like: `email`, `uuid` 
+and properties like: `minLength`, `maxLength`, `pattern`
+
+These constraints will be added as **Bean Validation** annotations in the generated code.
+Thus, the constraints are validated at runtime.
+
 
 
 ## References
-* [OpenAPI Generator](https://openapi-generator.tech/)
-* [Config Options for Spring](https://openapi-generator.tech/docs/generators/spring)
+* OpenAPI Generator
+  * [OpenAPI Generator](https://openapi-generator.tech/)
+  * [Config Options for Spring](https://openapi-generator.tech/docs/generators/spring)
+  * [Maven Repository](https://mvnrepository.com/artifact/org.openapitools/openapi-generator-cli/5.2.1)
+  * [YouTube: Introducing OpenAPI Generator](https://youtu.be/t4jaTC7QjMg)
 
-* [Maven Repository](https://mvnrepository.com/artifact/org.openapitools/openapi-generator-cli/5.2.1)
-
-* [YouTube: Introducing OpenAPI Generator](https://youtu.be/t4jaTC7QjMg)
+* Security Aspects
+  * [OpenAPI Specification for API Security](https://youtu.be/kc56ks9b7AQ)
+  * [OpenAPI Specification](https://spec.openapis.org/oas/v3.1.0)
+    (4.4 Data Types; 4.8.27 Security Scheme Object)
 
 *Egon Teiniker, 2020-2021, GPL v3.0*
