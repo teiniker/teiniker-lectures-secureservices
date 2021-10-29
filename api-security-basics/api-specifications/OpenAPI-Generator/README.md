@@ -47,7 +47,7 @@ target/
 
 Compile the generated code
 ```
-$ cd src-gen
+$ cd target
 $ mvn spring-boot:run
 ```
 
