@@ -19,8 +19,8 @@
        * [REST-EJB-UserService-UUID](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-authorization/REST-EJB-UserService-UUID)  
 
 * [API Clients](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-clients) 
-      * [REST-EJB-UserService-TLS-Client](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-clients/REST-EJB-UserService-TLS-Client)
-      * [REST-EJB-UserService-BasicAuth-Client](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-clients/REST-EJB-UserService-BasicAuth-Client) 
+   * [REST-EJB-UserService-TLS-Client](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-clients/REST-EJB-UserService-TLS-Client)
+   * [REST-EJB-UserService-BasicAuth-Client](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-clients/REST-EJB-UserService-BasicAuth-Client) 
 
 * [API Specifications](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-specifications)
      * [SOAP-EJB-MessageAPI-Validation](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-specifications/SOAP-EJB-MessageAPI-Validation)
