@@ -10,13 +10,13 @@
          * [SpringBoot-ArticleService-BasicAuth](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-authentication/SpringBoot-ArticleService-BasicAuth)
 
 * [Authorization](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-authorization)
-      * Service-Level Authorization
-          * [REST-EJB-Authorization](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-authorization/REST-EJB-Authorization)
-          * [SpringBoot-ArticleService-Authorization](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-authorization/SpringBoot-ArticleService-Authorization) 
-      * Function-Level Authorization
-          * [REST-EJB-Authorization-Annotations](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-authorization/REST-EJB-Authorization-Annotations) 
-      * Object-Level Authorization
-          * [REST-EJB-UserService-UUID](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-authorization/REST-EJB-UserService-UUID)  
+   * Service-Level Authorization
+       * [REST-EJB-Authorization](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-authorization/REST-EJB-Authorization)
+       * [SpringBoot-ArticleService-Authorization](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-authorization/SpringBoot-ArticleService-Authorization) 
+   * Function-Level Authorization
+       * [REST-EJB-Authorization-Annotations](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-authorization/REST-EJB-Authorization-Annotations) 
+   * Object-Level Authorization
+       * [REST-EJB-UserService-UUID](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-authorization/REST-EJB-UserService-UUID)  
 
 * [API Clients](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-clients) 
       * [REST-EJB-UserService-TLS-Client](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-clients/REST-EJB-UserService-TLS-Client)
