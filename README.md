@@ -3,7 +3,7 @@
 This project collects examples, exercises and model solutions to give an introduction to API Security and secure 
 design of microservices.
 
-* **API Security Basics**
+* [**API Security Basics**](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics)
 
 * **Edge Security**
     * [SpringBoot-APIGateway](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/edge-security/SpringBoot-APIGateway)
