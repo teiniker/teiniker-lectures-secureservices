@@ -32,6 +32,9 @@ design of microservices.
      * [SpringBoot-HATEOAS](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-specifications/SpringBoot-HATEOAS) 
 
 * **Edge Security**
+    * [SpringBoot-APIGateway](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/edge-security/SpringBoot-APIGateway)
+    * [SpringBoot-OAuth2](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/edge-security/SpringBoot-OAuth2)
+    * [APIGateway-Throttling](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/edge-security/APIGateway-Throttling) 
 
 * **Service to Service Communication**  
   
