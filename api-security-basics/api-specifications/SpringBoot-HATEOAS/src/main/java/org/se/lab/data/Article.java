@@ -1,4 +1,4 @@
-package org.se.lab;
+package org.se.lab.data;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +13,7 @@ public class Article implements Serializable
 {
     private static final long serialVersionUID = 1L;
 
-    Article(String description, long price)
+    public Article(String description, long price)
     {
         setDescription(description);
         setPrice(price);

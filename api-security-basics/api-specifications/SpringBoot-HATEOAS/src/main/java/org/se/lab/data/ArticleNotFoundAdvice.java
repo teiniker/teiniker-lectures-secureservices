@@ -1,4 +1,4 @@
-package org.se.lab;
+package org.se.lab.data;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;

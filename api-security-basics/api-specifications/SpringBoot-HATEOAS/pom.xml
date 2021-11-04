@@ -10,7 +10,7 @@
 	</parent>
 
 	<groupId>org.se.lab</groupId>
-	<artifactId>SpringBoot-ArticleService</artifactId>
+	<artifactId>SpringBoot-HATEOAS</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SpringBoot-ArticleService</name>
 
@@ -26,6 +26,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-hateoas</artifactId>
 		</dependency>
 
 		<dependency>

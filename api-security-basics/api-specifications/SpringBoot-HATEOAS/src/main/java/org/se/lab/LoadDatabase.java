@@ -1,5 +1,7 @@
 package org.se.lab;
 
+import org.se.lab.data.Article;
+import org.se.lab.data.ArticleRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
