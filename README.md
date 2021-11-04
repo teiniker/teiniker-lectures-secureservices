@@ -1,10 +1,27 @@
 # Secure Services by Example 
 
-This project collects examples, exercises and model solutions to give an introduction to API Security ans secure 
-design of micro services.
+This project collects examples, exercises and model solutions to give an introduction to API Security and secure 
+design of microservices.
 
 * API Security Basics
-  
+  * [Authentication](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-authentication)
+     * Transport Layer Security 
+         * [REST-EJB-UserService-TLS](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-authentication/REST-EJB-UserService-TLS)
+         * [SOAP-EJB-ArticleService-TLS](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-authentication/SOAP-EJB-ArticleService-TLS) 
+         * [SpringBoot-ArticleService-TLS](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-authentication/SpringBoot-ArticleService-TLS)
+     * Basic Authentication
+         * [REST-EJB-UserService-BasicAuth](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-authentication/REST-EJB-UserService-BasicAuth)
+         * [SpringBoot-ArticleService-BasicAuth](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-authentication/SpringBoot-ArticleService-BasicAuth)
+  * [Authorization](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-authorization)
+  * [API Clients](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-clients) 
+  * [API Specifications](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-specifications)
+     * [SOAP-EJB-MessageAPI-Validation](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-specifications/SOAP-EJB-MessageAPI-Validation)
+     * [SpringBoot-OpenAPI](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-specifications/SpringBoot-OpenAPI)
+     * [OpenAPI](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-specifications/OpenAPI)
+     * [OpenAPI-Generator](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-specifications/OpenAPI-Generator)
+     * [SpringBoot-BeanValidation](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-specifications/SpringBoot-ArticleService-BeanValidation)
+     * [SpringBoot-HATEOAS](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics/api-specifications/SpringBoot-HATEOAS) 
+
 * Edge Security
 
 * Service to Service Communication  
