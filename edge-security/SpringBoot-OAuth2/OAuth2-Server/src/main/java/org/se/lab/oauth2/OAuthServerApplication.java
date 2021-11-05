@@ -8,17 +8,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @SpringBootApplication
-public class OAuthServerApplication {
-
-    public static void main(String[] args) {
+public class OAuthServerApplication
+{
+    public static void main(String[] args)
+    {
         SpringApplication.run(OAuthServerApplication.class, args);
     }
 
-    @RequestMapping(
-            value = "/",
-            produces = MediaType.APPLICATION_JSON_VALUE
-    )
-    public ResponseEntity<String> index() {
+    @RequestMapping(value = "/",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> index()
+    {
         return new ResponseEntity<>("{\"message\":\"Home!\"}", HttpStatus.OK);
     }
 }

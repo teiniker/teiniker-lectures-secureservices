@@ -13,8 +13,8 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 
 @Configuration
 @EnableAuthorizationServer
-public class OAuthServerConfig extends AuthorizationServerConfigurerAdapter {
-
+public class OAuthServerConfig extends AuthorizationServerConfigurerAdapter
+{
     private TokenStore tokenStore;
     private final PasswordEncoder passwordEncoder;
 
@@ -22,19 +22,22 @@ public class OAuthServerConfig extends AuthorizationServerConfigurerAdapter {
     private AuthenticationManager authenticationManager;
 
     @Override
-    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception
+    {
         endpoints
                 .authenticationManager(authenticationManager)
                 .approvalStoreDisabled()
                 .tokenStore(tokenStore);
     }
 
-    public OAuthServerConfig(PasswordEncoder passwordEncoder) {
+    public OAuthServerConfig(PasswordEncoder passwordEncoder)
+    {
         this.passwordEncoder = passwordEncoder;
     }
 
     @Override
-    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+    public void configure(ClientDetailsServiceConfigurer clients) throws Exception
+    {
         clients.inMemory()
             .withClient("orderprocessingapp")
                 .secret(passwordEncoder.encode("orderprocessingappsecret"))
@@ -52,10 +55,10 @@ public class OAuthServerConfig extends AuthorizationServerConfigurerAdapter {
     }
 
     @Override
-    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception
+    {
         security
                 .checkTokenAccess("isAuthenticated()")
                 .allowFormAuthenticationForClients();
     }
-
 }

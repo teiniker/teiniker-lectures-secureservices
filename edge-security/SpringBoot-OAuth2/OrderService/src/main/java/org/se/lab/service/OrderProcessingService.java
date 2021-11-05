@@ -28,13 +28,14 @@ import org.se.lab.exceptions.OrderNotFoundException;
 @EnableWebSecurity
 @RestController
 @RequestMapping("/orders")
-public class OrderProcessingService extends WebSecurityConfigurerAdapter {
+public class OrderProcessingService extends WebSecurityConfigurerAdapter
+{
 
     private Map<String, Order> orders = new HashMap<>();
 
     @PostMapping
-    public ResponseEntity<Order> placeOrder(@RequestBody Order order) {
-
+    public ResponseEntity<Order> placeOrder(@RequestBody Order order)
+    {
         System.out.println("Received Order For " + order.getItems().size() + " Items");
         order.getItems().forEach((lineItem) -> System.out.println("Item: " + lineItem.getItemCode() +
                 " Quantity: " + lineItem.getQuantity()));
@@ -46,18 +47,21 @@ public class OrderProcessingService extends WebSecurityConfigurerAdapter {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Order> getOrder(@PathVariable String id) throws OrderNotFoundException {
-
-        if(orders.containsKey(id)){
+    public ResponseEntity<Order> getOrder(@PathVariable String id) throws OrderNotFoundException
+    {
+        if(orders.containsKey(id))
+        {
             return new ResponseEntity<Order>(orders.get(id), HttpStatus.OK);
         }
-        else {
+        else
+        {
            throw new OrderNotFoundException();
         }
     }
 
     @Bean
-    public ResourceServerTokenServices tokenServices() {
+    public ResourceServerTokenServices tokenServices()
+    {
         RemoteTokenServices tokenServices = new RemoteTokenServices();
         tokenServices.setClientId("orderprocessingservice");
         tokenServices.setClientSecret("orderprocessingservicesecret");

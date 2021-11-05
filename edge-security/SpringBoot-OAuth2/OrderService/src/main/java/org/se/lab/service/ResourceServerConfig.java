@@ -9,18 +9,16 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 
 @Configuration
 @EnableResourceServer
-public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
-
+public class ResourceServerConfig extends ResourceServerConfigurerAdapter
+{
     private static final String SECURED_READ_SCOPE = "#oauth2.hasScope('read')";
-
     private static final String SECURED_WRITE_SCOPE = "#oauth2.hasScope('write')";
-
     private static final String SECURED_PATTERN_WRITE = "/orders/**";
-
     private static final String SECURED_PATTERN_READ = "/orders/{id}";
 
     @Override
-    public void configure(HttpSecurity http) throws Exception {
+    public void configure(HttpSecurity http) throws Exception
+    {
         http.requestMatchers()
                 .antMatchers(SECURED_PATTERN_WRITE).and().authorizeRequests()
                 .antMatchers(HttpMethod.POST, SECURED_PATTERN_WRITE).access(SECURED_WRITE_SCOPE)
@@ -28,7 +26,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     }
 
     @Override
-    public void configure(ResourceServerSecurityConfigurer resources) {
+    public void configure(ResourceServerSecurityConfigurer resources)
+    {
         resources.resourceId("sample-oauth");
     }
 }
