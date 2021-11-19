@@ -12,37 +12,27 @@ passed on the network.
 **In production systems, HTTPS should be used for any andpoint.**
 
 
-## Starting the Deployment
+## Deployment
 
 The following **Spring Boot applications** must be started in **separate shells**:
 
 ```
-$ cd APIGateway-Throttling/oauth2_server
+$ cd APIGateway-Throttling/OrderService
 $ mvn spring-boot:run
 
-$ cd APIGateway-Throttling/gateway
+$ cd APIGateway-Throttling/OAuth2Server
 $ mvn spring-boot:run
 
-$ cd APIGateway-Throttling/service
+$ cd APIGateway-Throttling/APIGateway
 $ mvn spring-boot:run
+
 ```
 
-## Accessing the Microservice via Zuul
+## Accessing the Microservice via the API Gateway
 
 First, we **request an access token** from the OAuth 2.0 server:
 ```
-$ curl -i -u application1:application1secret -H "Content-Type: application/json" -d '{"grant_type":"client_credentials", "scope":"read write"}' http://localhost:9090/token/oauth/token
-
-HTTP/1.1 200
-Cache-Control: no-store
-Pragma: no-cache
-X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
-X-Frame-Options: DENY
-Date: Thu, 26 Nov 2020 18:16:54 GMT
-Keep-Alive: timeout=60
-Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
+$ curl -u application1:application1secret -H "Content-Type: application/json" -d '{"grant_type":"client_credentials", "scope":"read write"}' http://localhost:9090/token/oauth/token
 
 {"access_token":"f8685e59-f370-450e-965b-39d2a20563c5","token_type":"bearer","expires_in":3389,"scope":"read write"}
 ```
@@ -72,20 +62,6 @@ $ curl -v http://localhost:9090/retail/orders -H 'Content-Type: application/json
     "shippingAddress":"No 4, CA, USA"
 }
 EOF
-
-POST /retail/orders HTTP/1.1
-Host: localhost:9090
-User-Agent: curl/7.64.0
-Accept: */*
-Content-Type: application/json
-Authorization: Bearer f8685e59-f370-450e-965b-39d2a20563c5
-Content-Length: 304
-
-HTTP/1.1 201
-Date: Thu, 26 Nov 2020 18:50:10 GMT
-Keep-Alive: timeout=60
-Content-Type: application/json
-Transfer-Encoding: chunked
 
 {{"orderId":"c69d2104-ac8b-46ed-8a49-3fd2d8d68437","items":[{"itemCode":"IT001","quantity":3},{"itemCode":"IT004","quantity":1}],"shippingAddress":"No 4, CA, USA"}
 ```
@@ -130,7 +106,7 @@ be executed before the request being processed.
 The **filterOrder()** method returns **2** which defines that this filter should be executed after 
 the OAuthFilter (whose filter-order is set to 1).
 
-The **shouldFIlter()** method returns **true** which indicates that this filter is active.
+The **shouldFilter()** method returns **true** which indicates that this filter is active.
 
 At the top of the ThrottlingFilter class, we initialize a counter of the `CounterCache`
 type, which is an in-memory map. Each entry in this map holds a counter against its 
@@ -212,4 +188,7 @@ as a key.
 
 
 ## References
-Prabath Siriwardena, Nuwan Dias. **Microservices Security in Action**. Manning, 2020
+* Prabath Siriwardena, Nuwan Dias. **Microservices Security in Action**. Manning, 2020
+    * Chapter 5.1: Throttling at the API gateway with Zuul 
+
+

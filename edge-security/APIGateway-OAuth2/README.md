@@ -12,8 +12,6 @@ passed on the network. **In production systems, HTTPS should be used for any end
 
 
 ## Setting Up a Microservice 
-Zuul is an open source proxy server build by Netflix, acting as the entry point for
-all of the company's backend streaming applications.
 
 We start with a **simple microservice**:
 ```
@@ -196,4 +194,7 @@ If the server doesn't respond with 200, the authentication has failed.
 
 
 ## References
-Prabath Siriwardena, Nuwan Dias. **Microservices Security in Action**. Manning, 2020
+* Prabath Siriwardena, Nuwan Dias. **Microservices Security in Action**. Manning, 2020
+    * Chapter 3: Securing north/south traffic with an API gateway
+
+*Egon Teiniker, 2020 - 2021, GPL v3.0*
