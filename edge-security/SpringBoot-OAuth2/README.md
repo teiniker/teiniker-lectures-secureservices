@@ -345,4 +345,7 @@ Date: Thu, 19 Nov 2020 14:28:24 GMT
 ```
 
 ## References
-Prabath Siriwardena, Nuwan Dias. **Microservices Security in Action**. Manning, 2020
+* Prabath Siriwardena, Nuwan Dias. **Microservices Security in Action**. Manning, 2020
+  * Chapter 2: First Steps in Securing Microservices
+  
+*Egon Teiniker, 2020-2021, GPL v3.0*
