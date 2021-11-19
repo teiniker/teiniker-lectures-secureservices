@@ -1,4 +1,4 @@
-# Securing an API Gateway
+# Securing an API Gateway with OAuth2.0
 
 The following examples are reused from **chapter 3** of the **Microservices Security in Actions** book. 
 You can find all examples of this book on [GitHub](https://github.com/microservices-security-in-action/samples).
