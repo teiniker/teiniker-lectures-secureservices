@@ -5,15 +5,13 @@ You can find all examples of this book on [GitHub](https://github.com/microservi
 This document describes the main steps needed to make the examples run and discusses the output 
 of the experiments.
 
-The following examples are based on the **Spring Boot** framework and can be build using **Maven**.
+The examples are based on the **Spring Boot** framework and can be build using **Maven**.
 
 Note that **all samples use HTTP** (not HTTPS) endpoints to make it possible to inspect messages being 
-passed on the network.
-**In production systems, HTTPS should be used for any endpoint.**
+passed on the network. **In production systems, HTTPS should be used for any endpoint.**
 
 
-
-## Setting Up an API Gateway 
+## Setting Up a Microservice 
 Zuul is an open source proxy server build by Netflix, acting as the entry point for
 all of the company's backend streaming applications.
 
@@ -59,7 +57,8 @@ Date: Thu, 19 Nov 2020 16:55:48 GMT
 {"orderId":"28e9ba9c-f284-4f3b-ac14-8dce44f2a7cd","items":[{"itemCode":"IT001","quantity":3},{"itemCode":"IT004","quantity":1}],"shippingAddress":"No 4, CA, USA"}
 ```
 
-## Enforcing OAuth 2.0 at the Zuul Gateway
+## Enforcing OAuth 2.0 at the Edge
+
 The next step is enforcing security on the Zuul gateway so that **only authenticated 
 clients** are granted access to the microservice.
 
@@ -166,14 +165,13 @@ various operations on them (`OAuthFilter`):
 ```Java
 String oauthServerURL = env.getProperty("authserver.introspection.endpoint");
 
-try {
+try
+{
     URL url = new URL(oauthServerURL);
     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-
     connection.setRequestMethod("POST");
     connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
     connection.setRequestProperty("Authorization", "Basic YXBwbGljYXRpb24xOmFwcGxpY2F0aW9uMXNlY3JldA==");
-
     String urlParameters = "token=" + token;
 
     //Send post request to authorization server to validate token
@@ -184,7 +182,8 @@ try {
     int responseCode = connection.getResponseCode();
 
     //If the authorization server doesn't respond with a 200.
-    if (responseCode != 200) {
+    if (responseCode != 200) 
+    {
         log.error("Response code from authz server is " + responseCode);
         handleError(requestContext);
     }

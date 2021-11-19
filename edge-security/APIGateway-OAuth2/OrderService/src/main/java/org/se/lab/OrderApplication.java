@@ -1,4 +1,4 @@
-package com.manning.mss.ch03.service;
+package org.se.lab;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

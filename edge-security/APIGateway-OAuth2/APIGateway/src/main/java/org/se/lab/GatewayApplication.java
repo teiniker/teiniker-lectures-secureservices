@@ -1,11 +1,9 @@
-package com.manning.mss.ch03.sample04;
+package org.se.lab;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
-
-import com.manning.mss.ch03.sample04.filters.OAuthFilter;
 
 @EnableZuulProxy
 @SpringBootApplication

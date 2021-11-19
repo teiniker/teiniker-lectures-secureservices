@@ -1,4 +1,4 @@
-package com.manning.mss.ch03.sample01.orderentity;
+package org.se.lab.data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

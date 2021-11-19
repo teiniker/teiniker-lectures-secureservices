@@ -1,9 +1,11 @@
-package com.manning.mss.ch03.service;
+package org.se.lab.service;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import org.se.lab.data.Order;
+import org.se.lab.data.OrderNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,18 +15,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.manning.mss.ch03.sample01.exceptions.OrderNotFoundException;
-import com.manning.mss.ch03.sample01.orderentity.Order;
-
 @RestController
 @RequestMapping("/orders")
-public class OrderProcessingService {
-
+public class OrderProcessingService
+{
     private Map<String, Order> orders = new HashMap<>();
 
     @PostMapping
-    public ResponseEntity<Order> placeOrder(@RequestBody Order order) {
-
+    public ResponseEntity<Order> insert(@RequestBody Order order)
+    {
         System.out.println("Received Order For " + order.getItems().size() + " Items");
         order.getItems().forEach((lineItem) -> System.out.println("Item: " + lineItem.getItemCode() +
                 " Quantity: " + lineItem.getQuantity()));
@@ -36,12 +35,14 @@ public class OrderProcessingService {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Order> getOrder(@PathVariable String id) throws OrderNotFoundException {
-
-        if(orders.containsKey(id)){
+    public ResponseEntity<Order> findById(@PathVariable String id) throws OrderNotFoundException
+    {
+        if(orders.containsKey(id))
+        {
             return new ResponseEntity<Order>(orders.get(id), HttpStatus.OK);
         }
-        else {
+        else
+        {
             throw new OrderNotFoundException();
         }
     }

@@ -1,4 +1,4 @@
-package com.manning.mss.ch03.sample03.oauth2.server;
+package org.se.lab;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.io.ByteStreams;

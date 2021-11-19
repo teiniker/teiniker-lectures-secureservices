@@ -1,9 +1,9 @@
-package com.manning.mss.ch03.sample01.orderentity;
+package org.se.lab.data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Invoice {
-
+public class Invoice
+{
     @JsonProperty("invoiceId")
     private String invoiceId;
 
@@ -16,38 +16,38 @@ public class Invoice {
     @JsonProperty("message")
     private String message;
 
-    public String getInvoiceId() {
-
+    public String getInvoiceId()
+    {
         return invoiceId;
     }
 
-    public void setInvoiceId(String invoiceId) {
-
+    public void setInvoiceId(String invoiceId)
+    {
         this.invoiceId = invoiceId;
     }
 
-    public String getOrderId() {
-
+    public String getOrderId()
+    {
         return orderId;
     }
 
-    public void setOrderId(String orderId) {
-
+    public void setOrderId(String orderId)
+    {
         this.orderId = orderId;
     }
 
-    public double getPrice() {
-
+    public double getPrice()
+    {
         return price;
     }
 
-    public void setPrice(double price) {
-
+    public void setPrice(double price)
+    {
         this.price = price;
     }
 
-    public String getMessage() {
-
+    public String getMessage()
+    {
         return message;
     }
 

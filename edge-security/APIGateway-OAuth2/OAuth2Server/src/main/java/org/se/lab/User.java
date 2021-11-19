@@ -1,4 +1,4 @@
-package com.manning.mss.ch03.sample03.oauth2.server;
+package org.se.lab;
 
 public class User {
 
