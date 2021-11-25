@@ -16,39 +16,6 @@ $ openssl version
 OpenSSL 1.1.1g  21 Apr 2020
 ```
 
-## Generating Psuedo Random Numbers
-The following command line generates a number of random bytes, which can either be output raw, as Base64 or as HEX:
-```
-$ openssl rand -hex 16
-f05a4f9bef09d057c355c6e28fec5543
-
-$ openssl rand -base64 16
-gokRIzPgvBsnQd5fshD9fg==
-```
-Parameters:
-* **rand**: Generate pseudo-random bytes.
-* **-hex**: Show the output as a hex string.
-* **-base64**: Perform base64 encoding on the output.
-* **-out file**: Write to file instead of standard output.
- 
-## Generating a File Fingerprint (Hash Value)
-The digest functions output the message digest of a supplied file or files in hexadecimal. 
-
-To see the list of supported algorithms, use the `list --digest-commands` command.
-```
-$ openssl list -digest-commands
-blake2b512        blake2s256        gost              md4               
-md5               rmd160            sha1              sha224            
-sha256            sha3-224          sha3-256          sha3-384          
-sha3-512          sha384            sha512            sha512-224        
-sha512-256        shake128          shake256          sm3   
-```
-
-```
-$ openssl dgst -sha256 wordlist.txt 
-SHA256(wordlist.txt)= fd17b0ff31d7fb7b4e202b0cd99e1f11aa1f4972aab81010544a4e562f42bac7
-```
-
 ## Generating Private and Public Keys
 
 To generate an RSA **private key** type the following command:
