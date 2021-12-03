@@ -1,0 +1,59 @@
+Exercise: gRPC ArticleService
+-------------------------------------------------------------------------------
+
+Implement a gRPC ArticleService (server and client) analog the the existing REST
+service.
+
+public Article(int id, String description, long price)
+{
+    private int id;
+    private String description;
+    private long price;
+    //...
+}
+
+public class ArticleService
+{
+    public void insert(Article user)
+    {
+        //...
+    }
+
+    public void update(Article dto)
+    {
+        //...
+    }
+
+    public void delete(int id)
+    {
+        //...
+    }
+
+    public List<Article> findAll()
+    {
+        //...
+    }
+
+    public Article findById(int id)
+    {
+        //...
+    }
+}
+
+A) Define a Protocol Buffers IDL
+    message Article {...}
+    service ArticleService {...}
+
+B) Implement the Server (started from the command line)
+    ArticleServer.java
+
+C) Implement the Client (started from the command line)
+    ArticleClient.java
+
+References:
+> Quick start
+    https://grpc.io/docs/languages/java/quickstart/
+> gRPC-Java - An RPC library and framework
+    https://github.com/grpc/grpc-java
+> Introduction to gRPC
+  https://www.baeldung.com/grpc-introduction
