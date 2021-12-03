@@ -1,54 +1,24 @@
 Exercise: gRPC ArticleService
 -------------------------------------------------------------------------------
 
-Implement a gRPC ArticleService (server and client) analog the the existing REST
-service.
+Implement a gRPC ArticleService (server and client) based on a given interface
+description:
 
-public Article(int id, String description, long price)
-{
-    private int id;
-    private String description;
-    private long price;
-    //...
-}
+    src/main/proto/article.proto
 
-public class ArticleService
-{
-    public void insert(Article user)
-    {
-        //...
-    }
+A) Article Server
+    Implement the following artefacts:
+        server/ArticleServer.java
+        server/GrpcServer
+        data/ArticleEntity
+    Note that the corresponding DTO "Article" will be generated from the
+    proto File description.
 
-    public void update(Article dto)
-    {
-        //...
-    }
+B) Implement the Client
+    Implement the following artefacts:
+        client/GrpcClient.java
 
-    public void delete(int id)
-    {
-        //...
-    }
-
-    public List<Article> findAll()
-    {
-        //...
-    }
-
-    public Article findById(int id)
-    {
-        //...
-    }
-}
-
-A) Define a Protocol Buffers IDL
-    message Article {...}
-    service ArticleService {...}
-
-B) Implement the Server (started from the command line)
-    ArticleServer.java
-
-C) Implement the Client (started from the command line)
-    ArticleClient.java
+Note that the proper pom.xml file is already included in this example.
 
 References:
 > Quick start
