@@ -67,6 +67,8 @@ Parameters:
 
 ## Generating Self-Signed Certificates
 
+![Digital Certificate](DigitalCertificate.png)
+
 A common server-side operation is to generate a self-signed certificate for testing or encrypting communications between 
 internal servers.
 

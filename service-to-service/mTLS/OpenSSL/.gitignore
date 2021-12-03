@@ -7,3 +7,5 @@ key.pem
 server.crt
 server.key
 server.csr
+private-key.pem
+public-key.pem
