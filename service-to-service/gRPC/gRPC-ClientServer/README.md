@@ -1,8 +1,6 @@
 # Example: gRPC Client / Server 
 
-**gRPC** is a high performance, open source RPC framework initially developed by Google.
-The framework is based on a **client-server model** of remote procedure calls. 
-A client application can directly call methods on a server application as if it was a local object.
+The given example shows the implementation of a simple `HelloService` using gRPC.
 
 ## Defining the Service
 We define a service by specifying **methods** that can be called remotely along with their **parameters** 
@@ -155,3 +153,5 @@ respond, and will either return a response or raise an exception.
 ## References
 * [Introduction to Google Protocol Buffer](https://www.baeldung.com/google-protocol-buffer)
 * [Introduction to gRPC](https://www.baeldung.com/grpc-introduction)
+
+*Egon Teiniker, 2020-2021, GPL v3.0*
