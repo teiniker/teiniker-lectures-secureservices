@@ -12,7 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Class that does throttling of requests
  */
-public class ThrottlingFilter extends ZuulFilter {
+public class ThrottlingFilter extends ZuulFilter
+{
 
     private static Logger log = LoggerFactory.getLogger(ThrottlingFilter.class);
 
@@ -20,24 +21,24 @@ public class ThrottlingFilter extends ZuulFilter {
     //Maximum number of entries in the cache would be 10000.
     private CounterCache counter = new CounterCache(60, 10, 10000);
 
-    public String filterType() {
-
+    public String filterType()
+    {
         return "pre";
     }
 
-    public int filterOrder() {
-
+    public int filterOrder()
+    {
         return 2;
     }
 
-    public boolean shouldFilter() {
-
+    public boolean shouldFilter()
+    {
         return true;
     }
 
     @Override
-    public Object run() {
-
+    public Object run()
+    {
         log.info("Executing Throttling Filter");
 
         RequestContext requestContext = RequestContext.getCurrentContext();

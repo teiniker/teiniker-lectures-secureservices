@@ -67,6 +67,8 @@ Parameters:
 
 ## Generating Self-Signed Certificates
 
+![Digital Certificate](DigitalCertificate.png)
+
 A common server-side operation is to generate a self-signed certificate for testing or encrypting communications between 
 internal servers.
 
@@ -154,6 +156,72 @@ Parameters:
 * **-text**: Strips the text headers from the output.
 * **-noout**: Needed not to output the encoded version of the certificate
 * **-in**: The certificate that we are verifying.
+
+
+## Generating Signed Certificates
+To create a signed certificate, we have to create a **Certificate Authority** first.
+We do that by generating a **private key** and a **self-signed certificate**.
+```
+$ openssl genrsa -out ca.key 4096
+$ openssl req -new -x509 -days 365 -key ca.key -out ca.crt
+
+$ openssl x509 -text -noout -in ca.crt
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            35:ed:64:6b:a7:bf:c3:1a:5f:d7:ec:1d:ed:37:e1:05:2d:e8:23:21
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C = at, ST = styria, L = graz, O = fhj, OU = stm, CN = ca, emailAddress = ca@fhj.at
+        Validity
+            Not Before: Jan 13 19:34:28 2021 GMT
+            Not After : Jan 13 19:34:28 2022 GMT
+        Subject: C = at, ST = styria, L = graz, O = fhj, OU = stm, CN = ca, emailAddress = ca@fhj.at
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (4096 bit)
+...
+```
+Parameters:
+*   **genrsa**: generate an RSA private key
+*  **-out filename**:  Output the key to the specified file. If this argument is not specified then standard output is used.
+
+* **req**: primarily creates and processes certificate requests in PKCS#10 format.
+  It can additionally create self signed certificates for use as root CAs for example.
+* **-new**: This option generates a new certificate request.
+* **-key filename**: This specifies the file to read the private key from.
+  It also accepts PKCS#8 format private keys for PEM format files.
+
+Now, that we have a certificate that we trust ;-) we can create a **signed server certificate**.  
+First we create a **private server key** and a **certificate request**.
+Finally, we **sign the server's certificate request** using the CA's private key.
+```
+$ openssl genrsa -out server.key 4096
+$ openssl req -new -key server.key -out server.csr
+$ openssl x509 -req -days 365 -in server.csr -CA ca.crt -CAkey ca.key -set_serial 01 -out server.crt
+
+$ openssl x509 -text -noout -in server.crt 
+Certificate:
+    Data:
+        Version: 1 (0x0)
+        Serial Number: 1 (0x1)
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C = at, ST = styria, L = graz, O = fhj, OU = stm, CN = ca, emailAddress = ca@fhj.at
+        Validity
+            Not Before: Jan 13 19:36:39 2021 GMT
+            Not After : Jan 13 19:36:39 2022 GMT
+        Subject: C = at, ST = styria, L = graz, O = fhj, OU = stm, CN = teini, emailAddress = teini@fhj.at
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (4096 bit)
+...
+```
+Parameters:
+*  **-CA filename**: Specifies the CA certificate to be used for signing. When this option is present x509 behaves like a "mini CA".
+*  **-CAkey filename**: Sets the CA private key to sign a certificate with.
+   If this option is not specified then it is assumed that the CA private key is present in the CA certificate file.
+*  **-set_serial n**: Specifies the serial number to use. The serial number can be decimal or hex (if preceded by 0x).
+
 
 ## References
 * [openssl](https://www.openssl.org/docs/man1.1.1/man1/openssl.html)
