@@ -8,8 +8,14 @@ public class AddressBookTest
 	@Test
 	public void testAddressBookBuilder()
 	{
-		Person homer = Person.newBuilder().setName("homer").setPassword("$2y$12$9gRSvDCPp9lC/JBBo7jCZe.mXhpOiWk4z.y04YJ2NXzUo7qsKbg.S").build();
-		Person marge = Person.newBuilder().setName("marge").setPassword("$2y$12$GxlzYasVmEnH7G0OuRXWx..G.NqjA7mf20ZWqruD8endmfdmHajMW ").build();
+		Person homer = Person.newBuilder()
+					.setName("homer")
+					.setPassword("$2y$12$9gRSvDCPp9lC/JBBo7jCZe.mXhpOiWk4z.y04YJ2NXzUo7qsKbg.S")
+				.build();
+		Person marge = Person.newBuilder()
+					.setName("marge")
+					.setPassword("$2y$12$GxlzYasVmEnH7G0OuRXWx..G.NqjA7mf20ZWqruD8endmfdmHajMW ")
+				.build();
 
 		AddressBook book = AddressBook.newBuilder()
 				.addPeople(marge)
