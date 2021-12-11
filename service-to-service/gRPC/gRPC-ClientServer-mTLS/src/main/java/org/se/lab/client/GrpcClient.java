@@ -24,7 +24,7 @@ public class GrpcClient
                 .keyManager(new File("/tmp/sslcert/client.crt"), new File("/tmp/sslcert/client.pem"))
                 .build();
 
-        ManagedChannel channel = NettyChannelBuilder.forAddress("localhost", 50440)
+        ManagedChannel channel = NettyChannelBuilder.forAddress("localhost", 8443)
                 .negotiationType(NegotiationType.TLS)
                 .sslContext(sslContext)
                 .build();

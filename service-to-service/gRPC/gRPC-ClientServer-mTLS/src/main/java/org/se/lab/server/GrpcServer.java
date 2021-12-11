@@ -15,9 +15,9 @@ import java.util.logging.Logger;
 
 import static io.grpc.netty.GrpcSslContexts.configure;
 
-public class GRPCServer
+public class GrpcServer
 {
-    private static final Logger LOG = Logger.getLogger(GRPCServer.class.getName());
+    private static final Logger LOG = Logger.getLogger(GrpcServer.class.getName());
 
     public static void main(String[] args) throws IOException, InterruptedException
     {
@@ -28,24 +28,12 @@ public class GRPCServer
 
         SslContext sslContext = GrpcSslContexts.configure(sslClientContextBuilder, SslProvider.OPENSSL).build();
 
-        Server server = NettyServerBuilder.forAddress(new InetSocketAddress("localhost",50440))
+        Server server = NettyServerBuilder.forAddress(new InetSocketAddress("localhost",8443))
                 .addService(new HelloServiceImpl())
                 .sslContext(sslContext)
                 .build()
                 .start();
         LOG.info("Server started...");
-
-        Runtime.getRuntime().addShutdownHook(new Thread()
-        {
-            @Override
-            public void run()
-            {
-                // Use stderr here since the logger may have been reset by its JVM shutdown hook.
-                System.err.println("*** shutting down gRPC server since JVM is shutting down");
-                server.shutdown();
-                System.err.println("*** server shut down");
-            }
-        });
 
         server.awaitTermination();
     }
