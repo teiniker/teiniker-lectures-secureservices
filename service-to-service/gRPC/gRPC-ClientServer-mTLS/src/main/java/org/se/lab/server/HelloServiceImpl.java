@@ -1,6 +1,7 @@
-package org.se.lab;
+package org.se.lab.server;
 
 import io.grpc.stub.StreamObserver;
+import org.se.lab.*;
 
 public class HelloServiceImpl
     extends HelloServiceGrpc.HelloServiceImplBase

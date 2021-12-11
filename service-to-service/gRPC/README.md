@@ -109,6 +109,8 @@ gRPC users typically call these APIs on the client side and implement the corres
     returning the server’s protocol buffer response(s).
 
 ## References
+* [YouTube: Intro to gRPC](https://youtu.be/3Kkj6vAW5a4)
+
 * [Introduction to gRPC](https://grpc.io/docs/what-is-grpc/introduction/)
 
 * [Core concepts, architecture and lifecycle](https://grpc.io/docs/what-is-grpc/core-concepts/)

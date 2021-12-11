@@ -1,4 +1,4 @@
-package org.se.lab;
+package org.se.lab.server;
 
 import io.grpc.Server;
 import io.grpc.netty.GrpcSslContexts;
