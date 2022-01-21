@@ -252,4 +252,6 @@ The benefit is that common layers need to be installed only once.
 * Jeff Nickoloff. **Docker in Action**. Manning, 2016 
 
 * [Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+
+
 *Egon Teiniker, 2021, GPL v3.0*
