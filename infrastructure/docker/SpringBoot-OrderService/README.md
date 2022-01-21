@@ -1,46 +1,6 @@
-# Spring Boot: OrderService 
+# Building a Docker Image with Spring Boot 
 
-Spring Boot provides a very good support to building RESTful Web Services.
-```Java
-@RestController
-@RequestMapping("/orders")
-public class OrderProcessingService 
-{
-    @PostMapping
-    public ResponseEntity<Order> placeOrder(@RequestBody Order order)
-    {
-        //...
-        return new ResponseEntity<Order>(order, HttpStatus.CREATED);
-    }
-    
-    @GetMapping("/{id}")
-    public ResponseEntity<Order> getOrder(@PathVariable String id) 
-    {
-        //...
-        return new ResponseEntity<Order>(orders.get(id), HttpStatus.OK);
-    }
-}
-```
-The following annotations can be used:
-* The **@RestController** annotation is used to define the RESTful web services.
-* The **@RequestMapping** annotation is used to define the Request URI to access the REST Endpoints.
-
-* The **@GetMapping** annotation maps HTTP GET requests onto specific handler methods. 
-    It is a composed annotation that acts as a shortcut for `@RequestMapping(method = RequestMethod.GET)`.
-* The **@PostMapping** annotation maps HTTP POST requests onto specific handler methods. 
-   It is a composed annotation that acts as a shortcut for `@RequestMapping(method = RequestMethod.POST)`.
-* The  @PutMapping annotation maps HTTP PUT requests onto specific handler methods. 
-    It is a composed annotation that acts as a shortcut for `@RequestMapping(method = RequestMethod.PUT)`.
-* The **@DeleteMapping** annotation maps HTTP DELETE requests onto specific handler methods. 
-    It is a composed annotation that acts as a shortcut for `@RequestMapping(method = RequestMethod.DELETE)`.
-
-* The **@PathVariable** annotation is used to define the custom or dynamic request URI. 
-   The Path variable in request URI is defined as curly braces {}.
-* The **@RequestParam** annotation is used to read the request parameters from the Request URL. 
-* The **@RequestBody** annotation is used to define the request body content type.
-
-
-We start with a **simple microservice**:
+We build and start the **Spring Boot web service**:
 ```
 $ mvn spring-boot:run
 ```
@@ -102,9 +62,9 @@ CMD ["java", "-jar", "/opt/service/SpringBoot-OrderService-1.0.jar"]
 
 Using the following Docker command, we **create a new image** called `orderservice`: 
 ```
-# docker build -t orderservice .
+$ sudo docker build -t orderservice .
 
-# docker image ls
+$ sudo docker image ls
 REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
 orderservice             latest              631ef36eb957        29 seconds ago      362MB
 adoptopenjdk/openjdk11   alpine              014786455e14        3 weeks ago         345MB
@@ -112,16 +72,16 @@ adoptopenjdk/openjdk11   alpine              014786455e14        3 weeks ago    
 
 Finally, we start a new container based on the build image:
 ```
-# docker run -p 8080:8080 orderservice
+$ sudo docker run -p 8080:8080 orderservice
 ```
 Now, we are free to reuse the `curl` statements from above to test our running microservice.
 
 
 Note that we can easily run a second `orderservice` container with a **different port number**:
 ```
-# docker run -p 8090:8080 orderservice
+$ sudo docker run -p 8090:8080 orderservice
 
-# docker container ls -a
+$ sudo docker container ls -a
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS           PORTS                    NAMES
 e7225039ee7c        orderservice        "java -jar /opt/serv…"   14 minutes ago      Up 14 minutes    0.0.0.0:8090->8080/tcp   gallant_dubinsky
 c6976c4604e6        orderservice        "java -jar /opt/serv…"   15 minutes ago      Up 15 minutes    0.0.0.0:8080->8080/tcp   awesome_sinoussi

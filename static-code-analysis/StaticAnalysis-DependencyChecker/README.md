@@ -13,15 +13,16 @@ undermine application defenses and enable various attacks and impacts.
 Download the Dependency Check [Ant Task](https://owasp.org/www-project-dependency-check/)
 
 Rename `analysis.properties.template` to `analysis.properties` and set the **dependency-check.home** property 
-to your install directory of SpotBugs.
+to your install directory of DependencyCheck.
 
 Example: analysis.properties
 ```
 # Project to analyze
-target.home =/home/student/github/teiniker-lectures-securedesign/risk-analysis/VulnerableWebApplication/target/VulnerableWebApplication/WEB-INF
-target.lib = ${target.home}/lib/
+target.home =../StaticAnalysis-Target
+target.lib = ${target.home}/lib
 
 # Tool settings
+# https://owasp.org/www-project-dependency-check/
 dependency-check.home=/home/student/local/dependency-check-ant/
 analysis.reports = reports
 ```
