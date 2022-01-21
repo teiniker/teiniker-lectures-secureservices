@@ -2,7 +2,7 @@ version: '2.1'
 
 services:
   wildfly:
-    build: wildfly/.
+    build: ./docker-wildfly
     depends_on:
       mariadb:
         condition: service_healthy

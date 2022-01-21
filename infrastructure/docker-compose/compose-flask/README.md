@@ -1,4 +1,4 @@
-# Example: Docker Compose (python + flask + redis)
+# Docker Compose: Python + Flask + Redis
 
 This example is based on the [Get started with Docker Compose](https://docs.docker.com/compose/gettingstarted/)
 article published on the Docker homepage.
