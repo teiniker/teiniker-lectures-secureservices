@@ -100,10 +100,10 @@ The --env flag or -e for short can be used to inject any environment variable.
 See: [DockerHub](https://hub.docker.com/r/jboss/wildfly)
 ```
 # docker container run -p 8080:8080 -p 9990:9990 jboss/wildfly
-
+```
 The **run** command downloads the needed image from DockerHub (and all its dependencies) and starts a container running
 the Wildfly application server.
-
+```
 # docker container ls -a
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
 e25fd561accc        jboss/wildfly       "/opt/jboss/wildfly/…"   2 minutes ago       Up 2 minutes        8080/tcp            gracious_bassi
