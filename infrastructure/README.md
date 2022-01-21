@@ -103,4 +103,4 @@ associated risks.
 * [Kubernetes vs. Docker: A Primer](https://containerjournal.com/topics/container-ecosystems/kubernetes-vs-docker-a-primer/)
 * [From Docker Compose to Kubernetes](https://caylent.com/from-docker-compose-to-kubernetes)
 
-*Egon Teiniker, 2021, GPL v3.0*
+*Egon Teiniker, 2021-2022, GPL v3.0*
