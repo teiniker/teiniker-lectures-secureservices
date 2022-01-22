@@ -99,7 +99,7 @@ Note that to use the `docker` command, we have to execute Maven as root:
 ```
 # vi .bashrc
 
-export M2_HOME=/opt/apache-maven-3.6.3
+export M2_HOME=/opt/apache-maven-3.8.2
 export PATH=$M2_HOME/bin:$PATH
 ```
 
