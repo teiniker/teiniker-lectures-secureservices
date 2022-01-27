@@ -97,10 +97,8 @@ associated risks.
   
  
 ## References
-* [Docker Engine](https://docs.docker.com/engine/)
-* [Overview of Docker Compose](https://docs.docker.com/compose/)
-* [Kubernetes](https://kubernetes.io/docs/home/)
-* [Kubernetes vs. Docker: A Primer](https://containerjournal.com/topics/container-ecosystems/kubernetes-vs-docker-a-primer/)
 * [From Docker Compose to Kubernetes](https://caylent.com/from-docker-compose-to-kubernetes)
+* [Kubernetes vs. Docker: A Primer](https://containerjournal.com/topics/container-ecosystems/kubernetes-vs-docker-a-primer/)
+* [Kubernetes](https://kubernetes.io/docs/home/)
 
 *Egon Teiniker, 2021-2022, GPL v3.0*
