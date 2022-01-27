@@ -90,8 +90,16 @@ There are a number of **security issues with Docker containers** that we need to
     runtime option: [Isolate containers with a user namespace](https://docs.docker.com/engine/security/userns-remap/).
     
 ## References
-* [YouTube: Docker Security Essentials](https://youtu.be/KINjI1tlo2w)
 * [Docker Homepage](https://www.docker.com/)
+
 * [Docker Security](https://github.com/docker/labs/blob/master/security/README.md)
 
-*Egon Teiniker, 2021, GPL v3.0*
+* **YouTube: Docker Security Essentials**:  
+    * [How To Secure Docker Containers](https://youtu.be/KINjI1tlo2w)
+    * [Auditing Docker Security](https://youtu.be/mQkVB6KMHCg)
+    * [Securing The Docker Host](https://youtu.be/egqSNqNISz0)
+    * [Securing The Docker Daemon](https://youtu.be/70QOBVwLyC0)
+	* [How To Secure & Harden Docker Containers](https://youtu.be/CQLtT_qeB40)
+	
+
+*Egon Teiniker, 2021-2022, GPL v3.0*
