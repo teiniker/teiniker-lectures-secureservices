@@ -2,9 +2,26 @@ Connecting Wildfly to a Database
 ---------------------------------------------------------------------
 
 To allow applications to connect to a database, we need to configure
-a datasource. Upon server startup, each datasource is prepopulated 
+a datasource. Upon server startup, each datasource is prepopulated
 with a pool of database connections. Applications acquire a database
-connection from the pool by doing a JNDI lookup. 
+connection from the pool by doing a JNDI lookup.
+
+
+How to start the database server?
+---------------------------------------------------------------------
+Start the MySQL server (in the VM, the database server is already running):
+
+$ sudo systemctl start mariadb.service
+
+Start a MySQL client (as student):
+
+$ mysql -u student -p
+Enter password: student
+MariaDB [(none)]> use testdb;
+MariaDB [testdb]> show tables;
+
+MariaDB [testdb]> source sql/createUser.sql;
+We can also copy and paste the SQL commands from the SQL file into the client terminal.
 
 
 How to install the JDBC driver?
