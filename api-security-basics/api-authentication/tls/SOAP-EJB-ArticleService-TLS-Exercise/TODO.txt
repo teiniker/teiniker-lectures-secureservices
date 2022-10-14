@@ -4,7 +4,7 @@ Exercise: Transport Layer Security (SOAP Service)
 You have given a working SOAP service. Just to verify that all settings are
 working, perform the following tasks:
 
-A) Deploy & Test the REST Service
+A) Deploy & Test the SOAP Service
     - Start the database server and import the SQL script: setup.sql
         $ sudo systemctl start mariadb.service
         $ mysql -u student -pstudent
