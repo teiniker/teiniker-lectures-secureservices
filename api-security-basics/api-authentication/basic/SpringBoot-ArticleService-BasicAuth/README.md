@@ -62,7 +62,6 @@ First, when we access the service **without authentication** we get a **401 Unau
 $ curl -i -k https://localhost:8443/articles
 
 HTTP/1.1 401 
-Set-Cookie: JSESSIONID=DDDC6152D1CD136A1718D30FCC1301AC; Path=/; Secure; HttpOnly
 WWW-Authenticate: Basic realm="Realm"
 Content-Type: application/json
 Date: Fri, 15 Oct 2021 19:06:27 GMT
@@ -105,4 +104,4 @@ $ echo 'aG9tZXI6aG9tZXI=' | base64 --decode
 * [Spring Security Basic Authentication](https://www.baeldung.com/spring-security-basic-authentication)
 * [YouTube: HTTP Basic Authentication using Spring Security](https://youtu.be/hF-iMHpl970)
 
-*Egon Teiniker, 2020 - 2021, GPL v3.0*
+*Egon Teiniker, 2020 - 2022, GPL v3.0*
