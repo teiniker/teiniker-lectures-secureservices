@@ -1,16 +1,3 @@
-How to test client permissions?
--------------------------------------------------------------------------------
-Using SoapUI we can simulate different clients:
-
-user: https://localhost:8443/REST-EJB-Authorization/v1/products
-    student	=> HTTP/1.1 200 OK
-    admin	=> HTTP/1.1 200 OK
-
-admin: http://localhost:8443/REST-EJB-Authorization/v1/users
-    student => HTTP/1.1 403 Forbidden
-    admin   => HTTP/1.1 200 OK
-
-
 How add a new user to the Wildfly configuration?
 -------------------------------------------------------------------------------
 

@@ -2,12 +2,21 @@ How to access the REST resource?
 -------------------------------------------------------------------------------
 URL: https://localhost:8443/REST-EJB-UserService-UUID/v1/users
 
-
 How to create a new user?
 -------------------------------------------------------------------------------
+
+Add the following user:
 <user>
-	<username>burns</username><password>YDYg2ELvjAWIllkU7wbECt/lr6w=</password>
+    <username>burns</username>
+    <password>YDYg2ELvjAWIllkU7wbECt/lr6w=</password>
 </user>
+
+$ curl -i -k -u student:student -X POST https://localhost:8443/REST-EJB-UserService-UUID/v1/users -H 'Content-type:application/xml' -d '<user><username>burns</username><password>YDYg2ELvjAWIllkU7wbECt/lr6w=</password></user>'
+
+Retrieve the inserted user: (insert your UUID)
+
+$ curl -i -k -u student:student https://localhost:8443/REST-EJB-UserService-UUID/v1/users/843a02da-25fb-4a28-9186-fe89c70cd683
+
 
 
 How to implement UUIDs for your service?

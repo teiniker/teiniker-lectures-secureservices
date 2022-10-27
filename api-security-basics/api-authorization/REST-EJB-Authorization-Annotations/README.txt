@@ -137,11 +137,9 @@ REST Application Configuration: web.xml
 			<web-resource-name>annotated resources</web-resource-name>
 			<url-pattern>/v1/*</url-pattern>
 		</web-resource-collection>
-		<!-- turn off TLS (for testing only) 
-		<user-data-constraint> 
+		<user-data-constraint>
 			<transport-guarantee>CONFIDENTIAL</transport-guarantee> 
 		</user-data-constraint> 
-		-->
 		<auth-constraint>
 			<role-name>*</role-name>
 		</auth-constraint>

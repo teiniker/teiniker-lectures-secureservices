@@ -32,13 +32,13 @@
 			<web-resource-name>user resources</web-resource-name>
 			<url-pattern>/v1/products/*</url-pattern>
 		</web-resource-collection>
-		<user-data-constraint>
-			<transport-guarantee>CONFIDENTIAL</transport-guarantee> 
-		</user-data-constraint> 
 		<auth-constraint>
 			<role-name>user</role-name>
 			<role-name>admin</role-name>
 		</auth-constraint>
+		<user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee> 
+		</user-data-constraint> 
 	</security-constraint>
 
 	<security-constraint>
@@ -49,12 +49,12 @@
 			<http-method>GET</http-method>
 			-->
 		</web-resource-collection>
-		<user-data-constraint>
-			<transport-guarantee>CONFIDENTIAL</transport-guarantee> 
-		</user-data-constraint> 
 		<auth-constraint>
 			<role-name>admin</role-name>
 		</auth-constraint>
+		<user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee> 
+		</user-data-constraint> 
 	</security-constraint>
 
 	<login-config>
