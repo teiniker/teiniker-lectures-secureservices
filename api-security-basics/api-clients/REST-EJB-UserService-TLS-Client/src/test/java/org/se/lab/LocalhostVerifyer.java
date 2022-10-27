@@ -8,7 +8,7 @@ import javax.net.ssl.SSLSession;
  * as host name in the URL. If the CN in the certificate is not the same as 
  * the host name, your web service client fails.
  * 
- * So, a valid solution would be create an implementation of HostnameVerifier 
+ * So, a valid solution would be to create an implementation of HostnameVerifier
  * that returns ok for localhost, regardless of the certificate.
  */
 public class LocalhostVerifyer implements HostnameVerifier
