@@ -5,15 +5,15 @@ design of microservices.
 
 * **Secure Web Services**
 
-  * [**API Security Basics**](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics)
+  * [API Security Basics](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/api-security-basics)
 
-  * [**Edge Security**](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/edge-security)
+  * [Edge Security](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/edge-security)
 
-  * [**Service to Service Communication**](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/service-to-service)  
+  * [Service to Service Communication](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/service-to-service)  
   
 * **SecDevOps**
-  * [**Static Code Analysis**](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/static-code-analysis)
-  * [**Service Infrastructure**](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/infrastructure)
+  * [Static Code Analysis](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/static-code-analysis)
+  * [Service Infrastructure](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/infrastructure)
   
 See also: 
 [Secure Coding by Example](https://github.com/teiniker/teiniker-lectures-securecoding) and 
