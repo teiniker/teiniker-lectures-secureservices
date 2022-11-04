@@ -60,6 +60,7 @@ springdoc.api-docs.path=/api-docs
 ```
 
 ## References
+* [YouTube (Java Brains): How to add Swagger to Spring Boot](https://youtu.be/gduKpLW_vdY)
 
 * [Documenting a Spring REST API Using OpenAPI 3.0](https://www.baeldung.com/spring-rest-openapi-documentation)
 * [springdoc-openapi](https://springdoc.org/)

@@ -1,4 +1,5 @@
 package org.se.lab;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
@@ -19,6 +20,8 @@ public class Article implements Serializable
     {
     }
 
+
+    @Min(value=0, message="id must be a positive number!")
     private Long id;
     public Long getId()
     {
@@ -31,7 +34,7 @@ public class Article implements Serializable
 
 
     @NotNull
-    @Size(min = 10, message = "Description must have at least 10 characters")
+    @Size(min = 10,max = 255, message = "Description must have at least 10 characters!")
     private String description;
     public String getDescription()
     {
@@ -42,6 +45,7 @@ public class Article implements Serializable
         this.description = description;
     }
 
+    @Min(value=0, message="price must be a positive number!")
     private long price;
     public long getPrice()
     {
