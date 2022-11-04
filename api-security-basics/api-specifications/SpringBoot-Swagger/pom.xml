@@ -10,7 +10,7 @@
 	</parent>
 
 	<groupId>org.se.lab</groupId>
-	<artifactId>SpringBoot-OpenAPI</artifactId>
+	<artifactId>SpringBoot-Swagger</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>

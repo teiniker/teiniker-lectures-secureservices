@@ -104,4 +104,6 @@ $ echo 'aG9tZXI6aG9tZXI=' | base64 --decode
 * [Spring Security Basic Authentication](https://www.baeldung.com/spring-security-basic-authentication)
 * [YouTube: HTTP Basic Authentication using Spring Security](https://youtu.be/hF-iMHpl970)
 
+* [HTTP Authentication: Basic and Digest Access Authentication](https://www.ietf.org/rfc/rfc2617.txt)
+
 *Egon Teiniker, 2020 - 2022, GPL v3.0*

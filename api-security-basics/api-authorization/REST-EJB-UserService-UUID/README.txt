@@ -15,7 +15,7 @@ $ curl -i -k -u student:student -X POST https://localhost:8443/REST-EJB-UserServ
 
 Retrieve the inserted user: (insert your UUID)
 
-$ curl -i -k -u student:student https://localhost:8443/REST-EJB-UserService-UUID/v1/users/843a02da-25fb-4a28-9186-fe89c70cd683
+$ curl -i -k -u student:student https://localhost:8443/REST-EJB-UserService-UUID/v1/users/509feebb-4b90-4511-a24a-67d740f5c96f
 
 
 

@@ -25,7 +25,7 @@
 * **API Specifications**
      * [Introduction](api-specifications/README.md)
      * [SOAP-EJB-MessageAPI-Validation](api-specifications/SOAP-EJB-MessageAPI-Validation)
-     * [SpringBoot-OpenAPI](api-specifications/SpringBoot-OpenAPI)
+     * [SpringBoot-OpenAPI](api-specifications/SpringBoot-Swagger)
      * [OpenAPI](api-specifications/OpenAPI)
      * [OpenAPI-Generator](api-specifications/OpenAPI-Generator)
      * [SpringBoot-BeanValidation](api-specifications/SpringBoot-ArticleService-BeanValidation)
