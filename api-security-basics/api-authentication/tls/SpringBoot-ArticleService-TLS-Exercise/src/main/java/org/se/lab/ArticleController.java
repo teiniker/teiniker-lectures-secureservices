@@ -21,25 +21,25 @@ public class ArticleController
     }
 
     @GetMapping("/articles")
-    List<Article> all()
+    List<Article> findAll()
     {
         return repository.findAll();
     }
 
     @GetMapping("/articles/{id}")
-    Article one(@PathVariable Long id)
+    Article findById(@PathVariable Long id)
     {
         return repository.findById(id).orElseThrow(() -> new ArticleNotFoundException(id));
     }
 
     @PostMapping("/articles")
-    Article newArticle(@RequestBody Article newArticle)
+    Article insert(@RequestBody Article newArticle)
     {
         return repository.save(newArticle);
     }
 
     @PutMapping("/articles/{id}")
-    Article replaceEmployee(@RequestBody Article newArticle, @PathVariable Long id)
+    Article update(@RequestBody Article newArticle, @PathVariable Long id)
     {
         return repository.findById(id)
                 .map(employee -> {
@@ -54,7 +54,7 @@ public class ArticleController
     }
 
     @DeleteMapping("/articles/{id}")
-    void deleteEmployee(@PathVariable Long id)
+    void delete(@PathVariable Long id)
     {
         repository.deleteById(id);
     }
