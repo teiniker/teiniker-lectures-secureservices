@@ -188,6 +188,9 @@ As we can see, the request is logged by the API Gateway before it is handed on t
 ## References
 * [Routing and Filtering](https://spring.io/guides/gs/routing-and-filtering/)
 
+* [Spring REST with a Zuul Proxy](https://www.baeldung.com/spring-rest-with-zuul-proxy)
+* [Exploring the New Spring Cloud Gateway](https://www.baeldung.com/spring-cloud-gateway)
+
 * Prabath Siriwardena, Nuwan Dias. **Microservices Security in Action**. Manning, 2020
 
-*Egon Teiniker, 2020 - 2021, GPL v3.0*
+*Egon Teiniker, 2016 - 2022, GPL v3.0*
