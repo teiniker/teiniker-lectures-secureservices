@@ -22,13 +22,8 @@
    * [REST-EJB-UserService-TLS-Client](api-clients/REST-EJB-UserService-TLS-Client)
    * [REST-EJB-UserService-BasicAuth-Client](api-clients/REST-EJB-UserService-BasicAuth-Client) 
 
-* **API Specifications**
-     * [Introduction](api-bestpractices/README.md)
-     * [SOAP-EJB-MessageAPI-Validation](api-specifications/SOAP-EJB-MessageAPI-Validation)
-     * [SpringBoot-OpenAPI](api-specifications/SpringBoot-Swagger)
-     * [OpenAPI](api-specifications/OpenAPI)
-     * [OpenAPI-Generator](api-specifications/OpenAPI-Generator)
-     * [SpringBoot-BeanValidation](api-specifications/SpringBoot-ArticleService-BeanValidation)
-     * [SpringBoot-HATEOAS](api-specifications/SpringBoot-HATEOAS) 
+* [API Design Best Practices](api-bestpractices)
+
+* [API Specifications](api-bestpractices)   
 
 *Egon Teiniker, 2020 - 2022, GPL v3.0*
