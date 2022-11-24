@@ -10,7 +10,7 @@
 	</parent>
 
 	<groupId>org.se.lab</groupId>
-	<artifactId>SpringBoot-ArticleService-BeanValidation</artifactId>
+	<artifactId>SpringBoot-BeanValidation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SpringBoot-ArticleService</name>
 

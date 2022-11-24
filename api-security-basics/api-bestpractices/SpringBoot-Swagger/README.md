@@ -65,4 +65,4 @@ springdoc.api-docs.path=/api-docs
 * [Documenting a Spring REST API Using OpenAPI 3.0](https://www.baeldung.com/spring-rest-openapi-documentation)
 * [springdoc-openapi](https://springdoc.org/)
 
-*Egon Teiniker, 2020-2021, GPL v3.0*
+*Egon Teiniker, 2016-2022, GPL v3.0*

@@ -252,4 +252,4 @@ More details can be found in the [OpenAPI Specification](https://swagger.io/spec
 * [Authentication and Authorization](https://swagger.io/docs/specification/authentication/)
 * [OpenAPI Specification](https://swagger.io/specification/)
 
-*Egon Teiniker, 2020-2021, GPL v3.0*
+*Egon Teiniker, 2016-2022, GPL v3.0*

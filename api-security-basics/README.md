@@ -23,7 +23,7 @@
    * [REST-EJB-UserService-BasicAuth-Client](api-clients/REST-EJB-UserService-BasicAuth-Client) 
 
 * **API Specifications**
-     * [Introduction](api-specifications/README.md)
+     * [Introduction](api-bestpractices/README.md)
      * [SOAP-EJB-MessageAPI-Validation](api-specifications/SOAP-EJB-MessageAPI-Validation)
      * [SpringBoot-OpenAPI](api-specifications/SpringBoot-Swagger)
      * [OpenAPI](api-specifications/OpenAPI)

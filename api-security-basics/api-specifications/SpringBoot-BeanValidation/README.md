@@ -113,6 +113,8 @@ Annotations defined in the JSR 303 (Bean Validation) are:
 * **@Email**: Validates that the annotated property is a valid email address.
 * **@Pattern(regexp="", message="")**: The annotated CharSequence must match the specified regular expression. The regular expression follows the Java regular expression conventions.
 
+
+
 ## Access the OpenAPI Specification
 
 Download the formal specification of this REST API:
@@ -148,4 +150,4 @@ components:
 * [Bean Validation in Spring Boot](https://springframework.guru/bean-validation-in-spring-boot/)
 * [Bean Validation 2.0 (JSR 380)](https://beanvalidation.org/2.0-jsr380/)
 
-*Egon Teiniker, 2020-2022, GPL v3.0*
+*Egon Teiniker, 2016-2022, GPL v3.0*
