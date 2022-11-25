@@ -26,7 +26,7 @@ A WSDL document contains the following elements:
    * targetNamespace=“…” xmlns:tns=“…”
 
 * **`<types>`**\
-   The types element serves as a container for defining any data types that are not described by the 
+   The types element serves as a container for **defining any data types** that are not described by the 
    XML schema build-in types: complex types and custom simple types.
 
 * **`<import>`**
