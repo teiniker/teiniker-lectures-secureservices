@@ -2,9 +2,11 @@
 
 ## Setup
 
-Download the openapi-generator-cli-5.2.1.jar file from the Maven Repository and store it in a local directory.
+Download the openapi-generator-cli.jar file from the Maven Repository and store it in a local directory.
 ```
-$ java -jar generator/openapi-generator-cli-5.2.1.jar help
+$ wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/6.2.1/openapi-generator-cli-6.2.1.jar -O openapi-generator-cli.jar
+
+$ java -jar generator/openapi-generator-cli.jar help
 usage: openapi-generator-cli <command> [<args>]
 
 The most commonly used openapi-generator-cli commands are:
