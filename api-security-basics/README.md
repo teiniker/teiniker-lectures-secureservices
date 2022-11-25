@@ -24,6 +24,6 @@
 
 * [API Design Best Practices](api-bestpractices)
 
-* [API Specifications](api-bestpractices)   
+* [API Specifications](api-specifications)   
 
 *Egon Teiniker, 2016 - 2022, GPL v3.0*
