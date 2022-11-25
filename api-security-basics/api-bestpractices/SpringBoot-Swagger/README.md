@@ -46,6 +46,16 @@ To sort the API paths in order of their HTTP methods, we can add:
 springdoc.swagger-ui.operationsSorter=method
 ```
 
+## Generate Documentation via Annotations
+
+We can add some description to our API using some of **OpenAPI-specific annotations**:
+
+* **@Operation**: The annotation may be used to define a resource method as an OpenAPI Operation, and/or to define additional properties for the Operation.
+
+* **@ApiResponse**: The annotation may be used at method level or as field of Operation to define one or more responses of the Operation.
+
+* **@ApiResponses**: Container for repeatable ApiResponse annotation.
+
 
 ## OpenAPI Specification
 The **OpenAPI** descriptions will be available at the path `/v3/api-docs` by default:
@@ -64,5 +74,7 @@ springdoc.api-docs.path=/api-docs
 
 * [Documenting a Spring REST API Using OpenAPI 3.0](https://www.baeldung.com/spring-rest-openapi-documentation)
 * [springdoc-openapi](https://springdoc.org/)
+
+* [swagger-annotations API](https://javadoc.io/doc/io.swagger.core.v3/swagger-annotations/latest/index.html)
 
 *Egon Teiniker, 2016-2022, GPL v3.0*
