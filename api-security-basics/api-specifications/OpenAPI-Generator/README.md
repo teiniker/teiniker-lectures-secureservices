@@ -22,27 +22,37 @@ The most commonly used openapi-generator-cli commands are:
 ## Generate the Service Implementation
 
 ```
-$ java -jar generator/openapi-generator-cli-5.2.1.jar generate -g spring --library spring-boot -i src/main/resources/api.yaml -o target -p groupId=org.se.lab -p artifactId=REST-ArticleService -p artifactVersion=1.0.0-SNAPSHOT
+$ java -jar openapi-generator-cli.jar generate -g spring --library spring-boot -i ArticleService.yaml -o target -p groupId=org.se.lab -p artifactId=ArticleService -p artifactVersion=1.0.0-SNAPSHOT
 
-$ tree target/
-target/
-└── main
-    ├── java
-    │   └── org
-    │       └── openapitools
-    │           ├── api
-    │           │   ├── ApiUtil.java
-    │           │   ├── ArticlesApiController.java
-    │           │   └── ArticlesApi.java
-    │           ├── configuration
-    │           │   ├── HomeController.java
-    │           │   └── OpenAPIDocumentationConfig.java
-    │           ├── model
-    │           │   └── Article.java
-    │           ├── OpenAPI2SpringBoot.java
-    │           └── RFC3339DateFormat.java
-    └── resources
-        └── application.properties
+$ tree 
+├── ArticleService.yaml
+└── target
+    ├── pom.xml
+    ├── README.md
+    └── src
+        ├── main
+        │   ├── java
+        │   │   └── org
+        │   │       └── openapitools
+        │   │           ├── api
+        │   │           │   ├── ApiUtil.java
+        │   │           │   ├── ArticlesApiController.java
+        │   │           │   └── ArticlesApi.java
+        │   │           ├── configuration
+        │   │           │   ├── HomeController.java
+        │   │           │   └── SpringDocConfiguration.java
+        │   │           ├── model
+        │   │           │   └── Article.java
+        │   │           ├── OpenApiGeneratorApplication.java
+        │   │           └── RFC3339DateFormat.java
+        │   └── resources
+        │       ├── application.properties
+        │       └── openapi.yaml
+        └── test
+            └── java
+                └── org
+                    └── openapitools
+                        └── OpenApiGeneratorApplicationTests.java
 ```
 
 Compile the generated code
@@ -53,7 +63,7 @@ $ mvn spring-boot:run
 
 The API documentation will be available at:
 ```
-http://localhost:8443/swagger-ui.html#/article-controller
+http://localhost:8080/swagger-ui.html
 ```
 
 Because this only the skeleton of a service, there is no real functionality.
@@ -137,4 +147,4 @@ Thus, the constraints are validated at runtime.
   * [OpenAPI Specification](https://spec.openapis.org/oas/v3.1.0)
     (4.4 Data Types; 4.8.27 Security Scheme Object)
 
-*Egon Teiniker, 2020-2021, GPL v3.0*
+*Egon Teiniker, 2016-2022, GPL v3.0*
