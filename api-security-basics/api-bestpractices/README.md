@@ -154,7 +154,7 @@ REST allows clients to dynamically navigate to the appropriate resource by trave
 page and click on any link**.
 The REST client makes use of these links to navigate.
 
-_Example_: [SpringBoot HATEOAS](../SpringBoot-HATEOAS)
+_Example_: [SpringBoot HATEOAS](SpringBoot-HATEOAS)
 
 
 ## Always Version APIs
@@ -196,7 +196,7 @@ It makes the developer's integration job easier.
 A **change log or a release log** should list all of the impacted libraries, and if some APIs are
 deprecated, then replacement APIs or workarounds should be elaborated on inside the documentation.
 
-_Example_: [SpringBoot Swagger](../SpringBoot-Swagger)
+_Example_: [SpringBoot Swagger](SpringBoot-Swagger)
 
 
 ## References
