@@ -29,3 +29,22 @@ B) Bean Validation
         title: not null, 10 <= length <= 255
         isbn: Regular Expression for the following format: 978-1492034025 (only digits)
 
+C) Swagger 
+    Add Swagger to the project, so that you can access the documentation
+    via your Browser:
+        https://localhost:8443/swagger-ui.html
+    
+    Check your constraints on the class Book 
+    Book{
+        id	string
+        author*	string
+        maxLength: 255
+        minLength: 5
+        title*	string
+        maxLength: 255
+        minLength: 10
+        isbn	string
+        pattern: ^[0-9]{3}-[0-9]{10}$
+    }    
+
+Tip: Also add the needed dependencies in pom.xml 
