@@ -1,6 +1,6 @@
 # API Security Basics 
 
-* **Authentication**
+* Authentication
      * Transport Layer Security 
          * [REST-EJB-UserService-TLS](api-authentication/tls/REST-EJB-UserService-TLS)
          * [SOAP-EJB-ArticleService-TLS](api-authentication/tls/SOAP-EJB-ArticleService-TLS) 
@@ -9,7 +9,7 @@
          * [REST-EJB-UserService-BasicAuth](api-authentication/basic/REST-EJB-UserService-BasicAuth)
          * [SpringBoot-ArticleService-BasicAuth](api-authentication/basic/SpringBoot-ArticleService-BasicAuth)
 
-* **Authorization**
+* Authorization
    * Service-Level Authorization
        * [REST-EJB-Authorization](api-authorization/REST-EJB-Authorization)
        * [SpringBoot-ArticleService-Authorization](api-authorization/SpringBoot-ArticleService-Authorization) 
@@ -18,7 +18,7 @@
    * Object-Level Authorization
        * [REST-EJB-UserService-UUID](api-authorization/REST-EJB-UserService-UUID)  
 
-* **API Clients** 
+* API Clients 
    * [REST-EJB-UserService-TLS-Client](api-clients/REST-EJB-UserService-TLS-Client)
    * [REST-EJB-UserService-BasicAuth-Client](api-clients/REST-EJB-UserService-BasicAuth-Client) 
 
@@ -26,4 +26,4 @@
 
 * [API Specifications](api-bestpractices)   
 
-*Egon Teiniker, 2020 - 2022, GPL v3.0*
+*Egon Teiniker, 2016 - 2022, GPL v3.0*
