@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.se.lab</groupId>
-    <artifactId>SpringBoot-APIGateway</artifactId>
+    <artifactId>SpringBoot-APIGateway-Zool</artifactId>
     <version>1.0</version>
 
     <parent>

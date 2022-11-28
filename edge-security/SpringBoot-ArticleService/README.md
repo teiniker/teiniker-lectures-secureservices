@@ -8,7 +8,7 @@ $ mvn spring-boot:run
 ```
 
 ```
-$ curl -i http://localhost:8080/articles
+$ curl -i http://localhost:9090/articles
 
 ```
 
