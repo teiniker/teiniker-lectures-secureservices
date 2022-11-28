@@ -247,7 +247,7 @@ More details can be found in the [OpenAPI Specification](https://swagger.io/spec
 
 
 ## References
-
+* [YouTube: What is OpenAPI?](https://youtu.be/InE6Odx--xo)
 * [OpenAPI 3.0 Tutorial](https://support.smartbear.com/swaggerhub/docs/tutorials/openapi-3-tutorial.html)
 * [Authentication and Authorization](https://swagger.io/docs/specification/authentication/)
 * [OpenAPI Specification](https://swagger.io/specification/)

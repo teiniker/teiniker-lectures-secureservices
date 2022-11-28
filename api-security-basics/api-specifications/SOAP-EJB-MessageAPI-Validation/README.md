@@ -16,7 +16,7 @@ WSDL is a complex interface definition language because it is not tied to any sp
 
 A WSDL document contains the following elements:
 
-* **<definitions>**\
+* **`<definitions>`**\
    This is is the root element of a WSDL document, and encapsulates the entire document and defines 
    the document’s name.
    Contains several XML namespace declarations:
@@ -25,11 +25,11 @@ A WSDL document contains the following elements:
    * xmlns:xsd=“http://www.w3.org/2001/XMLSchema”
    * targetNamespace=“…” xmlns:tns=“…”
 
-* **<types>**\
-   The types element serves as a container for defining any data types that are not described by the 
+* **`<types>`**\
+   The types element serves as a container for **defining any data types** that are not described by the 
    XML schema build-in types: complex types and custom simple types.
 
-* **<import>**\
+* **`<import>`**
    * Import elements make available in the present WSDL document the definitions from a specified namespace 
       in another WSDL document.
 
@@ -37,7 +37,7 @@ A WSDL document contains the following elements:
       * **namespace**: must match the targetNamespace declared by the WSDL document being imported.
       * **location**: must point to an actual WSDL document.
 
-* **<message>**\
+* **`<message>`**
    * A message element can describe the payload of outgoing or incoming messages.
    * A message element can also describe the contents of SOAP header blocks and fault elements.
    * The way to define a message element depends on whether we use RPC-style or document-style:
@@ -45,25 +45,25 @@ A WSDL document contains the following elements:
       (call parameters, return values and faults).
       * **Document-style**: the message definition refers to a top-level element in the types definition. 
 
-* **<portType>**\
+* **`<portType>`**
    * A portType defines the abstract interface of a web service which is implemented by the **binding** 
       and **service** elements.
    * A portType may have one or more **operation** elements, each of which defines an RPC- or document-style web service method. 
 
-* **<operation>**\
+* **`<operation>`**
    * Each operation element uses one or more message definitions to define its input, output and faults.
       * An **input message** represents the payload sent to the web service.
       * An **output message** represents the payload sent to the client.
       * An operation may include zero or more **fault messages**, each of which describes a different 
          kind of error.
 
-* **<binding>**\
+* **`<binding>`**
    * The binding element maps an abstract **portType** to a set of concrete protocols such as SOAP and HTTP, 
       messaging styles (RPC or Document), and encoding styles (Literal or SOAP encoding).
    * The children of the binding element (**operation**, **input**, **output**) map directly to the corresponding 
       children of the portType element.
 
-* **<service>**\
+* **`<service>`**
    * The service element contains one or more **port** elements, each of which represents a different 
       web service.
    * The port element assigns the URL to a specific **binding**.  
