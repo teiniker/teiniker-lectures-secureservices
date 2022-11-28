@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.se.lab</groupId>
-	<artifactId>SpringBool-API-Gateway</artifactId>
+	<artifactId>SpringBoot-API-Gateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<parent>
