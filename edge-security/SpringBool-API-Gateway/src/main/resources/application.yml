@@ -1,0 +1,11 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: article_module
+          uri: http://localhost:9090/
+          predicates:
+            - Path=/articles/**
