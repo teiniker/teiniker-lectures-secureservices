@@ -1,13 +1,50 @@
 # Edge Security 
 
-* **API Gateway**
-   * [SpringBoot-APIGateway](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/edge-security/SpringBoot-APIGateway)
-    
-* **OAuth2.0**
-   * [SpringBoot-OAuth2](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/edge-security/SpringBoot-OAuth2)
-   * [APIGateway-OAuth2](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/edge-security/APIGateway-OAuth2)
+## API Gateway
+The API gateway is an important piece of infrastructure in our microservice architecture,
+since it plays a critical role that helps us clearly separate the functional requirements
+from nonfunctional ones.
 
-* **Throttling**
-   * [APIGateway-Throttling](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/edge-security/APIGateway-Throttling) 
+Microservices are behind a set of APIs that is exposed to the outside world via an API
+gateway.
+The API gateway is the entry point to the microservice deployment, which screens all
+incoming messages for security and other QoS features.
+
+One key aspect of microservices best practice is the **single responsibility principle (SRP)**.
+Each microservice should be performing only one particular function.
+An API gateway helps in **decoupling security from a microservice**.
+
+_Examples_:
+   * [SpringBoot-APIGateway-Zool](SpringBoot-APIGateway-Zool)
+   * [SpringBoot-APIGateway](SpringBoot-APIGateway)
+   * [SpringBoot-APIGateway-Rewriting](SpringBoot-APIGateway-Rewriting)
+
+
+## Authentication on the Edge
+
+**OAuth 2.0** is a mechanism for solving the problems related to providing our
+username and password to an application that we don't trust to access our data.
+
+### Spring Security OAuth 
+**End of Life Notice** - 
+The Spring Security OAuth project has reached end of life and is no longer actively maintained by VMware, Inc.
+This project has been replaced by the OAuth2 support provided by Spring Security and Spring Authorization Server.
+
+_Examples_: Use **JDK 11** (JDK 17 will not work)
+* [SpringBoot-OAuth2](SpringBoot-OAuth2)
+* [APIGateway-OAuth2](APIGateway-OAuth2)
+    
+
+### Spring Authorization Server
+ This is a framework that provides implementations of the OAuth 2.1 and OpenID Connect 1.0
+ specifications and other related specifications. It is built on top of Spring Security to provide a secure,
+ light-weight, and customizable foundation for building OpenID Connect 1.0 Identity Providers and OAuth2 Authorization
+ Server products.
+ Spring Authorization Server requires a **Java 17** or higher Runtime Environment.
+
+## References
+* [Spring Security OAuth](https://spring.io/projects/spring-security-oauth)
+* [Spring Authorization Server](https://spring.io/projects/spring-authorization-server)
+* Prabath Siriwardena, Nuwan Dias. **Microservices Security in Action**. Manning, 2020
 
 *Egon Teiniker, 2016-2022, GPL v3.0*

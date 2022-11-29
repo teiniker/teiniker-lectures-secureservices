@@ -1,24 +1,9 @@
-# API Gateway
+# Zool API Gateway
 
-The API gateway is an important piece of infrastructure in our microservice architecture,
-since it plays a critical role that helps us clearly separate the functional requirements 
-from nonfunctional ones.
-
-Microservices are behind a set of APIs that is exposed to the outside world via an API 
-gateway.
-The API gateway is the entry point to the microservice deployment, which screens all 
-incoming messages for security and other QoS features.
-
-One key aspect of microservices best practice is the 
-**single responsibility principle (SRP)**.
-Each microservice should be performing only one particular function.
-An API gateway helps in **decoupling security from a microservice**.
-
-## API Gateway Setup
 We use **Zuul** which is an open-source proxy server build by Netflix, acting as the entry point for
 all of the company's backend streaming applications.
 
-### Service and API Gateway Setup
+## Service and API Gateway Setup
 First, we start the `ArticlesService` and then the API gateway.
 
 ```

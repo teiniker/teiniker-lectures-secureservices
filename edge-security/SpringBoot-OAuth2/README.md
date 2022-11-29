@@ -5,11 +5,11 @@ You can find all examples of this book on [GitHub](https://github.com/microservi
 This document describes the main steps needed to make the examples run and discusses the output 
 of the experiments.
 
-The following examples are based on the **Spring Boot** framework and can be build using **Maven**.
+The following examples are based on the **Spring Boot** framework and can be build using **Maven**. 
 
 Note that **all samples use HTTP** (not HTTPS) endpoints to make it possible to inspect messages being 
 passed on the network.
-**In production systems, HTTPS should be used for any andpoint.**
+**In production systems, HTTPS should be used for any endpoint.**
 
 ## Setting Up an OAuth 2.0 Authorization Server
 
