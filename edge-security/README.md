@@ -16,8 +16,8 @@ An API gateway helps in **decoupling security from a microservice**.
 
 _Examples_:
    * [SpringBoot-APIGateway-Zool](SpringBoot-APIGateway-Zool)
-   * [SpringBoot-APIGateway](SpringBoot-APIGateway)
-   * [SpringBoot-APIGateway-Rewriting](SpringBoot-APIGateway-Rewriting)
+   * [SpringBoot-APIGateway](SpringBoot-API-Gateway)
+   * [SpringBoot-APIGateway-Rewriting](SpringBoot-API-Gateway-Rewriting)
 
 
 ## Authentication on the Edge
