@@ -14,8 +14,24 @@ One key aspect of microservices best practice is the **single responsibility pri
 Each microservice should be performing only one particular function.
 An API gateway helps in **decoupling security from a microservice**.
 
+### Zool Gateway
+**Zuul is a blocking API Gateway**.
+A blocking gateway makes use of as many threads as the number of incoming requests.
+So this approach is more resource intensive. If no threads are available to process incoming
+request then the request has to wait in queue.
+
 _Examples_:
    * [SpringBoot-APIGateway-Zool](SpringBoot-APIGateway-Zool)
+
+
+### Spring Cloud Gateway
+
+**Spring Cloud Gateway is a non-blocking API gateway**. 
+When using a non-blocking API gateway, a thread is always available to process the incoming request. 
+These request are then processed asynchronously in the background and once completed the response is 
+returned. So no incoming request never gets blocked when using Spring Cloud Gateway.
+
+_Examples_:
    * [SpringBoot-APIGateway](SpringBoot-API-Gateway)
    * [SpringBoot-APIGateway-Rewriting](SpringBoot-API-Gateway-Rewriting)
 
