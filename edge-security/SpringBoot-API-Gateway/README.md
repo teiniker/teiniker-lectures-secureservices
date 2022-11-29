@@ -33,7 +33,7 @@ $ curl -v http://localhost:8080/articles/
 
 
 ## References
-
+* [YouTube: Use Spring Cloud Gateway to drive traffic to your APIs](https://youtu.be/wYk0JrNdb8g)
 * [Spring Cloud Tutorial - Spring Cloud Gateway Hello World Example](https://www.javainuse.com/spring/cloud-gateway)
 * [Spring Cloud Gateway](https://cloud.spring.io/spring-cloud-gateway/reference/html)
 
