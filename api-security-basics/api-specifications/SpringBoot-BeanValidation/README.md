@@ -63,7 +63,7 @@ To use the Bean Validation feature in SpringBoot, we need to add the following d
     </dependency>
 ```
 
-Now we can **annotate beans with contraints** which are used as **Data Transfer Objects (DTO)**:
+Now we can **annotate beans with constraints** which are used as **Data Transfer Objects (DTO)**:
 
 ```Java
     @NotNull
@@ -71,7 +71,7 @@ Now we can **annotate beans with contraints** which are used as **Data Transfer 
     private String description;
 ```
 
-These constraints will validated if we use them as parameters in the controller.
+These constraints will be validated if we use them as parameters in the controller.
 ```Java
    @PostMapping("/articles")
     ResponseEntity<Article> newArticle(@Valid @RequestBody Article newArticle)
