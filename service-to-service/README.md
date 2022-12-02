@@ -22,4 +22,4 @@ There are three common ways to secure communications among services in a microse
 ## References
 Prabath Siriwardena, Nuwan Dias. **Microservices Security in Action**. Manning, 2020
 
-*Egon Teiniker, 2020-2022, GPL v3.0*
+*Egon Teiniker, 2016-2022, GPL v3.0*
