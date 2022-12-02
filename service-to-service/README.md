@@ -1,4 +1,4 @@
-# Securing Communication Between te API Gateway and the Microservice
+# Securing Communication Between Microservices and the API Gateway 
 
 We have to consider what happens if someone accesses the microservice directly,
 **bypassing the API gateway** layer.
