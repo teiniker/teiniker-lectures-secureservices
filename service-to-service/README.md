@@ -5,10 +5,10 @@
 gRPC is a high performance, open source RPC framework which is based on a client-server model of **remote procedure calls**. A client application can directly call methods on a server application as if it was a local object.
 * [Overview](gRPC)
 * Protocol Buffers
-  * Example: [Protocol Buffers](gRPC/gRPC-ProtocolBuffers)
+  * _Example_: [Protocol Buffers](gRPC/gRPC-ProtocolBuffers)
 * gRPC Services
-  * Example: [gRPC-ClientServer](gRPC/gRPC-ClientServer)
-  * Exercise: [gRPC-ArticleService](gRPC/gRPC-ArticleService-Exercise) ([Model Solution](gRPC/gRPC-ArticleService))
+  * _Example_: [gRPC-ClientServer](gRPC/gRPC-ClientServer)
+  * _Exercise_: [gRPC-ArticleService](gRPC/gRPC-ArticleService-Exercise) ([Model Solution](gRPC/gRPC-ArticleService))
 
 
 ## Securing the Communication
