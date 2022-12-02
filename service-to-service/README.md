@@ -3,22 +3,23 @@
 We have to consider what happens if someone accesses the microservice directly,
 **bypassing the API gateway** layer.
 
-First and formost, we need to make sure that our microservice isn't directly
-exposed to external clients. We need to make sure that it sits behind an organisation's
-**firewall**.
-No external client get access to our microservice unless they come in via the API gateway.
+There are three common ways to secure communications among services in a microservices deployment:
+* **Trust the Network**: No security is enforced in service-to-service communication. 
+  This model relies on network-level security which must guarantee that no attacker can intercept 
+  communications among services.  
 
-We need to build a mechanism in which the microservice rejects any request comming from
-clients other than the API gateway.
-The standard way is to enable **mTLS** between the API gateway and the microservice.
+* **Mutual TLS**: Each microservice in the deployment has to carry a public/private key pair and uses 
+  that key pair to authenticate to the receiver microservice via mTLS. 
+  Challenges in mTLS include bootstrapping trust and key/certificates management.\
+  _Example_: [Using OpenSSL](mTLS/OpenSSL)\
+  _Exercise_: [Mutual Transport Layer Security](mTLS/SpringBoot-ArticleService-mTLS-Exercise) ([Model Solution:](mTLS/SpringBoot-ArticleService-mTLS))
 
-Note that **mTLS verification happens at the transport layer** of the microservice and doesn't
-propagate up to the application layer.
-Developers don't have to write any application logic to handle the client verification,
-which is done by the underlying transport-layer implementation.
+* **JSON Web Tokens**: JWT works at the application layer and is a container that carry a set of claims 
+  (end-user attributes) and is signed by the issuer.
+
 
 
 ## References
 Prabath Siriwardena, Nuwan Dias. **Microservices Security in Action**. Manning, 2020
 
-*Egon Teiniker, 2020-2021, GPL v3.0*
+*Egon Teiniker, 2020-2022, GPL v3.0*
