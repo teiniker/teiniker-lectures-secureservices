@@ -1,4 +1,4 @@
-# Zool API Gateway
+# Zuul API Gateway
 
 We use **Zuul** which is an open-source proxy server build by Netflix, acting as the entry point for
 all of the company's backend streaming applications.
