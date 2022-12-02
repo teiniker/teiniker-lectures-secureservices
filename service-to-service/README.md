@@ -1,5 +1,17 @@
 # Securing Communication Between Microservices and the API Gateway 
 
+## Microservices using gRPC 
+
+gRPC is a high performance, open source RPC framework which is based on a client-server model of **remote procedure calls**. A client application can directly call methods on a server application as if it was a local object.
+* [Overview](gRPC)
+* Protocol Buffers
+  * Example: [Protocol Buffers](gRPC/gRPC-ProtocolBuffers)
+* gRPC Services
+  * Example: [gRPC-ClientServer](gRPC/gRPC-ClientServer)
+  * Exercise: [gRPC-ArticleService](gRPC/gRPC-ArticleService-Exercise) ([Model Solution](gRPC/gRPC-ArticleService))
+
+
+## Securing the Communication
 We have to consider what happens if someone accesses the microservice directly,
 **bypassing the API gateway** layer.
 
