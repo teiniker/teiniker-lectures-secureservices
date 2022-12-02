@@ -286,21 +286,7 @@ Date: Thu, 19 Nov 2020 14:27:31 GMT
 But when we try to use a **POST request**, the response says that the token's scope for
 this particular operation is insufficient and that the required scope is `write`:
 ```
-$ curl -i http://localhost:8080/orders -H 'Content-Type: application/json' -H 'Authorization: Bearer 8a54259a-df5e-486f-a901-ecd475e6e873' --data-binary @- <<EOF
-{
-"items":[
-    {
-        "itemCode":"IT001",
-        "quantity":3
-    },
-    {
-        "itemCode":"IT004",
-        "quantity":1
-    }
-    ],
-    "shippingAddress":"No 4, CA, USA"
-}
-EOF
+$ curl -v http://localhost:8080/orders -H 'Content-Type: application/json' -H 'Authorization: Bearer 8a54259a-df5e-486f-a901-ecd475e6e873' -d '{"items":[{"itemCode":"IT001","quantity":3},{"itemCode":"IT004","quantity":1}],"shippingAddress":"No 4, CA, USA"}'
 
 HTTP/1.1 403
 Cache-Control: no-store
