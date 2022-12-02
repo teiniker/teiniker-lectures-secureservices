@@ -1,4 +1,4 @@
-# OpenSSL
+# Using OpenSSL
 
 The **openssl** program is a command line tool for using the various cryptography functions of OpenSSL's crypto library from the shell.
 It can be used for:
