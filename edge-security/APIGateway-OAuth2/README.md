@@ -21,21 +21,7 @@ $ mvn spring-boot:run
 
 We can send a **HTTP POST request**:
 ```
-$ curl -v http://localhost:8080/orders -H 'Content-Type: application/json' --data-binary @- <<EOF
-{
-"items":[
-    {
-        "itemCode":"IT001",
-        "quantity":3
-    },
-    {
-        "itemCode":"IT004",
-        "quantity":1
-    }
-    ],
-    "shippingAddress":"No 4, CA, USA"
-}
-EOF
+$ curl -v http://localhost:8080/orders -H 'Content-Type: application/json' -d '{"items":[{"itemCode":"IT001","quantity":3},{"itemCode":"IT004","quantity":1}],"shippingAddress":"No 4, CA, USA"}'
 
 HTTP/1.1 201
 Content-Type: application/json
