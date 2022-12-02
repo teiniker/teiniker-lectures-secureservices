@@ -109,21 +109,7 @@ $ mvn spring-boot:run
 If we run the same curl command as we used earlier, we get an error message 
 (unauthorized) saying that the request was unsuccessful.
 ```
-$ curl -v http://localhost:8080/orders -H 'Content-Type: application/json' --data-binary @- <<EOF
-{
-"items":[
-    {
-        "itemCode":"IT001",
-        "quantity":3
-    },
-    {
-        "itemCode":"IT004",
-        "quantity":1
-    }
-    ],
-    "shippingAddress":"No 4, CA, USA"
-}
-EOF
+$ curl -v http://localhost:8080/orders -H 'Content-Type: application/json' -d '{"items":[{"itemCode":"IT001","quantity":3},{"itemCode":"IT004","quantity":1}],"shippingAddress":"No 4, CA, USA"}'
 
 HTTP/1.1 401
 Cache-Control: no-store
@@ -167,21 +153,7 @@ If the request is successful, we get an access token in response.
 We need to send the token as an HTTP header named Authorization, and the header value 
 needs to be prefixed by the string Bearer:
 ```
-$ curl -v http://localhost:8080/orders -H 'Content-Type: application/json' -H 'Authorization: Bearer 8d2e469c-e9a6-4ae4-94b2-5f9c3595c7a3' --data-binary @- <<EOF
-{
-"items":[
-    {
-        "itemCode":"IT001",
-        "quantity":3
-    },
-    {
-        "itemCode":"IT004",
-        "quantity":1
-    }
-    ],
-    "shippingAddress":"No 4, CA, USA"
-}
-EOF
+$ curl -v http://localhost:8080/orders -H 'Content-Type: application/json' -H 'Authorization: Bearer 8d2e469c-e9a6-4ae4-94b2-5f9c3595c7a3' -d '{"items":[{"itemCode":"IT001","quantity":3},{"itemCode":"IT004","quantity":1}],"shippingAddress":"No 4, CA, USA"}'
 
 POST /orders HTTP/1.1
 Host: localhost:8080
