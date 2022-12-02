@@ -32,7 +32,7 @@ A blocking gateway makes use of as many threads as the number of incoming reques
 So this approach is more resource intensive. If no threads are available to process incoming
 request then the request has to wait in queue.
 
-_Examples_: Use **JDK 11** (JDK 17 will not work)
+_Examples_: 
    * [SpringBoot-APIGateway-Zuul](SpringBoot-APIGateway-Zuul)
 
 
