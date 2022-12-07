@@ -1,5 +1,6 @@
 # Securing Communication Between Microservices and the API Gateway 
 
+## Securing the Communication
 We have to consider what happens if someone accesses the microservice directly,
 **bypassing the API gateway** layer.
 
@@ -12,11 +13,21 @@ There are three common ways to secure communications among services in a microse
   that key pair to authenticate to the receiver microservice via mTLS. 
   Challenges in mTLS include bootstrapping trust and key/certificates management.\
   _Example_: [Using OpenSSL](mTLS/OpenSSL)\
-  _Exercise_: [Mutual Transport Layer Security](mTLS/SpringBoot-ArticleService-mTLS-Exercise) ([Model Solution:](mTLS/SpringBoot-ArticleService-mTLS))
+  _Exercise_: [Mutual Transport Layer Security](mTLS/SpringBoot-ArticleService-mTLS-Exercise) ([Model Solution](mTLS/SpringBoot-ArticleService-mTLS))
 
 * **JSON Web Tokens**: JWT works at the application layer and is a container that carry a set of claims 
   (end-user attributes) and is signed by the issuer.
 
+
+## Microservices using gRPC 
+
+gRPC is a high performance, open source RPC framework which is based on a client-server model of **remote procedure calls**. A client application can directly call methods on a server application as if it was a local object.
+* [Overview](gRPC)
+* Protocol Buffers
+  * _Example_: [Protocol Buffers](gRPC/gRPC-ProtocolBuffers)
+* gRPC Services
+  * _Example_: [gRPC-ClientServer](gRPC/gRPC-ClientServer)
+  * _Exercise_: [gRPC-ArticleService](gRPC/gRPC-ArticleService-Exercise) ([Model Solution](gRPC/gRPC-ArticleService))
 
 
 ## References

@@ -26,14 +26,14 @@ _Examples_:
    * [SpringBoot-APIGateway-Rewriting](SpringBoot-API-Gateway-Rewriting)
 
 
-### Zool Gateway
+### Zuul Gateway
 **Zuul is a blocking API Gateway**.
 A blocking gateway makes use of as many threads as the number of incoming requests.
 So this approach is more resource intensive. If no threads are available to process incoming
 request then the request has to wait in queue.
 
-_Examples_: Use **JDK 11** (JDK 17 will not work)
-   * [SpringBoot-APIGateway-Zool](SpringBoot-APIGateway-Zuul)
+_Examples_: 
+   * [SpringBoot-APIGateway-Zuul](SpringBoot-APIGateway-Zuul)
 
 
 ## Authentication on the Edge
