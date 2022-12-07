@@ -33,7 +33,7 @@ So this approach is more resource intensive. If no threads are available to proc
 request then the request has to wait in queue.
 
 _Examples_: Use **JDK 11** (JDK 17 will not work)
-   * [SpringBoot-APIGateway-Zool](SpringBoot-APIGateway-Zool)
+   * [SpringBoot-APIGateway-Zool](SpringBoot-APIGateway-Zuul)
 
 
 ## Authentication on the Edge

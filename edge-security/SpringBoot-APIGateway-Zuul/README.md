@@ -19,7 +19,7 @@ $ mvn spring-boot:run
 We send a request to the API gateway which forwards the request to the `ArticleService` implementation.
 
 ```
-$ curl -i http://localhost:9090/api/articles/1
+$ curl -i http://localhost:8080/api/articles/1
 
 HTTP/1.1 200 
 Date: Sat, 16 Oct 2021 09:12:15 GMT
@@ -56,18 +56,18 @@ and the services to which to forward requests that are made to those routes.
 We specify routes by setting properties under `zuul.routes`. 
 Each of our microservices can have an entry under `zuul.routes.NAME`.
 
-We configure the API gateway to use port `9090` and to forward API requests to another service running on port `8080`.
+We configure the API gateway to use port `8080` and to forward API requests to another service running on port `8080`.
 All configurations can be done in the **application.properties** file.
 ```
-zuul.routes.api.url=http://localhost:8080
+zuul.routes.api.url=http://localhost:9090
 zuul.sensitiveHeaders=
 ribbon.eureka.enabled=false
-server.port=9090
+server.port=8080
 ```
 
 Spring Cloud Zuul automatically sets the path to the application name. 
 In this sample, we set `zuul.routes.api.url` so that Zuul will proxy requests to `/api` to the 
-URL `http://localhost:8080`.
+URL `http://localhost:9090`.
 
 Notice the second property in the `application.properties` file, Spring Cloud Netflix Zuul uses **Netflix’s Ribbon** 
 to perform client-side **load balancing**. By default, Ribbon would use **Netflix Eureka** for **service discovery**. 

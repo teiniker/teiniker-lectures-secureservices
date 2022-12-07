@@ -16,7 +16,7 @@ Set up the API gateway:
 $ cd SpringBoot-API-Gateway
 $ mvn spring-boot:run
 
-$ curl -v http://localhost:8080/articles/
+$ curl -v http://localhost:8080/articles
 [{"id":1,"description":"Design Patterns","price":4295},{"id":2,"description":"Effective Java","price":3336}]
 ```
 
