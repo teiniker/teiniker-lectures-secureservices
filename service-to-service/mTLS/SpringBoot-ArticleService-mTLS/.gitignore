@@ -2,4 +2,7 @@
 /.settings/
 /.classpath
 /.project
+/client.crt
+/privkey.pem
+/src/main/resources/server.jks
 

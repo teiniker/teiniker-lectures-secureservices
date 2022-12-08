@@ -13,9 +13,10 @@ public class SpringBootArticleServiceApplication
 		String path = System.getProperty("user.dir");
 		String keystorePath = path + File.separator + "src/main/resources/server.jks";
 		File file = new File(keystorePath);
-		System.out.println("Path (trustStore): " + file.getAbsolutePath());
 
-		if (file.exists()) {
+		if (file.exists())
+		{
+			System.out.println("Path (trustStore): " + file.getAbsolutePath());
 			System.setProperty("javax.net.ssl.trustStore", keystorePath);
 			System.setProperty("javax.net.ssl.trustStorePassword", "student");
 		}
