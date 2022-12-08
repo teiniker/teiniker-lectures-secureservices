@@ -54,6 +54,7 @@ public class GrpcClient
         ArticleListReply listReply2 = stub.findAllArticles(ArticleListRequest.newBuilder().build());
         LOGGER.debug("reply: {}", listReply2.toString());
 
+        /*
         LOGGER.info("delete non existing article 1 again");
         try
         {
@@ -64,7 +65,7 @@ public class GrpcClient
         {
             LOGGER.debug("reply: {}", e.toString(), e);
         }
-
+*/
         channel.shutdown();
     }
 }

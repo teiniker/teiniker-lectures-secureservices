@@ -9,12 +9,14 @@ public class AddressBookTest
 	public void testAddressBookBuilder()
 	{
 		Person homer = Person.newBuilder()
-					.setName("homer")
-					.setPassword("$2y$12$9gRSvDCPp9lC/JBBo7jCZe.mXhpOiWk4z.y04YJ2NXzUo7qsKbg.S")
+				.setName("homer")
+				.setPassword("$2y$12$9gRSvDCPp9lC/JBBo7jCZe.mXhpOiWk4z.y04YJ2NXzUo7qsKbg.S")
+				.setRole(Role.USER)
 				.build();
 		Person marge = Person.newBuilder()
-					.setName("marge")
-					.setPassword("$2y$12$GxlzYasVmEnH7G0OuRXWx..G.NqjA7mf20ZWqruD8endmfdmHajMW ")
+				.setName("marge")
+				.setPassword("$2y$12$GxlzYasVmEnH7G0OuRXWx..G.NqjA7mf20ZWqruD8endmfdmHajMW ")
+				.setRole(Role.ADMIN)
 				.build();
 
 		AddressBook book = AddressBook.newBuilder()
@@ -28,9 +30,18 @@ public class AddressBookTest
 	}
 
 	@Test
-	public void testAddressBookToString() {
-		Person homer = Person.newBuilder().setName("homer").setPassword("$2y$12$9gRSvDCPp9lC/JBBo7jCZe.mXhpOiWk4z.y04YJ2NXzUo7qsKbg.S").build();
-		Person marge = Person.newBuilder().setName("marge").setPassword("$2y$12$GxlzYasVmEnH7G0OuRXWx..G.NqjA7mf20ZWqruD8endmfdmHajMW ").build();
+	public void testAddressBookToString()
+	{
+		Person homer = Person.newBuilder()
+				.setName("homer")
+				.setPassword("$2y$12$9gRSvDCPp9lC/JBBo7jCZe.mXhpOiWk4z.y04YJ2NXzUo7qsKbg.S")
+				.setRole(Role.USER)
+				.build();
+		Person marge = Person.newBuilder()
+				.setName("marge")
+				.setPassword("$2y$12$GxlzYasVmEnH7G0OuRXWx..G.NqjA7mf20ZWqruD8endmfdmHajMW ")
+				.setRole(Role.ADMIN)
+				.build();
 
 		AddressBook book = AddressBook.newBuilder().addPeople(marge).addPeople(homer).build();
 		System.out.println(book.toString());
