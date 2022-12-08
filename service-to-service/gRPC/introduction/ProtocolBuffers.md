@@ -27,6 +27,11 @@ _Example_: `.proto` file
         string name = 2;
         string password = 3;
     }
+    
+    message AddressBook
+    {
+        repeated Person people = 1;
+    }
 ```
 
 The `.proto` file starts with a **package declaration**, which helps to prevent naming conflicts between different projects.
@@ -96,7 +101,45 @@ $ protoc -I=$SRC_DIR --java_out=$DST_DIR $SRC_DIR/filename.proto
 ### Maven Plugin 
 
 ```
+    <plugin>
+        <groupId>org.xolstice.maven.plugins</groupId>
+        <artifactId>protobuf-maven-plugin</artifactId>
+        <version>0.6.1</version>
+        <configuration>
+            <protocArtifact>com.google.protobuf:protoc:3.5.1-1:exe:${os.detected.classifier}</protocArtifact>
+            <pluginId>grpc-java</pluginId>
+            <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.16.1:exe:${os.detected.classifier}</pluginArtifact>
+        </configuration>
+        <executions>
+            <execution>
+                <goals>
+                    <goal>compile</goal>
+                    <goal>compile-custom</goal>
+                </goals>
+            </execution>
+        </executions>
+    </plugin>
+```
 
+```
+    <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+            <execution>
+                <id>add-source</id>
+                <phase>generate-sources</phase>
+                <goals>
+                    <goal>add-source</goal>
+                </goals>
+                <configuration>
+                    <sources>
+                        <source>${project.build.directory}/generated-sources/protobuf/java/</source>
+                    </sources>
+                </configuration>
+            </execution>
+        </executions>
+    </plugin>
 ```
 
 ## The Protocol Buffer API
@@ -186,3 +229,5 @@ repeated fields will be empty. New code will also transparently read old message
 
 * Kasun Indrasiri, Danesh Kuruppu. **gRPC: Up and Running**. O'Reilly . 
   * Chapter 4: gRPC: Under the Hood
+
+*Egon Teiniker, 2016-2022, GPL v3.0*

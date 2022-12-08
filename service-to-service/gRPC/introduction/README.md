@@ -116,4 +116,4 @@ gRPC users typically call these APIs on the client side and implement the corres
 * [Core concepts, architecture and lifecycle](https://grpc.io/docs/what-is-grpc/core-concepts/)
 
 
-*Egon Teiniker, 2020-2021, GPL v3.0*
+*Egon Teiniker, 2016-2022, GPL v3.0*
