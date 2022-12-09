@@ -71,22 +71,10 @@ use those tags for the commonly used or repeated elements, leaving tags 16 and h
 optional elements. 
 
 Each field must be annotated with one of the following **modifiers**:
-* **optional**: the field may or may not be set. If an optional field value isn't set, a **default value** is used. 
-    For simple types, you can specify your own default value. 
-    Otherwise, a system default is used: zero for numeric types, the empty string for strings, false for bools. 
-    For embedded messages, the default value is always the "default instance" or "prototype" of the message, which 
-    has none of its fields set. 
-    Calling the accessor to get the value of an optional (or required) field which has not been explicitly set 
-    always returns that field's default value.
 
 * **repeated**: the field may be repeated any number of times (including zero). 
     The order of the repeated values will be preserved in the protocol buffer. 
     Think of repeated fields as dynamically sized arrays.
-
-* **required**: a value for the field must be provided, otherwise the message will be considered "uninitialized". 
-    Trying to build an uninitialized message will throw a `RuntimeException`. 
-    Parsing an uninitialized message will throw an `IOException`. 
-    Other than this, a required field behaves exactly like an optional field.
 
 _Example_: [gRPC-ProtocolBuffers](../gRPC-ProtocolBuffers)
 
