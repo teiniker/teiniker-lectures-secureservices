@@ -5,7 +5,7 @@ The framework is based on a **client-server model** of remote procedure calls.
 A client application can directly call methods on a server application as if it was a local object.
 
 
-## Overview
+## Introduction
 In gRPC, a client application can directly call a method on a server application on a different machine as 
 if it were a local object, making it easier for us to create distributed applications and services. 
 
