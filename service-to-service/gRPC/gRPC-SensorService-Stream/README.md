@@ -1,20 +1,4 @@
-# Streaming with gRPC
-
-gRPC uses the **HTTP/2 network protocol** to do inter-service communications. 
-One key advantage of HTTP/2 is that it **supports streams**. 
-Each stream can multiplex multiple bidirectional messages sharing a single connection.
-
-In gRPC, we can have streaming with three functional call types:
-* **Server streaming RPC**: The client sends a single request to the server and gets back several messages that it 
-    reads sequentially.
-* **Client streaming RPC**: The client sends a sequence of messages to the server. 
-    The client waits for the server to process the messages and reads the returned response.
-* **Bidirectional streaming RPC**: The client and server can send multiple messages back and forth. 
-    The messages are received in the same order that they were sent. However, the server or client can respond 
-    to the received messages in the order that they choose.
-
-
-## Server-Side Streaming
+# Example: Server-Side Streaming
 
 The client sends a single request for a quote and gets back several responses.
 
