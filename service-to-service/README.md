@@ -23,7 +23,7 @@ There are three common ways to secure communications among services in a microse
 
 gRPC is a high performance, open source RPC framework which is based on a client-server model of **remote procedure calls**. A client application can directly call methods on a server application as if it was a local object.
 
-* [Overview](gRPC/introduction)
+* [gRPC Overview](gRPC/introduction)
 
 
 ## References
