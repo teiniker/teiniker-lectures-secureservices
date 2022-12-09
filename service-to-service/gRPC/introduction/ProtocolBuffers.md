@@ -88,7 +88,9 @@ Each field must be annotated with one of the following **modifiers**:
     Parsing an uninitialized message will throw an `IOException`. 
     Other than this, a required field behaves exactly like an optional field.
 
+_Example_: [gRPC-ProtocolBuffers](../gRPC-ProtocolBuffers)
 
+ 
 ## Compiling Protocol Buffers	
 
 We can use either a command line tool or a Maven plugin to generate Java code from the proto file.
@@ -107,6 +109,9 @@ generated code to go; often the same as $SRC_DIR), and the **path to our .proto 
 ```
 $ protoc -I=$SRC_DIR --java_out=$DST_DIR $SRC_DIR/filename.proto
 ```
+
+_Example_: [gRPC-ProtocolBuffers-protoc](../gRPC-ProtocolBuffers-protoc)
+
 
 ### Maven Plugin 
 
