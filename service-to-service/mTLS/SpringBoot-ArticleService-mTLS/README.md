@@ -52,8 +52,8 @@ curl: (56) OpenSSL SSL_read: error:14094412:SSL routines:ssl3_read_bytes:sslv3 a
 ```
 The server no longer accepts a request without a client certificate.
 
-To fix this, we need to create a key pair (a public key and a private key) for
-the curl client and configure the service to trust the public key.
+To fix this, **we need to create a key pair (a public key and a private key) for
+the curl client and configure the service to trust the public key**.
 
 To **generate a private key and a public key** for the curl client, we use the
 following **OpenSSL** command:
@@ -99,7 +99,7 @@ public class SpringBootArticleServiceApplication
 		String keystorePath = path + File.separator + "src/main/resources/server.jks";
 		File file = new File(keystorePath);
 		if (file.exists()) 
-        {
+        	{
 			System.setProperty("javax.net.ssl.trustStore", keystorePath);
 			System.setProperty("javax.net.ssl.trustStorePassword", "student");
 		}
