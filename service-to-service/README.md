@@ -22,12 +22,8 @@ There are three common ways to secure communications among services in a microse
 ## Microservices using gRPC 
 
 gRPC is a high performance, open source RPC framework which is based on a client-server model of **remote procedure calls**. A client application can directly call methods on a server application as if it was a local object.
-* [Introduction](gRPC/introduction)
-* Protocol Buffers
-  * _Example_: [Protocol Buffers](gRPC/gRPC-ProtocolBuffers)
-* gRPC Services
-  * _Example_: [gRPC-ClientServer](gRPC/gRPC-ClientServer)
-  * _Exercise_: [gRPC-ArticleService](gRPC/gRPC-ArticleService-Exercise) ([Model Solution](gRPC/gRPC-ArticleService))
+
+* [Overview](gRPC/introduction)
 
 
 ## References
