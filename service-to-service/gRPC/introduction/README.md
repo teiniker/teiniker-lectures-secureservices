@@ -31,6 +31,7 @@ For example, you can easily create a gRPC server in Java with clients Python or 
 
 ## References
 * [YouTube: Intro to gRPC](https://youtu.be/3Kkj6vAW5a4)
+* [YouTube (Matthias Grüter, Spotify): The Story of Why We Migrate to gRPC and How We Go About It](https://youtu.be/fMq3IpPE3TU)
 
 * [Introduction to gRPC](https://grpc.io/docs/what-is-grpc/introduction/)
 
