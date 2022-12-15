@@ -22,7 +22,7 @@ Date: Fri, 26 Nov 2021 12:47:39 GMT
 
 ## Setup TLS
 
-In order to configure a TLS connector, we hae to create a server-side certificate and configure the 
+In order to configure a TLS connector, we have to create a server-side certificate and configure the 
 application.properties file.
 
 ```
