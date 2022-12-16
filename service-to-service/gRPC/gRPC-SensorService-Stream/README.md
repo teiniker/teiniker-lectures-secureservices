@@ -1,8 +1,8 @@
 # Example: Server-Side Streaming
 
-The client sends a single request for a quote and gets back several responses.
+The client sends a single request with a `Sensor` message and gets back several `SensorData` responses.
 
-We add the stream keyword in front of the returned message type:
+We add the `stream` keyword in front of the returned message type:
 ```
 service SensorService
 {
