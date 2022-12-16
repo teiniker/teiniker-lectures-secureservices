@@ -35,6 +35,7 @@ gRPC is a high performance, open source RPC framework which is based on a client
 * Example: [ClientServer using mTLS](gRPC/gRPC-ClientServer-mTLS)
 * Exercise: [SensorService](gRPC/gRPC-SensorService-Exercise) ([Model Solution](gRPC/gRPC-SensorService-mTLS)) 
 * Exercise: [ArticleService](gRPC/gRPC-ArticleService-Exercise) ([Model Solution](gRPC/gRPC-ArticleService-mTLS))
+* Example: [Server-Side Streaming](gRPC/gRPC-SensorService-Stream)
 
 
 ## References
