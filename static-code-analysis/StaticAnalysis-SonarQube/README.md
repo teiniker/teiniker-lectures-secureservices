@@ -9,22 +9,22 @@ First, download [SonarQube](https://www.sonarqube.org/downloads/), unzip the fol
 the installation directory, e.g. `/home/student/local`:
 ```
 $ cd Downloads 
-$ unzip sonarqube-9.2.3.50713.zip
-$ mv sonarqube-9.2.3.50713 ../local/sonarqube-9.2.3
+$ unzip sonarqube-8.9.10.61524.zip
+$ mv sonarqube-8.9.10.61524 ../local/sonarqube-8.9.10
 ```
 
 Second, download [SonarScanner](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/) Linux-64-bit:
 ```
 $ cd Download 
-$ unzip sonar-scanner-cli-4.6.2.2472-linux
-$ mv sonar-scanner-4.6.2.2472-linux ../local/sonar-scanner-4.6.2
+$ unzip sonar-scanner-cli-4.7.0.2747-linux.zip
+$ mv sonar-scanner-4.7.0.2747-linux ../local/sonar-scanner-4.7.0
 
 $ vi ~/.bashrc
-export SONAR_SCANNER=/home/student/local/sonar-scanner-4.6.2
+export SONAR_SCANNER=/home/student/local/sonar-scanner-4.7.0
 add $SONAR_SCANNER/bin: to the $PATH 
 
 $ sonar-scanner --version
-INFO: Scanner configuration file: /home/student/local/sonar-scanner-4.6.2/conf/sonar-scanner.properties
+INFO: Scanner configuration file: /home/student/local/sonar-scanner-4.7.0/conf/sonar-scanner.properties
 INFO: Project root configuration file: NONE
 INFO: SonarScanner 4.6.2.2472
 INFO: Java 11.0.11 AdoptOpenJDK (64-bit)
@@ -36,19 +36,21 @@ Note that version numbers can change in newer versions...
 ## Start and Stop SonarQube
 Before we can run an analysis, we have to fire up the SonarQube server process.
 
-*Note that SonarQube is only working with Java 11!!*
+*Note that SonarQube is now working with Java 17!!*
 
 ```
-$ cd local/sonarqube-8.0/bin/linux-x86-64/
-$ sonar.sh start
+$ cd local/sonarqube-8.9.10/bin/linux-x86-64/
+$ ./sonar.sh start
 
-$ sonar.sh stop
+$ ./sonar.sh stop
 ```
 
 To access the SonarQube server from a browser, use the following link:
 ```
 URL: http://localhost:9000
-admin/admin
+
+Log In to SonarQube
+=> admin/admin
 => change to amin/root66
 ```
 Also, we add a new account which can be accessed via **SonarScanner**:

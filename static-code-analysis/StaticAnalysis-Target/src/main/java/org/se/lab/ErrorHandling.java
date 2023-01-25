@@ -45,4 +45,18 @@ public class ErrorHandling
 		}
 	}
 
+	public void useGenericExceptions()
+	{
+		FileInputStream fis = null;
+
+		try
+		{
+			fis = new FileInputStream("build.xml");
+			fis.close();
+		}
+		catch (IOException e)
+		{
+			throw new RuntimeException("Some bad things happened!");
+		}
+	}
 }

@@ -14,7 +14,6 @@ public class BadPractice
         s.length();
     }
     
-    
     public void showNullPointer()
     {
         String s = null;

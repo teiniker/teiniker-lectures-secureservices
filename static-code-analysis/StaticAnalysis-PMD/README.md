@@ -8,7 +8,7 @@ PMD is also shipped with a **Copy & Paste** detector (CPD) which can find duplic
 
 ## Setup
 
-Download and unzip [PMD](https://pmd.github.io/pmd-6.36.0/index.html).
+Download and unzip [PMD](https://pmd.sourceforge.io/pmd-6.36.0/index.html).
 
 Rename `pmd.properties.template` to `pmd.properties` and set the **pmd.home** property to your install directory of PMD
 
