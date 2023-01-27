@@ -133,10 +133,12 @@ artifacts from the grammar.
 We can have **different languages which share a common intermediate form**:
 * **Homogeneous AST**: A homogeneous tree implements an AST using a single node data type and a 
 normalized child list representation.
+
 ![Homogeneous AST](figures/HomogeneousAST.png)
 
 * **Irregular Heterogeneous AST**: An irregular tree implements an AST using more than a single 
 node data type and with an irregular child list representation.
+
 ![Heterogeneous AST](figures/HeterogeneousAST.png)
 
 ### Walking Trees
