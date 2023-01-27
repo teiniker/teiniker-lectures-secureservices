@@ -93,8 +93,7 @@ There are large classes of grammars for which we can build parsers that run in
 * **LL (Left-to-right, Left-most derivation)**:
  LL parsers are generally considered to be simpler and easier to understand. 
  They can be written by hand or generated automatically from an appropriate 
- grammar by a parser-generating tool.
-
+ grammar by a parser-generating tool.\
  LL parsers are also called **top-down or predictive parsers**. 
  They construct a parser tree from the root down, predicting at each step 
  which production will be used to expand the current node, based on the next 
@@ -105,8 +104,7 @@ There are large classes of grammars for which we can build parsers that run in
  LR parsers are almost always constructed by a parser-generating tool.
  LR parsers are also called **bottom up parsers**. 
  They construct a parse tree from the leaves up, recognizing when a collection 
- of leaves or other nodes can be joined together as the children of a single parent.
-
+ of leaves or other nodes can be joined together as the children of a single parent.\
  We can see LL or LR written with a number in parentheses after it: LL(2) for example. 
  This number indicates how many tokens of **look-ahead** are required in order to parse.
 
