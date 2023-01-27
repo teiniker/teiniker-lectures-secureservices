@@ -11,7 +11,7 @@ design of microservices.
 
   * [Service to Service Communication](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/service-to-service)  
   
-* **SecDevOps**
+* **Secure Continuous Delivery**
   * [Static Code Analysis](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/static-code-analysis)
   * [Service Infrastructure](https://github.com/teiniker/teiniker-lectures-secureservices/tree/master/infrastructure)
   
