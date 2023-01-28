@@ -31,13 +31,11 @@ Docker provides a set of infrastructure components that simplify distributing Do
 
 Note that Docker runs as the root user on our system (Debian 10).
 ```
-$ su
+# sudo systemctl start docker
+# sudo systemctl stop docker
 
-# systemctl start docker
-# systemctl stop docker
-
-# docker version
-# docker info
+# sudo docker version
+# sudo docker info
 ```
 
 A **Docker Container** is an instance of that image running as a process.
@@ -99,16 +97,16 @@ The --env flag or -e for short can be used to inject any environment variable.
 ### Example: Wildfly
 See: [DockerHub](https://hub.docker.com/r/jboss/wildfly)
 ```
-# docker container run -p 8080:8080 -p 9990:9990 jboss/wildfly
+# sudo docker container run -p 8080:8080 -p 9990:9990 jboss/wildfly
 ```
 The **run** command downloads the needed image from DockerHub (and all its dependencies) and starts a container running
 the Wildfly application server.
 ```
-# docker container ls -a
+# sudo docker container ls -a
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
 e25fd561accc        jboss/wildfly       "/opt/jboss/wildfly/…"   2 minutes ago       Up 2 minutes        8080/tcp            gracious_bassi
 
-# docker image ls
+# sudo docker image ls
 REPOSITORY                               TAG                 IMAGE ID            CREATED             SIZE
 jboss/wildfly                            latest              e6f71554a543        3 days ago          757MB
 ```
@@ -120,14 +118,14 @@ URL: http://localhost:8080/
 
 We can manage the container using the **start** and **stop** commands.
 ```
-# docker container stop e25fd561accc
+# sudo docker container stop e25fd561accc
 e25fd561accc
 
-# docker container ls -a
+# sudo docker container ls -a
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS               NAMES
 e25fd561accc        jboss/wildfly       "/opt/jboss/wildfly/…"   5 minutes ago       Exited (0) 5 seconds ago                       gracious_bassi
 
-# docker container start e25fd561accc
+# sudo docker container start e25fd561accc
 
 # ps -ax
 27753 ?        Sl     0:00 containerd-shim -namespace moby -workdir /var/lib/containerd/io.containerd.runtime.v1.linux/moby/5f1f3d2d445a199a6c5b7f79fef50a7c8b40dc32e9060a84442c515f3f3e5a26 -
@@ -141,9 +139,9 @@ Note that the **Wildfly container is running as a process** in our Linux system.
 ### Example: Database
 See: [DockerHub](https://hub.docker.com/_/mariadb)
 ```
-# docker container run -d -p 3306:3306 --name db  --env="MYSQL_ROOT_PASSWORD=root66" mariadb
+# sudo docker container run -d -p 3306:3306 --name db  --env="MYSQL_ROOT_PASSWORD=root66" mariadb
 
-# docker container inspect db
+# sudo docker container inspect db
 ...
 "IPAddress": "172.17.0.2"
 ...
@@ -206,4 +204,4 @@ The benefit is that common layers need to be installed only once.
 * [Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 
 
-*Egon Teiniker, 2021-2022, GPL v3.0*
+*Egon Teiniker, 2017-2023, GPL v3.0*
