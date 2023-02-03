@@ -63,7 +63,7 @@ There are a number of **security issues with Docker containers** that we need to
     Docker did not originally include any support for managing secrets.
     As a result, people hacked their own solutions:
     * **Passing secrets in environment variables**: Environment variables are discouraged because they are acessible by any
-        process in the container, thus easyli leaked.
+        process in the container, thus easily leaked.
     * **Build-time environment variables**: The Docker build-time environment variables where not designed to handle secrets.    
     
     It is recommended to use a **general-purpose secret keeper** such as 
