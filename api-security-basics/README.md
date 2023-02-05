@@ -1,5 +1,7 @@
 # API Security Basics 
 
+* [API Design Best Practices](api-bestpractices)
+
 * Authentication
      * Transport Layer Security 
          * [REST-EJB-UserService-TLS](api-authentication/tls/REST-EJB-UserService-TLS)
@@ -22,8 +24,6 @@
    * [REST-EJB-UserService-TLS-Client](api-clients/REST-EJB-UserService-TLS-Client)
    * [REST-EJB-UserService-BasicAuth-Client](api-clients/REST-EJB-UserService-BasicAuth-Client) 
 
-* [API Design Best Practices](api-bestpractices)
-
 * [API Specifications](api-specifications)   
 
-*Egon Teiniker, 2016 - 2022, GPL v3.0*
+*Egon Teiniker, 2016 - 2023, GPL v3.0*
