@@ -21,6 +21,7 @@ out of all the CRUD operations.
 
 If we need to design the rest of the operations, their paths should look like following:
 * `POST /licenses`: This is for creating a new license.
+
 * `PUT /licenses/{license_key}`: This is for partial updates. Here, the path has a parameter
   (that is, an identifier), which makes the path dynamic. The license key is a unique value
   in the license collection and is being used as an identifier.
@@ -38,6 +39,22 @@ If we need to design the rest of the operations, their paths should look like fo
 
 ## Status codes
 Please follow the guidelines of HTTP methods and status codes.
+
+All HTTP response status codes are separated into five classes or categories. 
+The first digit of the status code defines the class of response, while the 
+last two digits do not have any classifying or categorization role. 
+
+There are five classes defined by the standard:
+* **1xx informational response**: the request was received, continuing process.
+* **2xx successful**: the request was successfully received, understood, and accepted.
+* **3xx redirection**: further action needs to be taken in order to complete the request.
+* **4xx client error**: the request contains bad syntax or cannot be fulfilled.
+* **5xx server error**: the server failed to fulfil an apparently valid request.
+
+_Examples:_ 
+* **200 OK**: Document returned correctly.
+* **302 Redirect**: Go someplace else to get the resource.
+* **404 Not Found**: Can’t find this ressource.
 
 
 ## Use Hypermedia (HATEOAS)
@@ -204,5 +221,7 @@ _Example_: [SpringBoot Swagger](SpringBoot-Swagger)
 * Sourabh Sharma. **Modern API Development with Spring and Spring Boot: Design highly scalable and maintainable APIs with
   REST, gRPC, GraphQL, and the reactive paradigm**. Packt Publishing, 2021
   * Chapter: Best practices for designing REST APIs
-  
-*Egon Teiniker, 2016-2022, GPL v3.0*
+
+* [List of HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
+
+*Egon Teiniker, 2016-2023, GPL v3.0*
