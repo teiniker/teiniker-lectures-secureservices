@@ -6,7 +6,7 @@ public class Book implements Serializable
 {
     private static final long serialVersionUID = 1L;
 
-    Book(String id, String author, String title, String isbn)
+    Book(long id, String author, String title, String isbn)
     {
         setId(id);
         setAuthor(author);
@@ -19,12 +19,12 @@ public class Book implements Serializable
     }
 
 
-    private String id;
-    public String getId()
+    private long id;
+    public long getId()
     {
         return this.id;
     }
-    public void setId(String id)
+    public void setId(long id)
     {
         this.id = id;
     }
@@ -75,8 +75,8 @@ public class Book implements Serializable
     {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Book article = (Book) o;
-        return id.equals(article.id);
+        Book book = (Book) o;
+        return id == book.id;
     }
 
     @Override

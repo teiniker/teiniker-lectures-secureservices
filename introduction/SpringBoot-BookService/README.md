@@ -9,7 +9,7 @@ $ mvn spring-boot:run
 
 ## Accessing the API via curl
 
-### Find Articles
+### Find Books
 
 ```
 $ curl -i http://localhost:8080/books
@@ -17,24 +17,24 @@ $ curl -i http://localhost:8080/books
 HTTP/1.1 200 
 Content-Type: application/json
 Transfer-Encoding: chunked
-Date: Mon, 06 Feb 2023 18:00:08 GMT
+Date: Mon, 06 Feb 2023 21:03:31 GMT
 
 [
-    {"id":"da42b451-11e1-4ac9-be5e-dd3b767be1ba","author":"Joshua Bloch","title":"Effective Java","isbn":"978-0134685991"},
-    {"id":"10e290da-4c8d-4646-be93-7a03f47e3082","author":"Robert C. Martin","title":"Clean Code","isbn":"978-0132350884"},
-    {"id":"9770cdb8-1eb0-4198-b95e-242595374a20","author":"Martin Fowler","title":"Refactoring","isbn":" 978-0134757599"}
+    {"id":1,"author":"Joshua Bloch","title":"Effective Java","isbn":"978-0134685991"},
+    {"id":2,"author":"Robert C. Martin","title":"Clean Code","isbn":"978-0132350884"},
+    {"id":3,"author":"Martin Fowler","title":"Refactoring","isbn":" 978-0134757599"}
 ]
 ```
 
 ```
-$ curl -i http://localhost:8080/books/da42b451-11e1-4ac9-be5e-dd3b767be1ba
+$ curl -i http://localhost:8080/books/2
 
 HTTP/1.1 200 
 Content-Type: application/json
 Transfer-Encoding: chunked
-Date: Mon, 06 Feb 2023 18:02:47 GMT
+Date: Mon, 06 Feb 2023 21:06:05 GMT
 
-{"id":"da42b451-11e1-4ac9-be5e-dd3b767be1ba","author":"Joshua Bloch","title":"Effective Java","isbn":"978-0134685991"}
+{"id":2,"author":"Robert C. Martin","title":"Clean Code","isbn":"978-0132350884"}
 ```
 
 ```
@@ -42,47 +42,47 @@ $ curl -i http://localhost:8080/books/666
 
 HTTP/1.1 404 
 Content-Length: 0
-Date: Mon, 06 Feb 2023 18:05:19 GMT
+Date: Mon, 06 Feb 2023 21:06:42 GMT
 ```
 
-### Insert an Article
+### Insert a Book
 ```
 $ curl -i -X POST http://localhost:8080/books -H 'Content-type:application/json' -d '{"author":"Robert C. Martin","title":"Clean Code","isbn":"978-0132350884"}'
 
 HTTP/1.1 201 
 Content-Type: application/json
 Transfer-Encoding: chunked
-Date: Mon, 06 Feb 2023 18:07:52 GMT
+Date: Mon, 06 Feb 2023 21:07:20 GMT
 
-{"id":"da42b451-11e1-4ac9-be5e-dd3b767be1ba","author":"Robert C. Martin","title":"Clean Code","isbn":"978-0132350884"}
+{"id":4,"author":"Robert C. Martin","title":"Clean Code","isbn":"978-0132350884"}
 ```
 
-### Update an Article
+### Update a Book
 ```
-$ curl -i -X PUT http://localhost:8080/books/da42b451-11e1-4ac9-be5e-dd3b767be1ba -H 'Content-type:application/json' -d '{"author":"Joshua Bloch","title":"Effective Java, 2nd Edition","isbn":"978-0134685991"}'
+$ curl -i -X PUT http://localhost:8080/books/1 -H 'Content-type:application/json' -d '{"author":"Joshua Bloch","title":"Effective Java, 2nd Edition","isbn":"978-0134685991"}'
 
-HTTP/1.1 200
+HTTP/1.1 200 
 Content-Type: application/json
 Transfer-Encoding: chunked
-Date: Thu, 07 Oct 2021 14:20:22 GMT
+Date: Mon, 06 Feb 2023 21:08:31 GMT
 
-{"id":"da42b451-11e1-4ac9-be5e-dd3b767be1ba","author":"Joshua Bloch","title":"Effective Java, 2nd Edition","isbn":"978-0134685991"}
+{"id":1,"author":"Joshua Bloch","title":"Effective Java, 2nd Edition","isbn":"978-0134685991"}
 ```
 
-### Delete an Article
+### Delete a Book
 ```
-$ curl -i -X DELETE http://localhost:8080/books/da42b451-11e1-4ac9-be5e-dd3b767be1ba
+$ curl -i -X DELETE http://localhost:8080/books/2
 
 HTTP/1.1 204 
-Date: Mon, 06 Feb 2023 18:20:15 GMT
+Date: Mon, 06 Feb 2023 21:09:24 GMT
 ```
 
 ```
-$ curl -i http://localhost:8080/books/3
+$ curl -i http://localhost:8080/books/666
 
 HTTP/1.1 404 
 Content-Length: 0
-Date: Mon, 06 Feb 2023 18:21:13 GMT
+Date: Mon, 06 Feb 2023 21:10:07 GMT
 ```
 
 ## References

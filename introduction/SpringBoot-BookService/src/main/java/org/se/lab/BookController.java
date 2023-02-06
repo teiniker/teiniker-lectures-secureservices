@@ -7,27 +7,31 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 @RestController
 public class BookController
 {
-    private Map<String, Book> table;
+    private static long sequence = 1;
+    private static long nextValue()
+    {
+        return sequence++;
+    }
+
+    private Map<Long, Book> table;
 
     BookController()
     {
         // Simulate database table
         table = new ConcurrentHashMap<>();
 
-        String id1 = "da42b451-11e1-4ac9-be5e-dd3b767be1ba";
+        long id1 = nextValue();
         table.put(id1, new Book(id1, "Joshua Bloch", "Effective Java", "978-0134685991"));
 
-        String id2 = "10e290da-4c8d-4646-be93-7a03f47e3082";
+        long id2 = nextValue();
         table.put(id2, new Book(id2, "Robert C. Martin", "Clean Code", "978-0132350884"));
 
-        String id3 = "9770cdb8-1eb0-4198-b95e-242595374a20";
+        long id3 = nextValue();
         table.put(id3, new Book(id3, "Martin Fowler", "Refactoring", " 978-0134757599"));
     }
 
@@ -38,7 +42,7 @@ public class BookController
     }
 
     @GetMapping("/books/{id}")
-    ResponseEntity<Book> indById(@PathVariable String id)
+    ResponseEntity<Book> indById(@PathVariable long id)
     {
         Book item = table.get(id);
         if(item == null)
@@ -50,13 +54,13 @@ public class BookController
     @PostMapping("/books")
     ResponseEntity<Book> insert(@RequestBody Book book)
     {
-        book.setId(UUID.randomUUID().toString());
+        book.setId(nextValue());
         table.put(book.getId(), book);
         return new ResponseEntity<>(book, HttpStatus.CREATED);
     }
 
     @PutMapping("/books/{id}")
-    ResponseEntity<?> update(@RequestBody Book book, @PathVariable String id)
+    ResponseEntity<?> update(@RequestBody Book book, @PathVariable long id)
     {
         Book item = table.get(id);
         if(item == null)
@@ -71,7 +75,7 @@ public class BookController
     }
 
     @DeleteMapping("/books/{id}")
-    ResponseEntity<?> delete(@PathVariable String id)
+    ResponseEntity<?> delete(@PathVariable long id)
     {
         Book item = table.get(id);
         if(item == null)
