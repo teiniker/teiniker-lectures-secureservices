@@ -91,4 +91,4 @@ $ mvn dependency:analyze
 * [OWASP Dependency-Check](https://owasp.org/www-project-dependency-check/)
 * [Apache Maven Dependency Plugin](https://maven.apache.org/plugins/maven-dependency-plugin/index.html)
 
-*Egon Teiniker, 2020-2021, GPL v3.0*
+*Egon Teiniker, 2017-2023, GPL v3.0*

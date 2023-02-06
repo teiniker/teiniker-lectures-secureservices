@@ -4,6 +4,7 @@ This project collects examples, exercises and model solutions to give an introdu
 design of microservices.
 
 * **Secure Web Services**
+  * [Introduction to RESTful Services](introduction/)
 
   * [API Security Basics](api-security-basics)
 
