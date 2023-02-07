@@ -23,7 +23,6 @@ returned. So no incoming request never gets blocked when using Spring Cloud Gate
 
 _Examples_:
    * [SpringBoot-APIGateway](SpringBoot-API-Gateway)
-   * [SpringBoot-APIGateway-Rewriting](SpringBoot-API-Gateway-Rewriting)
 
 
 ### Zuul Gateway

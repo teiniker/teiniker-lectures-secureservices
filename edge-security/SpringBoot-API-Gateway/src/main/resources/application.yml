@@ -5,7 +5,16 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: article_module
-          uri: http://localhost:9090/
+        - id: path_route
+          uri: http://localhost:9090
           predicates:
-            - Path=articles/**
+            - Path=/v1/**
+          filters:
+            - RewritePath=/v1/(?<segment>.*), /$\{segment}
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: TRACE
