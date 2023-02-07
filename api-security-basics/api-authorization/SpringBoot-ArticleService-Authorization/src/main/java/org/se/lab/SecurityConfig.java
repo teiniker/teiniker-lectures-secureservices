@@ -24,7 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
                 .and()
                 .withUser("marge")
                     .password(passwordEncoder().encode("marge"))
-                    .roles("USER");
+                    .roles("ADMIN");
     }
 
     @Override
