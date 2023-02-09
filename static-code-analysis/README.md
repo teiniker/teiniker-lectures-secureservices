@@ -8,8 +8,6 @@ automatic tools.
 ## Software Metrics
 
 
-## RegEx-Based Code Analysis
-
 
 ## Rule-Based Code Analysis
 Rule-based analysis tools accept code, build a model that represents the program,
