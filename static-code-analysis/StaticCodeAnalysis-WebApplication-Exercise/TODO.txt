@@ -1,0 +1,31 @@
+LabExam 2022-01-15: Static Code Analysis
+-------------------------------------------------------------------------------
+
+Given a legacy web application.
+
+Use static code analysis techniques (e.g. SpotBugs, Find Security Bugs, Dependency Checker)
+to find vulnerabilities in this application.
+
+A) List all security relevant findings togethet with the corresponding code fragments.
+    [2 Points]
+
+
+B) Priorize the findings (what would you fix first) and describe possible
+    improvements in the code. [8 Points]
+
+
+C) Do you also find some more vulnerabilities during a manual code review?
+    (list the code fragments and possible improvements) [Extra points]
+
+
+
+The small print
+---------------
+Don't forget to replace MyName with your name, otherwise you get only 50% of
+your points...
+
+Tip: Implement the missing parts first and right before you export the project,
+    rename it.
+
+Also note that grading is based on a code review, thus, a running test doesn't
+automatically mean that you get all points.
