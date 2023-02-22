@@ -15,10 +15,12 @@ public class GRPCClientTest
 
         HelloServiceGrpc.HelloServiceBlockingStub stub = HelloServiceGrpc.newBlockingStub(channel);
 
-        HelloResponse helloResponse = stub.hello(HelloRequest.newBuilder()
+        HelloRequest req = HelloRequest.newBuilder()
                 .setFirstName("Homer")
                 .setLastName("Simpson")
-                .build());
+                .build();
+
+        HelloResponse helloResponse = stub.hello(req);
 
         System.out.println("Response received from server:\n" + helloResponse.getGreeting());
 
