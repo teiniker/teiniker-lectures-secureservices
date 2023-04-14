@@ -28,6 +28,12 @@ use of checked exceptions such as `SQLException`).
 $ egrep -i -n -r " Exception|RuntimeException" .
 ./src/main/java/org/se/lab/ErrorHandling.java:59:   throw new RuntimeException("Some bad things happened!");
 ```
+Another problem is the usage of e.printStackTrace() in production code:
+```
+$ egrep -i -n -r ".printStackTrace()" .
+
+```
+
 
 In the context of **cryptography** we can look for **insecure classes or cipher configurations**.
 ```
